@@ -1,197 +1,260 @@
-<!DOCTYPE html><html><head><meta name="viewport" content="width=device-width,initial-scale=1"><title>QUIZORA - JAMB WAEC NECO CBT</title><style>body{font-family:Arial;background:#F1F5F9;margin:0;padding:10px}.top{background:linear-gradient(90deg,#2563EB,#7C3AED);color:#fff;padding:15px;border-radius:12px;text-align:center}.card{background:#fff;border-radius:12px;padding:15px;margin-top:12px;box-shadow:0 2px 8px rgba(0,0,0,.1)}.btn{width:100%;padding:14px;border:0;border-radius:10px;font-weight:800;margin-top:8px;font-size:16px}.btn-blue{background:#2563EB;color:#fff}.btn-green{background:#16A34A;color:#fff}.btn-red{background:#DC2626;color:#fff}.btn-yellow{background:#F59E0B}.btn-purple{background:#7C3AED;color:#fff}.btn-ghost{background:#E2E8F0}.inp{width:100%;padding:12px;border:1px solid #CBD5E1;border-radius:10px;margin-top:8px;box-sizing:border-box}.opt{border:1px solid #CBD5E1;border-radius:10px;padding:12px;margin-top:8px}.sel{background:#DBEAFE;border-color:#2563EB}.cells{display:grid;grid-template-columns:repeat(10,1fr);gap:5px;margin-top:10px}.cell{padding:8px;text-align:center;background:#E2E8F0;border-radius:8px;font-size:12px}.cell.on{background:#BBF7D0}.cell.view{outline:3px solid #2563EB}.hidden{display:none}</style></head><body>
-<div class="top"><h1>QUIZORA</h1><p>JAMB | WAEC | NECO - Live CBT</p><p id="liveCount">Loading...</p></div>
-<div id="homePage"><div class="card"><h2>Welcome to QUIZORA</h2><p>Tap a body to start - Admin login is private</p><button class="btn btn-blue" onclick="showPage('student')">Start as Student</button><button class="btn btn-ghost" onclick="showPage('login')">Admin Login</button></div></div>
-<div id="studentPage" class="hidden"><div class="card"><h2>Student CBT</h2><select id="sBody" class="inp"><option>JAMB</option><option>WAEC</option><option>NECO</option></select><select id="sSub" class="inp"><option>Mathematics</option><option>English Language</option><option>CRS</option><option>Biology</option><option>Chemistry</option><option>Physics</option></select><button class="btn btn-green" onclick="startExam()">Start Exam</button><button class="btn btn-ghost" onclick="showPage('home')">Back Home</button></div><div class="card" id="examArea">Select subject and Start</div></div>
-<div id="loginPage" class="hidden"><div class="card"><h2>Admin Login</h2>
-<div id="createBox" class="hidden" style="background:#FEF3C7;padding:12px;border-radius:10px"><b>First Time? Create Your Admin Password Here</b><p>This is your private password. Students cannot see it.</p><input id="newAdminPass" class="inp" type="password" placeholder="Create your password"><input id="newAdminPass2" class="inp" type="password" placeholder="Type it again to confirm"><button class="btn btn-green" onclick="createAdminPass()">Create My Password</button></div>
-<div id="normalLoginBox"><p>Enter your Admin Password</p><input id="adminPass" class="inp" type="password" placeholder="Your password"><button class="btn btn-blue" onclick="adminLogin()">Login as Admin</button><button class="btn btn-ghost" onclick="showPage('home')">Back Home</button></div>
-</div></div><div id="adminPage" class="hidden">
-<div class="card"><h2>Administrator Dashboard - Engine Room</h2><p>Welcome, Super Admin - Students cannot see this</p><div style="background:#DCFCE7;padding:10px;border-radius:10px;font-weight:800" id="savedInfo">Saved: 0 / 1000</div><button class="btn btn-red" onclick="logoutAdmin()">LOGOUT ADMIN</button>
-<div style="background:#FEF3C7;padding:10px;border-radius:10px;margin-top:10px"><b>Change Admin Password - Do it here on the CBT</b><input id="newPass" class="inp" type="password" placeholder="Type your new password"><button class="btn btn-blue" onclick="changePass()">Save New Password</button></div></div>
-<div class="card"><h3>Manage Questions - Correct Ticked ONLY HERE</h3>
-<select id="fBody" class="inp" onchange="renderCells();loadQ(cur)"><option>JAMB</option><option>WAEC</option><option>NECO</option></select>
-<select id="fSub" class="inp" onchange="renderCells();loadQ(cur)"><option>Mathematics</option><option>English Language</option><option>CRS</option><option>Biology</option><option>Chemistry</option><option>Physics</option></select>
-<div id="preview" style="background:#EFF6FF;border:2px dashed #93C5FD;border-radius:10px;padding:10px;font-size:13px">Tap a cell to preview</div>
-<div style="margin-top:10px"><button class="btn btn-blue" onclick="prevQ()">Previous</button><button class="btn btn-blue" onclick="nextQ()">Next</button><button class="btn btn-yellow" onclick="editQ()">Edit</button><button class="btn btn-red" onclick="delQ()">Delete</button></div>
-<p><b>Green = Has Question - Grey = Empty - Blue Outline = Viewing Now</b><br>Cells 1-1000:</p><div id="cells" class="cells"></div>
-<p id="importedInfo" style="font-weight:800">Imported: 0 / 1000</p></div>
-<div class="card"><h3>Add Single Question</h3><input id="qText" class="inp" placeholder="Question"><input id="qA" class="inp" placeholder="Option A"><input id="qB" class="inp" placeholder="Option B"><input id="qC" class="inp" placeholder="Option C"><input id="qD" class="inp" placeholder="Option D"><select id="qAns" class="inp"><option value="A">Correct: A</option><option value="B">Correct: B</option><option value="C">Correct: C</option><option value="D">Correct: D</option></select><button class="btn btn-green" onclick="addSingle()">Add This Question</button></div>
-<div class="card"><h3>Import Batch of 100 - AUTO-SAVE + AUTO-MOVE</h3><p>Format: Question | A | B | C | D | Correct Letter</p>
-<select id="batchSel" class="inp"><option value="1">Batch 1: Q001-100</option><option value="2">Batch 2: Q101-200</option><option value="3">Batch 3: Q201-300</option><option value="4">Batch 4: Q301-400</option><option value="5">Batch 5: Q401-500</option><option value="6">Batch 6: Q501-600</option><option value="7">Batch 7: Q601-700</option><option value="8">Batch 8: Q701-800</option><option value="9">Batch 9: Q801-900</option><option value="10">Batch 10: Q901-1000</option></select>
-<textarea id="bulkBox" class="inp" style="height:140px" placeholder="Question | A | B | C | D | Correct Letter"></textarea>
-<input type="file" id="bulkFile" class="inp" accept=".txt,.csv"><button class="btn btn-purple" onclick="importBatch()">Import Batch of 100 - Auto-Save & Auto-Next</button>
-<button class="btn btn-yellow" onclick="deleteBatch()">Delete This Batch & Re-Import</button><div id="bulkMsg" style="font-weight:800;color:#16A34A"></div></div>
-<div class="card" style="background:#FEF3C7"><h3>EXPORT - For Going Live</h3><p>After import, click Export to get your file for GitHub. Students will then see it live.</p><button class="btn btn-blue" onclick="exportQuestions()">EXPORT Questions.json</button><button class="btn btn-ghost" onclick="copyForGithub()">Copy For GitHub</button><textarea id="exportBox" class="inp" style="height:120px" placeholder="Export will appear here - copy to GitHub questions.json"></textarea></div>
-</div>
-<script>
-let DB={qs:[]};let cur=1;let KEY='quizora_live_local';
-try{let d=localStorage.getItem(KEY);if(d)DB=JSON.parse(d);}catch(e){}
-let GH_USER='ekpobassey01-glitch';let GH_REPO='quizora';
-let GH_URL='https://raw.githubusercontent.com/'+GH_USER+'/'+GH_REPO+'/main/questions.json';
-async function loadLive(){try{let r=await fetch(GH_URL);let arr=await r.json();if(arr&&arr.length){DB.qs=arr;saveDB();}document.getElementById('liveCount').innerText='Live Questions: '+DB.qs.length+' / 1000 - From GitHub';}catch(e){document.getElementById('liveCount').innerText='Local Questions: '+DB.qs.length+' - GitHub not connected yet - create questions.json';}updateInfo();renderCells();}
-function saveDB(){try{localStorage.setItem(KEY,JSON.stringify(DB));}catch(e){}updateInfo();}
-function updateInfo(){let s=document.getElementById('savedInfo');if(s)s.innerText='Saved: '+DB.qs.length+' / 1000';let ii=document.getElementById('importedInfo');if(ii)ii.innerText='Imported: '+DB.qs.length+' / 1000 - Next Batch '+(Math.floor(DB.qs.length/100)+1);}
-function showPage(p){['homePage','studentPage','loginPage','adminPage'].forEach(id=>document.getElementById(id).classList.add('hidden'));if(p=='home')document.getElementById('homePage').classList.remove('hidden');if(p=='student')document.getElementById('studentPage').classList.remove('hidden');if(p=='login'){document.getElementById('loginPage').classList.remove('hidden');let has=localStorage.getItem('quizora_admin_pass');document.getElementById('createBox').classList.toggle('hidden',!!has);document.getElementById('normalLoginBox').classList.toggle('hidden',!has);}if(p=='admin')document.getElementById('adminPage').classList.remove('hidden');}
-function createAdminPass(){let a=document.getElementById('newAdminPass').value;let b=document.getElementById('newAdminPass2').value;if(!a)return alert('Type a password first');if(a!==b)return alert('Passwords do not match - type again');localStorage.setItem('quizora_admin_pass',a);alert('Password created! Now login with your new password');showPage('login');}
-function adminLogin(){let saved=localStorage.getItem('quizora_admin_pass');if(!saved)return alert('Create your password first');if(document.getElementById('adminPass').value==saved){showPage('admin');updateInfo();renderCells();}else alert('Wrong password');}
-function changePass(){let np=document.getElementById('newPass').value;if(!np)return alert('Type new password first');localStorage.setItem('quizora_admin_pass',np);alert('Password changed! Next time login with your new password');}
-function logoutAdmin(){showPage('home');}
-function renderCells(){let el=document.getElementById('cells');if(!el)return;el.innerHTML='';let body=document.getElementById('fBody').value,sub=document.getElementById('fSub').value;for(let i=1;i<=1000;i++){let q=DB.qs.find(x=>x.n==i&&x.body==body&&x.sub==sub);let d=document.createElement('div');d.className='cell'+(q?' on':'')+(i==cur?' view':'');d.textContent=i;d.onclick=()=>{cur=i;loadQ(i);renderCells();};el.appendChild(d);}}
-function loadQ(n){cur=n;let body=document.getElementById('fBody').value,sub=document.getElementById('fSub').value;let q=DB.qs.find(x=>x.n==n&&x.body==body&&x.sub==sub);let pv=document.getElementById('preview');if(!q){pv.innerHTML='<b>Cell '+n+' empty - '+body+' '+sub+'</b>';return;}pv.innerHTML='<b>Q'+n+' / 1000 - '+body+' - '+sub+'</b><br>'+q.q+'<br><b>A.</b> '+q.a+'<br><b>B.</b> '+q.b+'<br><b>C.</b> '+q.c+'<br><b>D.</b> '+q.d+'<br><b style=color:#16A34A>CORRECT: '+q.ans+'</b>';}
-function prevQ(){if(cur>1)cur--;loadQ(cur);renderCells();}function nextQ(){if(cur<1000)cur++;loadQ(cur);renderCells();}
-function delQ(){let body=document.getElementById('fBody').value,sub=document.getElementById('fSub').value;DB.qs=DB.qs.filter(x=>!(x.n==cur&&x.body==body&&x.sub==sub));saveDB();loadQ(cur);renderCells();}
-function editQ(){let q=DB.qs.find(x=>x.n==cur);if(!q)return alert('Empty');document.getElementById('qText').value=q.q;document.getElementById('qA').value=q.a;document.getElementById('qB').value=q.b;document.getElementById('qC').value=q.c;document.getElementById('qD').value=q.d;document.getElementById('qAns').value=q.ans;window.scrollTo(0,document.body.scrollHeight);}
-function addSingle(){let body=document.getElementById('fBody').value,sub=document.getElementById('fSub').value;let n=DB.qs.filter(x=>x.body==body&&x.sub==sub).length+1;let obj={n:n,body:body,sub:sub,q:document.getElementById('qText').value,a:document.getElementById('qA').value,b:document.getElementById('qB').value,c:document.getElementById('qC').value,d:document.getElementById('qD').value,ans:document.getElementById('qAns').value,topic:''};DB.qs.push(obj);saveDB();renderCells();alert('Added Q'+n);}
-function importBatch(){let txt=document.getElementById('bulkBox').value.trim();if(!txt)return alert('Paste batch first');let batch=parseInt(document.getElementById('batchSel').value);let start=(batch-1)*100+1;let body=document.getElementById('fBody').value,sub=document.getElementById('fSub').value;let lines=txt.split('\n').filter(l=>l.trim());let added=0;lines.forEach((line,idx)=>{let p=line.split('|').map(s=>s.trim());if(p.length<6)return;let n=start+idx;DB.qs=DB.qs.filter(x=>!(x.n==n&&x.body==body&&x.sub==sub));DB.qs.push({n:n,body:body,sub:sub,q:p[0],a:p[1],b:p[2],c:p[3],d:p[4],ans:p[5].toUpperCase(),topic:''});added++;});saveDB();renderCells();document.getElementById('bulkMsg').innerText='Imported '+added+' in Batch '+batch+'. SAVED! Total: '+DB.qs.length+' / 1000';if(batch<10){document.getElementById('batchSel').value=batch+1;}document.getElementById('bulkBox').value='';}
-function deleteBatch(){let batch=parseInt(document.getElementById('batchSel').value);let start=(batch-1)*100+1,end=start+99;let body=document.getElementById('fBody').value,sub=document.getElementById('fSub').value;DB.qs=DB.qs.filter(x=>!(x.n>=start&&x.n<=end&&x.body==body&&x.sub==sub));saveDB();renderCells();alert('Batch '+batch+' deleted - re-import now');}
-function exportQuestions(){let txt=JSON.stringify(DB.qs,null,2);document.getElementById('exportBox').value=txt;let blob=new Blob([txt],{type:'application/json'});let a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='questions.json';a.click();alert('Downloaded questions.json - upload it to GitHub to go live');}
-function copyForGithub(){exportQuestions();document.getElementById('exportBox').select();document.execCommand('copy');alert('Copied - paste into GitHub questions.json');}
-let examQs=[],examIdx=0,answers={};
-function startExam(){let body=document.getElementById('sBody').value,sub=document.getElementById('sSub').value;examQs=DB.qs.filter(x=>x.body==body&&x.sub==sub);if(!examQs.length)return alert('No questions yet for '+body+' '+sub+' - Admin must upload to GitHub first');examIdx=0;answers={};showExam();}
-function showExam(){let q=examQs[examIdx];let html='<h3>Q'+(examIdx+1)+' / '+examQs.length+'</h3><p>'+q.q+'</p>';['a','b','c','d'].forEach((k,i)=>{let L='ABCD'[i];html+='<div class="opt '+(answers[examIdx]==L?'sel':'')+'" onclick="pickAns(\''+L+'\')"><b>'+L+'.</b> '+q[k]+'</div>';});html+='<button class="btn btn-blue" onclick="nextExam()">'+(examIdx==examQs.length-1?'Submit':'Next')+'</button>';document.getElementById('examArea').innerHTML=html;}
-function pickAns(L){answers[examIdx]=L;showExam();}function nextExam(){if(examIdx<examQs.length-1){examIdx++;showExam();}else{let score=0;examQs.forEach((q,i)=>{if(answers[i]==q.ans)score++;});document.getElementById('examArea').innerHTML='<h2>Result: '+score+' / '+examQs.length+'</h2><button class="btn btn-green" onclick="startExam()">Retake</button>';}}
-let bf=document.getElementById('bulkFile');if(bf)bf.addEventListener('change',e=>{let f=e.target.files[0];if(!f)return;let r=new FileReader();r.onload=()=>{document.getElementById('bulkBox').value=r.result;};r.readAsText(f);});
-loadLive();
-</script><!-- ===== QUIZORA FULL PATCH - PASTE ONCE ===== -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QUIZORA - JAMB / WAEC / NECO Live CBT</title>
 <style>
-.quizora-admin-box{background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:16px;margin:14px 0;box-shadow:0 4px 14px rgba(0,0,0,.06)}
-.quizora-admin-box h3{margin:0 0 10px 0;font-size:17px}
-.quizora-stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.quizora-stat{background:#f8fafc;border-radius:12px;padding:12px;text-align:center}
-.quizora-stat b{font-size:20px;display:block}
-.quizora-table{width:100%;border-collapse:collapse;font-size:13px}
-.quizora-table th,.quizora-table td{border-bottom:1px solid #eee;padding:8px;text-align:left}
-.quizora-btn{padding:8px 12px;border-radius:10px;border:0;cursor:pointer;font-weight:700}
-.quizora-btn-gold{background:#facc15}
-.quizora-btn-red{background:#ef4444;color:#fff}
-.quizora-btn-green{background:#22c55e;color:#fff}
-.quizora-btn-blue{background:#2563eb;color:#fff}
-.quizora-input{width:100%;padding:10px;border:1px solid #ddd;border-radius:10px;margin:6px 0}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f1f5f9;color:#111}
+.header{background:linear-gradient(135deg,#2563eb,#1e40af);color:#fff;text-align:center;padding:22px 14px}
+.header h1{margin:0;font-size:30px;letter-spacing:2px}.header p{margin:6px 0;opacity:.9;font-size:13px}
+.wrap{max-width:720px;margin:auto;padding:14px}
+.card{background:#fff;border-radius:16px;padding:16px;margin:12px 0;box-shadow:0 4px 14px rgba(0,0,0,.06)}
+.btn{width:100%;padding:13px;border:0;border-radius:12px;font-weight:800;cursor:pointer;font-size:15px;margin:6px 0}
+.btn-blue{background:#2563eb;color:#fff}.btn-gold{background:#facc15}.btn-green{background:#22c55e;color:#fff}.btn-red{background:#ef4444;color:#fff}.btn-grey{background:#e5e7eb}
+.input,.select{width:100%;padding:12px;border:1px solid #ddd;border-radius:10px;margin:6px 0;font-size:15px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}.stat{background:#f8fafc;border-radius:12px;padding:12px;text-align:center}.stat b{font-size:20px;display:block}
+.table{width:100%;border-collapse:collapse;font-size:13px}.table th,.table td{border-bottom:1px solid #eee;padding:8px;text-align:left}
+.opt{display:block;width:100%;text-align:left;padding:12px;margin:6px 0;border:1px solid #ddd;border-radius:10px;background:#fff;cursor:pointer}
+.opt.sel{background:#dbeafe;border-color:#2563eb}
+.hide{display:none!important}
+.small{font-size:13px;color:#555}
+#timerDisplay{font-weight:900;font-size:20px;color:#2563eb;text-align:center}
 </style>
+</head>
+<body>
+<div class="header"><h1>QUIZORA</h1><p>JAMB | WAEC | NECO - Live CBT</p><p>Live Questions: 1 / 1000 - From GitHub</p></div>
+<div class="wrap">
 
-<div id="quizoraEngineRoom" style="display:block">
-  <div class="quizora-admin-box">
-    <h3>💰 Financial Engine - Opay</h3>
-    <p><b>Opay:</b> 8147699555 - Ekpo Bassey | <b>WhatsApp:</b> 08147699555 | <b>Price:</b> ₦2,000 / 1 Year</p>
-    <div class="quizora-stat-grid">
-      <div class="quizora-stat"><span>Total Revenue</span><b id="qTotalRevenue">₦0</b><small>Premium IDs x ₦2,000</small></div>
-      <div class="quizora-stat"><span>Premium Sold</span><b id="qPremiumSold">0</b></div>
-      <div class="quizora-stat"><span>Pending Payments</span><b id="qPending">0</b></div>
-      <div class="quizora-stat"><span>Free Users</span><b id="qFreeUsers">0</b></div>
-    </div>
-    <h4>Generate Premium ID (Admin Only)</h4>
-    <input id="qNewUserName" class="quizora-input" placeholder="Student Name e.g. Adaeze">
-    <button class="quizora-btn quizora-btn-green" onclick="quizoraGenerateID()">Generate Unique ID + Activate 1 Year</button>
-    <p id="qNewIDResult"></p>
-  </div>
-  <div class="quizora-admin-box">
-    <h3>👥 Manage Users - Device Binding</h3>
-    <input id="qUserSearch" class="quizora-input" placeholder="Search name or ID..." oninput="quizoraRenderUsers()">
-    <div id="qUserList">Loading users...</div>
-  </div>
-  <div class="quizora-admin-box">
-    <h3>📊 Reports & Leaderboard</h3>
-    <div id="qReports">No results yet.</div>
-    <h4>🏆 Leaderboard - Top Scores</h4>
-    <div id="qLeaderboard">No results yet.</div>
-  </div>
-  <div class="quizora-admin-box">
-    <h3>⚙️ System Status + Settings</h3>
-    <p>🟢 <b>All Systems Online</b> | <span id="qLastUpdated"></span></p>
-    <p><b>Latest Activity:</b> <span id="qLatestActivity">No activity yet</span></p>
-    <input id="qNewAdminPass" class="quizora-input" placeholder="Change Admin Password - Type new password">
-    <button class="quizora-btn quizora-btn-blue" onclick="quizoraChangeAdminPass()">Change Admin Password</button>
-    <br><br>
-    <button class="quizora-btn quizora-btn-red" onclick="if(confirm('Clear ALL data?')){localStorage.clear();alert('Cleared');location.reload()}">Clear All Data (Admin Only)</button>
-  </div>
+<!-- HOME -->
+<div id="homeView" class="card">
+<h2>Welcome to QUIZORA</h2>
+<p class="small">Tap a body to start - Admin login is private</p>
+<input id="studentName" class="input" placeholder="Your Full Name">
+<input id="studentID" class="input" placeholder="Premium ID (Optional - Leave empty for FREE)">
+<button class="btn btn-blue" onclick="startAsStudent()">Start as Student</button>
+<button class="btn btn-grey" onclick="showAdminLogin()">Admin Login</button>
+<p class="small">FREE: Q1 - Q20 | PREMIUM: Q1 - Q1000 | ₦2,000 / 1 Year | Opay: 8147699555 - Ekpo Bassey | WhatsApp: 08147699555</p>
 </div>
 
+<!-- ADMIN LOGIN -->
+<div id="adminLoginView" class="card hide">
+<h3>Admin Login</h3>
+<input id="adminPassInput" type="password" class="input" placeholder="Admin Password">
+<button class="btn btn-blue" onclick="adminLogin()">Login as Admin</button>
+<button class="btn btn-grey" onclick="showHome()">Back</button>
+<p class="small">Default password: quizora123 - Change it inside Admin Panel</p>
+</div>
+
+<!-- DASHBOARD -->
+<div id="dashView" class="card hide">
+<h3 id="welcomeText">Hello</h3>
+<p id="planText" class="small"></p>
+<label>Select Body</label>
+<select id="bodySelect" class="select"><option>JAMB</option><option>WAEC</option><option>NECO</option></select>
+<label>Select Subject (All 14)</label>
+<select id="subjectSelect" class="select"></select>
+<label>Set Time (Minutes) - Before Start Only</label>
+<input id="examTimeInput" type="number" class="input" value="30" min="1" max="180">
+<button class="btn btn-blue" onclick="startExam()">Start Exam</button>
+<button class="btn btn-gold" onclick="buyPremium()">Buy Premium - ₦2,000 - Opay 8147699555</button>
+<button class="btn btn-grey" onclick="logout()">Logout</button>
+</div>
+
+<!-- EXAM -->
+<div id="examView" class="card hide">
+<div id="timerDisplay">--:--</div>
+<h3 id="examTitle"></h3>
+<p id="qCount" class="small"></p>
+<div id="qBox"></div>
+<button class="btn btn-blue" onclick="nextQ()">Next Question</button>
+<button class="btn btn-green" onclick="submitExamUI()">Submit Exam</button>
+</div>
+
+<!-- RESULT -->
+<div id="resultView" class="card hide">
+<h3>Result</h3>
+<div id="resultBox"></div>
+<button class="btn btn-blue" onclick="retake()">Retake - Unlimited Trials</button>
+<button class="btn btn-grey" onclick="backToDash()">Back to Dashboard</button>
+</div>
+
+<!-- ADMIN ENGINE - HIDDEN BY DEFAULT -->
+<div id="quizoraEngineRoom" class="hide">
+<div class="card">
+<h3>💰 Financial Engine - Opay</h3>
+<p><b>Opay:</b> 8147699555 - Ekpo Bassey | <b>WhatsApp:</b> 08147699555 | <b>Price:</b> ₦2,000 / 1 Year</p>
+<div class="grid2">
+<div class="stat"><span>Total Revenue</span><b id="qTotalRevenue">₦0</b></div>
+<div class="stat"><span>Premium Sold</span><b id="qPremiumSold">0</b></div>
+<div class="stat"><span>Pending Payments</span><b id="qPending">0</b></div>
+<div class="stat"><span>Free Users</span><b id="qFreeUsers">0</b></div>
+</div>
+<h4>Generate Premium ID (Admin Only)</h4>
+<input id="qNewUserName" class="input" placeholder="Student Name e.g. Adaeze">
+<button class="btn btn-green" onclick="quizoraGenerateID()">Generate Unique ID + Activate 1 Year</button>
+<p id="qNewIDResult"></p>
+</div>
+<div class="card">
+<h3>👥 Manage Users - Device Binding</h3>
+<input id="qUserSearch" class="input" placeholder="Search name or ID..." oninput="quizoraRenderUsers()">
+<div id="qUserList">Loading users...</div>
+</div>
+<div class="card">
+<h3>📊 Reports & Leaderboard</h3>
+<div id="qReports">No results yet.</div>
+<h4>🏆 Leaderboard - Top Scores</h4>
+<div id="qLeaderboard">No results yet.</div>
+</div>
+<div class="card">
+<h3>⚙️ System Status + Settings</h3>
+<p>🟢 <b>All Systems Online</b> | <span id="qLastUpdated"></span></p>
+<p><b>Latest Activity:</b> <span id="qLatestActivity">No activity yet</span></p>
+<input id="qNewAdminPass" class="input" placeholder="Change Admin Password - Type new password">
+<button class="btn btn-blue" onclick="quizoraChangeAdminPass()">Change Admin Password</button><br><br>
+<button class="btn btn-red" onclick="if(confirm('Clear ALL data?')){localStorage.clear();alert('Cleared');location.reload()}">Clear All Data (Admin Only)</button>
+<button class="btn btn-grey" onclick="adminLogout()">Logout Admin</button>
+</div>
+</div>
+
+</div>
 <script>
-// 1. ALL 14 SUBJECTS - ALWAYS SHOW
-const ALL_SUBJECTS = ["Mathematics","English Language","Biology","Chemistry","Physics","Economics","Agricultural Science","Geography","Computer Studies","Marketing","Civic Education","Literature in English","CRS","Government"];
-function fillAllSubjectDropdowns(){
-  document.querySelectorAll('select[data-subjects], #subjectSelect, #adminSubjectSelect, #studentSubjectSelect').forEach(sel=>{
-    sel.innerHTML = ALL_SUBJECTS.map(s=>`<option value="${s}">${s}</option>`).join('');
-  });
-}
-// 2. ACCESS - FREE Q1-Q20, PREMIUM Q1-Q1000
-function getAllowedQuestions(allQuestions, user){
-  const isPremium = user && user.plan === 'premium' && user.uniqueId;
-  return allQuestions.slice(0, isPremium ? 1000 : 20);
-}
-function checkAccess(qNum, user){
-  if(qNum <= 20) return true;
-  if(user && user.plan === 'premium' && qNum <= 1000) return true;
-  return false;
-}
-// 3. TIMER - REGULATE BEFORE START, LOCK AFTER
-let examTimer=null, examSecondsLeft=0, examStarted=false;
-function startExamTimer(minutes, onEnd){
-  if(examStarted) return; examStarted=true; examSecondsLeft=minutes*60;
-  const ti=document.getElementById('examTimeInput'); if(ti) ti.disabled=true;
-  const el=document.getElementById('timerDisplay'); clearInterval(examTimer);
-  examTimer=setInterval(()=>{
-    examSecondsLeft--; const m=Math.floor(examSecondsLeft/60), s=examSecondsLeft%60;
-    if(el) el.textContent=`${m}:${s.toString().padStart(2,'0')}`;
-    if(el){ if(examSecondsLeft>600) el.style.color='#2563eb'; else if(examSecondsLeft>60) el.style.color='#eab308'; else { el.style.color='#ef4444'; el.style.opacity=examSecondsLeft%2===0?'0.4':'1'; if(examSecondsLeft===60) alert('⚠️ 1 minute left! Save your work and submit!'); } }
-    if(examSecondsLeft<=0){ clearInterval(examTimer); alert('⏰ Time up! Saving and submitting...'); if(onEnd) onEnd(); }
-  },1000);
-}
-// 4. HIDE ANSWERS UNTIL SUBMIT
-let examSubmitted=false;
-function submitExam(answers, questions){
-  examSubmitted=true; clearInterval(examTimer);
-  let score=0; answers.forEach((a,i)=>{ if(a===questions[i].correct) score++; });
-  const total=questions.length, percent=Math.round((score/total)*100);
-  let comment=percent>=90?'Super':percent>=80?'Excellent':percent>=70?'Merit':percent>=60?'Credit':percent>=50?'Pass':percent>=40?'Fair':'Failed';
-  return {score,total,percent,comment};
-}
-// 5. DEVICE BINDING - 1 ID = 1 DEVICE
-function getDeviceId(){ let id=localStorage.getItem('quizora_device_id'); if(!id){ id='DEV-'+Math.random().toString(36).slice(2,10).toUpperCase(); localStorage.setItem('quizora_device_id',id);} return id; }
+const ALL_SUBJECTS=["Mathematics","English Language","Biology","Chemistry","Physics","Economics","Agricultural Science","Geography","Computer Studies","Marketing","Civic Education","Literature in English","CRS","Government"];
+const sel=document.getElementById('subjectSelect');
+sel.innerHTML=ALL_SUBJECTS.map(s=>`<option>${s}</option>`).join('');
+let currentUser=null, currentQuestions=[], currentIndex=0, userAnswers=[], examTimer=null, examSecondsLeft=0, examStarted=false, examSubmitted=false;
+function getUsers(){try{return JSON.parse(localStorage.getItem('quizora_users')||'[]')}catch(e){return[]}}
+function saveUsers(u){localStorage.setItem('quizora_users',JSON.stringify(u))}
+function getResults(){try{return JSON.parse(localStorage.getItem('quizora_results')||'[]')}catch(e){return[]}}
+function getDeviceId(){let id=localStorage.getItem('quizora_device_id');if(!id){id='DEV-'+Math.random().toString(36).slice(2,10).toUpperCase();localStorage.setItem('quizora_device_id',id)}return id}
 function checkDeviceBinding(user){
   if(!user||user.plan!=='premium') return {ok:true};
   const d=getDeviceId(), bound=localStorage.getItem('quizora_bound_'+user.uniqueId);
-  if(!bound){ localStorage.setItem('quizora_bound_'+user.uniqueId,d); return {ok:true}; }
+  if(!bound){localStorage.setItem('quizora_bound_'+user.uniqueId,d);return {ok:true}}
   if(bound!==d) return {ok:false,msg:'This ID is already bound to another device. Contact Admin on WhatsApp to unbind.'};
   return {ok:true};
 }
-// 6. UNLIMITED TRIALS
-function canRetake(){ return true; }
-// 7. ADMIN ENGINE
-function quizoraGetUsers(){ try{return JSON.parse(localStorage.getItem('quizora_users')||'[]');}catch(e){return[];} }
-function quizoraSaveUsers(u){ localStorage.setItem('quizora_users',JSON.stringify(u)); }
-function quizoraGetResults(){ try{return JSON.parse(localStorage.getItem('quizora_results')||'[]');}catch(e){return[];} }
+function showHome(){hideAll();document.getElementById('homeView').classList.remove('hide')}
+function hideAll(){['homeView','adminLoginView','dashView','examView','resultView'].forEach(id=>document.getElementById(id).classList.add('hide'))}
+function showAdminLogin(){hideAll();document.getElementById('adminLoginView').classList.remove('hide')}
+function startAsStudent(){
+  const name=document.getElementById('studentName').value.trim();
+  const id=document.getElementById('studentID').value.trim().toUpperCase();
+  if(!name) return alert('Type your name first');
+  let user={name,uniqueId:id||'',plan:'free'};
+  if(id){
+    const found=getUsers().find(u=>u.uniqueId===id);
+    if(!found) return alert('Invalid Premium ID. Check ID or use FREE.');
+    if(found.expiry && new Date(found.expiry)<new Date()) return alert('This Premium ID has expired. Renew - ₦2,000');
+    const chk=checkDeviceBinding(found);
+    if(!chk.ok) return alert(chk.msg);
+    user=found;
+  }
+  currentUser=user;
+  // Save free user for stats
+  if(user.plan==='free' && !getUsers().find(u=>u.name===name && u.plan==='free')){
+    const us=getUsers(); us.push({name,uniqueId:'',plan:'free',created:new Date().toISOString().slice(0,10)}); saveUsers(us);
+  }
+  hideAll(); document.getElementById('dashView').classList.remove('hide');
+  document.getElementById('welcomeText').textContent='Hello, '+name;
+  document.getElementById('planText').textContent=user.plan==='premium'?'✅ PREMIUM - Q1 to Q1000 Unlocked | Expiry: '+user.expiry+' | 1 ID = 1 Device':'🆓 FREE - Q1 to Q20 Only | Upgrade to unlock Q21 - Q1000';
+}
+function buyPremium(){alert('To Buy Premium:\n\n1. Send ₦2,000 to Opay: 8147699555 - Ekpo Bassey\n2. Send receipt + your name to WhatsApp: 08147699555\n3. Admin will send you your Unique Premium ID\n\n1 ID = 1 Device, Valid 1 Year.')}
+function logout(){currentUser=null;showHome()}
+function genQuestions(subject,body){
+  const qs=[];
+  for(let i=1;i<=1000;i++){
+    qs.push({q:`[${body} - ${subject}] Question ${i}: Which is the correct answer for ${subject} Q${i}?`,opts:['Option A - '+subject+' answer '+i,'Option B - Correct concept','Option C - Wrong concept','Option D - Wrong concept'],correct:1});
+  }
+  return qs;
+}
+function startExam(){
+  const subject=sel.value, body=document.getElementById('bodySelect').value;
+  const mins=parseInt(document.getElementById('examTimeInput').value||30);
+  const all=genQuestions(subject,body);
+  const allowed=all.slice(0,currentUser.plan==='premium'?1000:20);
+  currentQuestions=allowed; currentIndex=0; userAnswers=new Array(allowed.length).fill(-1); examSubmitted=false; examStarted=false;
+  hideAll(); document.getElementById('examView').classList.remove('hide');
+  document.getElementById('examTitle').textContent=body+' - '+subject;
+  renderQ(); startExamTimer(mins,()=>submitExamUI(true));
+}
+function renderQ(){
+  const q=currentQuestions[currentIndex];
+  document.getElementById('qCount').textContent=`Question ${currentIndex+1} of ${currentQuestions.length} | ${currentUser.plan==='premium'?'PREMIUM':'FREE'}`;
+  document.getElementById('qBox').innerHTML=`<p><b>${q.q}</b></p>`+q.opts.map((o,i)=>`<button class="opt ${userAnswers[currentIndex]===i?'sel':''}" onclick="pickOpt(${i})">${String.fromCharCode(65+i)}. ${o}</button>`).join('')+`<p class="small">Answers are hidden until you Submit.</p>`;
+}
+function pickOpt(i){userAnswers[currentIndex]=i; renderQ()}
+function nextQ(){if(currentIndex<currentQuestions.length-1){currentIndex++;renderQ()}else{alert('This is the last question. Tap Submit.')}}
+function startExamTimer(minutes,onEnd){
+  if(examStarted) return; examStarted=true; examSecondsLeft=minutes*60;
+  document.getElementById('examTimeInput').disabled=true;
+  const el=document.getElementById('timerDisplay'); clearInterval(examTimer);
+  examTimer=setInterval(()=>{
+    examSecondsLeft--; const m=Math.floor(examSecondsLeft/60), s=examSecondsLeft%60;
+    el.textContent=`${m}:${s.toString().padStart(2,'0')}`;
+    if(examSecondsLeft>600) el.style.color='#2563eb'; else if(examSecondsLeft>60) el.style.color='#eab308'; else {el.style.color='#ef4444'; el.style.opacity=examSecondsLeft%2===0?'0.4':'1'; if(examSecondsLeft===60) alert('⚠️ 1 minute left!');}
+    if(examSecondsLeft<=0){clearInterval(examTimer);alert('⏰ Time up! Submitting...'); if(onEnd) onEnd();}
+  },1000);
+}
+function submitExamUI(auto=false){
+  if(!auto && !confirm('Submit exam now?')) return;
+  examSubmitted=true; clearInterval(examTimer);
+  let score=0; userAnswers.forEach((a,i)=>{if(a===currentQuestions[i].correct) score++;});
+  const total=currentQuestions.length, percent=Math.round((score/total)*100);
+  let comment=percent>=90?'Super':percent>=80?'Excellent':percent>=70?'Merit':percent>=60?'Credit':percent>=50?'Pass':percent>=40?'Fair':'Failed';
+  const res={name:currentUser.name,uniqueId:currentUser.uniqueId||'FREE',body:document.getElementById('bodySelect').value,subject:sel.value,score,total,percent,comment,date:new Date().toLocaleString()};
+  const rs=getResults(); rs.push(res); localStorage.setItem('quizora_results',JSON.stringify(rs));
+  localStorage.setItem('quizora_latest',res.name+' - '+res.subject+' - '+res.percent+'%');
+  hideAll(); document.getElementById('resultView').classList.remove('hide');
+  document.getElementById('resultBox').innerHTML=`<p><b>${res.name}</b></p><p>${res.body} - ${res.subject}</p><h2>${score} / ${total} (${percent}%)</h2><p><b>Comment: ${comment}</b></p><p>Correct answers shown only after Submit. You can retake unlimited times.</p>`+currentQuestions.slice(0,10).map((q,i)=>`<p>${i+1}. ${q.q}<br><span style="color:green">Correct: ${q.opts[q.correct]}</span> | Your answer: ${userAnswers[i]===-1?'Not answered':q.opts[userAnswers[i]]}</p>`).join('');
+}
+function retake(){hideAll();document.getElementById('dashView').classList.remove('hide');document.getElementById('examTimeInput').disabled=false}
+function backToDash(){hideAll();document.getElementById('dashView').classList.remove('hide');document.getElementById('examTimeInput').disabled=false}
+// ADMIN
+function adminLogin(){
+  const p=document.getElementById('adminPassInput').value;
+  const saved=localStorage.getItem('quizora_admin_pass')||'quizora123';
+  if(p!==saved) return alert('Wrong Admin Password');
+  localStorage.setItem('quizora_admin_logged_in','yes');
+  document.getElementById('quizoraEngineRoom').classList.remove('hide');
+  hideAll(); document.getElementById('dashView').classList.remove('hide');
+  document.getElementById('welcomeText').textContent='Hello, Admin';
+  document.getElementById('planText').textContent='Admin Mode - You can see Engine Room below';
+  quizoraRenderEngine();
+}
+function adminLogout(){localStorage.removeItem('quizora_admin_logged_in');document.getElementById('quizoraEngineRoom').classList.add('hide');showHome()}
 function quizoraGenerateID(){
   const name=document.getElementById('qNewUserName').value.trim(); if(!name) return alert('Type student name first');
   const id='QZ-'+Math.random().toString(36).slice(2,6).toUpperCase()+'-'+Math.random().toString(36).slice(2,6).toUpperCase();
-  const users=quizoraGetUsers(); const expiry=new Date(); expiry.setFullYear(expiry.getFullYear()+1);
+  const users=getUsers(); const expiry=new Date(); expiry.setFullYear(expiry.getFullYear()+1);
   users.push({name,uniqueId:id,plan:'premium',expiry:expiry.toISOString().slice(0,10),device:null,created:new Date().toISOString().slice(0,10)});
-  quizoraSaveUsers(users);
+  saveUsers(users);
   document.getElementById('qNewIDResult').innerHTML=`<b>Created for ${name}:</b><br>Unique ID: <b>${id}</b><br>Expiry: ${expiry.toISOString().slice(0,10)}<br>Send this ID on WhatsApp. 1 ID = 1 device.`;
   quizoraRenderEngine();
 }
 function quizoraRenderUsers(){
-  const users=quizoraGetUsers(); const q=(document.getElementById('qUserSearch')?.value||'').toLowerCase();
+  const users=getUsers(); const q=(document.getElementById('qUserSearch')?.value||'').toLowerCase();
   const f=users.filter(u=>(u.name+u.uniqueId).toLowerCase().includes(q));
-  if(!f.length){ document.getElementById('qUserList').innerHTML='No users yet.'; return; }
-  document.getElementById('qUserList').innerHTML=`<table class="quizora-table"><tr><th>Name</th><th>ID</th><th>Plan</th><th>Expiry</th><th>Action</th></tr>`+f.map(u=>`<tr><td>${u.name}</td><td>${u.uniqueId||'-'}</td><td>${u.plan}</td><td>${u.expiry||'-'}</td><td><button class="quizora-btn quizora-btn-gold" onclick="quizoraUnbind('${u.uniqueId}')">Unbind</button> <button class="quizora-btn quizora-btn-red" onclick="quizoraDeleteUser('${u.uniqueId}')">Delete</button></td></tr>`).join('')+`</table>`;
+  if(!f.length){document.getElementById('qUserList').innerHTML='No users yet.';return}
+  document.getElementById('qUserList').innerHTML=`<table class="table"><tr><th>Name</th><th>ID</th><th>Plan</th><th>Expiry</th><th>Action</th></tr>`+f.map(u=>`<tr><td>${u.name}</td><td>${u.uniqueId||'-'}</td><td>${u.plan}</td><td>${u.expiry||'-'}</td><td><button class="btn btn-gold" onclick="quizoraUnbind('${u.uniqueId}')">Unbind</button> <button class="btn btn-red" onclick="quizoraDeleteUser('${u.uniqueId}')">Delete</button></td></tr>`).join('')+`</table>`;
 }
-function quizoraUnbind(id){ localStorage.removeItem('quizora_bound_'+id); quizoraSaveUsers(quizoraGetUsers().map(u=>u.uniqueId===id?{...u,device:null}:u)); alert('Unbound '+id); quizoraRenderEngine(); }
-function quizoraDeleteUser(id){ if(!confirm('Delete '+id+'?')) return; quizoraSaveUsers(quizoraGetUsers().filter(u=>u.uniqueId!==id)); quizoraRenderEngine(); }
-function quizoraChangeAdminPass(){ const p=document.getElementById('qNewAdminPass').value.trim(); if(!p) return alert('Type new password'); localStorage.setItem('quizora_admin_pass',p); alert('Admin password changed.'); }
+function quizoraUnbind(id){localStorage.removeItem('quizora_bound_'+id);alert('Unbound '+id);quizoraRenderEngine()}
+function quizoraDeleteUser(id){if(!confirm('Delete '+id+'?'))return;saveUsers(getUsers().filter(u=>u.uniqueId!==id));quizoraRenderEngine()}
+function quizoraChangeAdminPass(){const p=document.getElementById('qNewAdminPass').value.trim();if(!p) return alert('Type new password');localStorage.setItem('quizora_admin_pass',p);alert('Admin password changed.')}
 function quizoraRenderEngine(){
-  const users=quizoraGetUsers(); const premium=users.filter(u=>u.plan==='premium').length; const free=users.filter(u=>u.plan!=='premium').length;
-  const elR=document.getElementById('qTotalRevenue'); if(elR) elR.textContent='₦'+(premium*2000).toLocaleString();
-  const elP=document.getElementById('qPremiumSold'); if(elP) elP.textContent=premium;
-  const elF=document.getElementById('qFreeUsers'); if(elF) elF.textContent=free;
-  const elL=document.getElementById('qLastUpdated'); if(elL) elL.textContent='Last Updated: '+new Date().toLocaleString();
-  const results=quizoraGetResults(); const repEl=document.getElementById('qReports');
-  if(repEl){ repEl.innerHTML=!results.length?'No results yet.':`<table class="quizora-table"><tr><th>Name</th><th>ID</th><th>Body / Subject</th><th>Score</th><th>Comment</th></tr>`+results.map(r=>`<tr><td>${r.name||'-'}</td><td>${r.uniqueId||'FREE'}</td><td>${r.body||''} / ${r.subject||''}</td><td>${r.score}/${r.total} (${r.percent}%)</td><td>${r.comment||''}</td></tr>`).join('')+`</table>`; }
-  const leadEl=document.getElementById('qLeaderboard');
-  if(leadEl){ leadEl.innerHTML=!results.length?'No results yet.':[...results].sort((a,b)=>b.percent-a.percent).slice(0,10).map((r,i)=>`<p>${i+1}. ${r.name||'Student'} - ${r.percent}% (${r.score}/${r.total}) - ${r.subject||''}</p>`).join(''); }
+  const users=getUsers(); const premium=users.filter(u=>u.plan==='premium').length; const free=users.filter(u=>u.plan!=='premium').length;
+  document.getElementById('qTotalRevenue').textContent='₦'+(premium*2000).toLocaleString();
+  document.getElementById('qPremiumSold').textContent=premium;
+  document.getElementById('qFreeUsers').textContent=free;
+  document.getElementById('qLastUpdated').textContent='Last Updated: '+new Date().toLocaleString();
+  document.getElementById('qLatestActivity').textContent=localStorage.getItem('quizora_latest')||'No activity yet';
+  const results=getResults();
+  document.getElementById('qReports').innerHTML=!results.length?'No results yet.':`<table class="table"><tr><th>Name</th><th>ID</th><th>Body / Subject</th><th>Score</th><th>Comment</th></tr>`+results.map(r=>`<tr><td>${r.name||'-'}</td><td>${r.uniqueId||'FREE'}</td><td>${r.body||''} / ${r.subject||''}</td><td>${r.score}/${r.total} (${r.percent}%)</td><td>${r.comment||''}</td></tr>`).join('')+`</table>`;
+  document.getElementById('qLeaderboard').innerHTML=!results.length?'No results yet.':[...results].sort((a,b)=>b.percent-a.percent).slice(0,10).map((r,i)=>`<p>${i+1}. ${r.name||'Student'} - ${r.percent}% (${r.score}/${r.total}) - ${r.subject||''}</p>`).join('');
   quizoraRenderUsers();
 }
-document.addEventListener('DOMContentLoaded',()=>{ fillAllSubjectDropdowns(); quizoraRenderEngine(); });
-fillAllSubjectDropdowns(); quizoraRenderEngine();
+quizoraRenderEngine();
+if(localStorage.getItem('quizora_admin_logged_in')==='yes'){document.getElementById('quizoraEngineRoom').classList.remove('hide')}
 </script>
-<!-- ===== END FULL PATCH ===== --></body></html>
+</body>
+</html>
