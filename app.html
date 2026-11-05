@@ -51,7 +51,17 @@
 <div id="resultView" class="card hide"><h3>Result - Scored</h3><div id="resultBox"></div><button class="btn b-blue" onclick="retake()">Retake Again - Unlimited ♾️</button><button class="btn b-grey" onclick="backToDash()">Back to Dashboard</button></div>
 <div id="adminView" class="hide"><div class="card" style="border:3px solid #7c3aed"><h2 style="color:#7c3aed;margin:0">Admin Dashboard 👑</h2><p class="small">Tap a tab below. Only Admin sees this.</p><div class="tabs"><button class="tab active" onclick="showAdminTab('overview',this)">🏠 Overview</button><button class="tab" onclick="showAdminTab('questions',this)">📝 Questions</button><button class="tab" onclick="showAdminTab('financial',this)">💰 Financial</button><button class="tab" onclick="showAdminTab('subs',this)">👥 Subscriptions</button><button class="tab" onclick="showAdminTab('candidates',this)">👥 Candidates</button><button class="tab" onclick="showAdminTab('performance',this)">📊 Performance</button><button class="tab" onclick="showAdminTab('settings',this)">⚙️ Settings</button></div><button class="btn b-orange" onclick="previewAsStudent()">👁️ Preview as Student</button><button class="btn b-grey" onclick="logout()">Logout Admin</button></div>
 <div id="tab-overview" class="card"><div class="statgrid"><div class="stat s1"><span>Candidates</span><b id="statCandidates">0</b></div><div class="stat s2"><span>Questions</span><b id="statQuestions">1000</b></div><div class="stat s3"><span>Premium IDs</span><b id="statPremium">0</b></div></div><div class="statgrid" style="margin-top:8px"><div class="stat" style="background:#22c55e"><span>Total Revenue</span><b id="qTotalRevenue">₦0</b></div><div class="stat" style="background:#f97316"><span>Free Users</span><b id="qFreeUsers">0</b></div><div class="stat" style="background:#06b6d4"><span>Pending</span><b id="qPending">0</b></div></div><p class="small" id="overviewPay">Opay: 8147699555 - Ekpo Bassey | WhatsApp: 08147699555 | Price: ₦2,000 / 1 Year</p><p class="small">🟢 All Systems Online | <b>Latest:</b> <span id="qLatestActivity">No activity yet</span></p></div>
-<div id="tab-questions" class="card hide"><h3>📝 Question Management</h3><select id="qmBody" class="select"><option>JAMB</option><option>WAEC</option><option>NECO</option><option>NABTEB</option><option>CAMBRIDGE</option></select><select id="qmSubject" class="select"></select><input id="qmSearch" class="input" placeholder="🔍 Search questions..." oninput="renderQuestionList()"><textarea id="qmQuestion" class="input" placeholder="Type Question..."></textarea><input id="qmA" class="input" placeholder="Option A"><input id="qmB" class="input" placeholder="Option B"><input id="qmC" class="input" placeholder="Option C"><input id="qmD" class="input" placeholder="Option D"><input id="qmExplain" class="input" placeholder="Explanation (Shown ONLY after Submit)"><label>Correct Answer</label><select id="qmCorrect" class="select"><option value="0">A is Correct</option><option value="1">B is Correct</option><option value="2">C is Correct</option><option value="3">D is Correct</option></select><button class="btn b-blue" onclick="addQuestion()">+ Add Question & Save</button><button class="btn b-purple" onclick="importBatch()">📥 Import Batch of 100</button><label>Or Import CSV (Question,A,B,C,D,Correct,Explanation)</label><input type="file" id="csvFile" accept=".csv" class="input" onchange="importCSV(event)"><h3>🔢 Cells 1 to 1000 - Tap a Cell to Edit</h3><p class="small">Page <span id="pageLabel">1</span> / 10 | 🔵 Blue = Has Question</p><div class="cells" id="adminCells"></div><button class="btn b-grey" onclick="prevPage()">← Previous</button><button class="btn b-grey" onclick="nextPage()">Next →</button><h3>📋 Question List</h3><div id="questionList">Loading...</div></div>
+<div id="tab-questions" class="card hide"><h3>📝 Question Management</h3><select id="qmBody" class="select"><option>JAMB</option><option>WAEC</option><option>NECO</option><option>NABTEB</option><option>CAMBRIDGE</option></select><select id="qmSubject" class="select"></select><input id="qmSearch" class="input" placeholder="🔍 Search questions..." oninput="renderQuestionList()"><textarea id="qmQuestion" class="input" placeholder="Type Question..."></textarea><input id="qmA" class="input" placeholder="Option A"><input id="qmB" class="input" placeholder="Option B"><input id="qmC" class="input" placeholder="Option C"><input id="qmD" class="input" placeholder="Option D"><input id="qmExplain" class="input" placeholder="Explanation (Shown ONLY after Submit)"><label>Correct Answer</label><select id="qmCorrect" class="select"><option value="0">A is Correct</option><option value="1">B is Correct</option><option value="2">C is Correct</option><option value="3">D is Correct</option></select><button class="btn b-blue" onclick="addQuestion()">+ Add Question & Save</button>
+<!-- NEW - ONLY ADDITION 1: PASTE BOX FOR BATCH OF 200 -->
+<div style="border:3px solid #7c3aed;border-radius:12px;padding:12px;margin-top:12px;background:#f5f3ff">
+<h3 style="margin:0">📥 Paste Batch Here - 200 Questions</h3>
+<p class="small">Format per line: Question | A | B | C | D | Correct Letter | Explanation<br>Topics will be mixed. Correct options will be reshuffled automatically.</p>
+<textarea id="pasteBox200" class="input" rows="8" placeholder="Paste your 200 questions here, one question per line...&#10;Example: What is 2+2? | 3 | 4 | 5 | 6 | B | 2+2 is 4"></textarea>
+<button class="btn b-purple" onclick="importPasted200()">📥 Import Pasted Batch - Up To 200</button>
+<button class="btn b-orange" onclick="reshuffleAllStored()">🔀 Reshuffle All Stored Questions & Options</button>
+</div>
+<button class="btn b-purple" onclick="importBatch()">📥 Import Batch of 200</button>
+<label>Or Import CSV (Question,A,B,C,D,Correct,Explanation)</label><input type="file" id="csvFile" accept=".csv" class="input" onchange="importCSV(event)"><h3>🔢 Cells 1 to 1000 - Tap a Cell to Edit</h3><p class="small">Page <span id="pageLabel">1</span> / 10 | 🔵 Blue = Has Question</p><div class="cells" id="adminCells"></div><button class="btn b-grey" onclick="prevPage()">← Previous</button><button class="btn b-grey" onclick="nextPage()">Next →</button><h3>📋 Question List</h3><div id="questionList">Loading...</div></div>
 <div id="tab-financial" class="card hide"><h3>💰 Financial - Payments & Revenue</h3><p><b>Total Revenue:</b> <span id="finRevenue">₦0</span> | <b>Pending:</b> <span id="finPending">0</span></p><input id="finName" class="input" placeholder="Student Name for Pending Payment"><input id="finAmount" class="input" placeholder="Amount e.g. 2000" value="2000"><button class="btn b-gold" onclick="addPending()">+ Add Pending Payment</button><div id="finList">No pending payments.</div><h4>✅ Approved Payments History</h4><div id="finApproved">No approved payments yet.</div></div>
 <div id="tab-subs" class="card hide"><h3>👥 Subscriptions - Premium IDs</h3><p class="small">1 ID = 1 Device. Cannot be transferred. Only Admin can Unbind.</p><input id="qNewUserName" class="input" placeholder="Student Name e.g. Adaeze"><button class="btn b-green" onclick="quizoraGenerateID()">Generate Unique ID + Activate 1 Year</button><p id="qNewIDResult"></p><input id="qUserSearch" class="input" placeholder="Search name or ID..." oninput="quizoraRenderUsers()"><div id="qUserList">Loading...</div></div>
 <div id="tab-candidates" class="card hide"><h3>👥 All Candidates</h3><input id="candSearch" class="input" placeholder="Search candidate..." oninput="renderCandidates()"><div id="candList">Loading...</div></div>
@@ -84,7 +94,18 @@ function backToAdmin(){isAdminPreview=false;$("floatBackBtn").classList.add("hid
 function logout(){currentUser=null;isAdminPreview=false;$("floatBackBtn").classList.add("hide");showHome()}
 function buyPremium(){alert(`Pay ₦${settings.price.toLocaleString()} to Opay ${settings.opay} - ${settings.opayName}. Then send receipt on WhatsApp ${settings.whats}. Admin will give you a Premium ID.`);window.open(`https://wa.me/234${settings.whats.replace(/^0/,"")}?text=`+encodeURIComponent("Hello, I want to buy QUIZORA Premium. I have paid."))}
 function getQuestions(body,subject){let base=[];for(let i=1;i<=1000;i++){base.push({q:`What is the correct answer for this ${subject} question? (Sample ${i})`,opts:["Option A for Q"+i,"Option B for Q"+i,"Option C for Q"+i,"Option D for Q"+i],correct:i%4,explain:`Explanation for this question`})}let custom=customQ.filter(x=>x.body===body&&x.subject===subject);custom.forEach((c,idx)=>{if(idx<1000)base[idx]=c});return base}
-function startExam(){let body=$("bodySelect").value,subj=$("subjectSelect").value;let all=getQuestions(body,subj);let limit=currentUser.premium?1000:settings.freeLimit;examQs=all.slice(0,limit);if($("shuffleSelect").value==="shuffle"){ examQs=shuffleArray(examQs); }examIdx=0;answers={};examSubmitted=false;let mins=parseInt($("examTimeInput").value);timeLeft=mins*60;hideAll();$("examView").classList.remove("hide");$("examTitle").textContent=body+" - "+subj;if(!$("calcBox").classList.contains("hide"))$("calcBox").classList.add("hide");calcClear();renderExam();startTimer()}
+// MODIFICATION 2: Reshuffle questions + reshuffle options + recalculate correct
+function reshuffleExamQuestions(list){
+  let out = shuffleArray([...list]);
+  out = out.map(q=>{
+    let correctText = q.opts[q.correct];
+    let opts = shuffleArray([...q.opts]);
+    let newCorrect = opts.indexOf(correctText);
+    return {q:q.q, opts:opts, correct:newCorrect, explain:q.explain};
+  });
+  return out;
+}
+function startExam(){let body=$("bodySelect").value,subj=$("subjectSelect").value;let all=getQuestions(body,subj);let limit=currentUser.premium?1000:settings.freeLimit;examQs=all.slice(0,limit);if($("shuffleSelect").value==="shuffle"){ examQs=reshuffleExamQuestions(examQs); } else { examQs=reshuffleExamQuestions(examQs); }examIdx=0;answers={};examSubmitted=false;let mins=parseInt($("examTimeInput").value);timeLeft=mins*60;hideAll();$("examView").classList.remove("hide");$("examTitle").textContent=body+" - "+subj;if(!$("calcBox").classList.contains("hide"))$("calcBox").classList.add("hide");calcClear();renderExam();startTimer()}
 function renderExam(){let total=examQs.length;$("qCount").textContent=`Question ${examIdx+1} of ${total}`;let q=examQs[examIdx];let clean=cleanQText(q.q);let html=`<p><b>Q${examIdx+1}: ${clean}</b></p>`;q.opts.forEach((o,i)=>{let checked=answers[examIdx]===i?"checked":"";html+=`<label style="display:block;margin:8px 0"><input type="radio" name="opt" value="${i}" ${checked} onchange="answers[${examIdx}]=${i};renderCellsExam()"> ${String.fromCharCode(65+i)}. ${o}</label>`});$("qBox").innerHTML=html;renderCellsExam()}
 function renderCellsExam(){let c=$("examCells");c.innerHTML="";examQs.forEach((_,i)=>{let d=document.createElement("div");d.className="cell"+(i===examIdx?" current":"")+(answers[i]!==undefined?" answered":"");d.textContent=i+1;d.onclick=()=>{examIdx=i;renderExam()};c.appendChild(d)})}
 function nextQ(){if(examIdx<examQs.length-1){examIdx++;renderExam()}else submitExamUI()}
@@ -100,10 +121,47 @@ function editCell(num){let list=customQ.filter(x=>x.body===$("qmBody").value&&x.
 function prevPage(){if(currentPage>1){currentPage--;renderCells()}}
 function nextPage(){if(currentPage<10){currentPage++;renderCells()}}
 function addQuestion(){let q=$("qmQuestion").value.trim();if(!q)return alert("Type question");let obj={body:$("qmBody").value,subject:$("qmSubject").value,q:q,opts:[$("qmA").value||"A",$("qmB").value||"B",$("qmC").value||"C",$("qmD").value||"D"],correct:parseInt($("qmCorrect").value),explain:$("qmExplain").value};if(editIndex>=0){customQ[editIndex]=obj;editIndex=-1}else customQ.push(obj);localStorage.setItem("quizora_customQ",JSON.stringify(customQ));["qmQuestion","qmA","qmB","qmC","qmD","qmExplain"].forEach(i=>$(i).value="");renderQuestionList();renderCells();refreshStats();alert("Question Saved ✅")}
+// MODIFICATION 1 & 3: Import box - batch of 200 - reshuffle topics/questions/options on import
+function importPasted200(){
+  let text=$("pasteBox200").value.trim();
+  if(!text) return alert("Paste box is empty. Paste your 200 questions first.");
+  let lines=text.split("\n").filter(l=>l.trim().length>0);
+  if(lines.length>200) alert("You pasted "+lines.length+". Only first 200 will be used.");
+  let body=$("qmBody").value, subj=$("qmSubject").value;
+  let added=0;
+  // Shuffle lines first so topics are mixed, no sequence
+  lines=shuffleArray(lines.slice(0,200));
+  for(let line of lines){
+    let p=line.split("|");
+    if(p.length<6) continue;
+    let opts=[(p[1]||"").trim(),(p[2]||"").trim(),(p[3]||"").trim(),(p[4]||"").trim()];
+    let correctText=opts[["A","B","C","D"].indexOf((p[5]||"A").trim().toUpperCase())]||opts[0];
+    // Reshuffle options for this question
+    let shuffled=shuffleArray([...opts]);
+    let newCorrect=shuffled.indexOf(correctText);
+    customQ.push({body:body,subject:subj,q:p[0].trim(),opts:shuffled,correct:newCorrect,explain:(p[6]||"").trim()});
+    added++;
+  }
+  $("pasteBox200").value="";
+  localStorage.setItem("quizora_customQ",JSON.stringify(customQ));
+  renderQuestionList();renderCells();refreshStats();
+  alert(added+" Questions Imported, Topics Mixed & Options Reshuffled ✅");
+}
+function reshuffleAllStored(){
+  customQ.forEach(q=>{
+    let correctText=q.opts[q.correct];
+    let opts=shuffleArray([...q.opts]);
+    q.opts=opts; q.correct=opts.indexOf(correctText);
+  });
+  customQ=shuffleArray(customQ);
+  localStorage.setItem("quizora_customQ",JSON.stringify(customQ));
+  renderQuestionList();renderCells();
+  alert("All Stored Questions & Options Reshuffled ✅");
+}
 function renderQuestionList(){let body=$("qmBody").value,subj=$("qmSubject").value,search=($("qmSearch").value||"").toLowerCase();let list=customQ.filter(x=>x.body===body&&x.subject===subj);if(search)list=list.filter(x=>x.q.toLowerCase().includes(search));if(!list.length){$("questionList").innerHTML=`<p class="small">No custom questions for ${body} - ${subj} yet. Use Add Question above or Import Batch.</p>`;return}$("questionList").innerHTML=list.map((q,i)=>{let idx=customQ.indexOf(q);return `<div class="qitem"><b>Q${i+1}: ${q.q}</b><br>${q.opts.map((o,j)=>`${String.fromCharCode(65+j)}. ${o} ${j===q.correct?"✅":""}`).join("<br>")}<br><small>${q.explain||""}</small><br><button class="btn b-small b-red" onclick="deleteQ(${idx})">Delete</button> <button class="btn b-small b-blue" onclick="editQ(${idx})">Edit</button></div>`}).join("")}
 function deleteQ(idx){if(confirm("Delete this question?")){customQ.splice(idx,1);localStorage.setItem("quizora_customQ",JSON.stringify(customQ));renderQuestionList();renderCells();refreshStats()}}
 function editQ(idx){let q=customQ[idx];$("qmQuestion").value=q.q;$("qmA").value=q.opts[0];$("qmB").value=q.opts[1];$("qmC").value=q.opts[2];$("qmD").value=q.opts[3];$("qmCorrect").value=q.correct;$("qmExplain").value=q.explain||"";editIndex=idx;window.scrollTo(0,0);alert("Editing - Tap Add Question to save")}
-function importBatch(){let body=$("qmBody").value,subj=$("qmSubject").value;for(let i=1;i<=100;i++){customQ.push({body:body,subject:subj,q:`Batch Question ${i} for ${subj}`,opts:["Option A","Option B","Option C","Option D"],correct:i%4,explain:"Batch explanation"})}localStorage.setItem("quizora_customQ",JSON.stringify(customQ));renderQuestionList();renderCells();refreshStats();alert("100 Questions Imported ✅")}
+function importBatch(){let body=$("qmBody").value,subj=$("qmSubject").value;for(let i=1;i<=200;i++){customQ.push({body:body,subject:subj,q:`Batch Question ${i} for ${subj}`,opts:["Option A","Option B","Option C","Option D"],correct:i%4,explain:"Batch explanation"})}localStorage.setItem("quizora_customQ",JSON.stringify(customQ));renderQuestionList();renderCells();refreshStats();alert("200 Questions Imported ✅")}
 function importCSV(e){let f=e.target.files[0];if(!f)return;let r=new FileReader();r.onload=function(){let lines=r.result.split("\n");lines.forEach(l=>{let p=l.split(",");if(p.length>=6){customQ.push({body:$("qmBody").value,subject:$("qmSubject").value,q:p[0],opts:[p[1],p[2],p[3],p[4]],correct:["A","B","C","D"].indexOf((p[5]||"A").trim().toUpperCase()),explain:p[6]||""})}});localStorage.setItem("quizora_customQ",JSON.stringify(customQ));renderQuestionList();renderCells();alert("CSV Imported ✅")};r.readAsText(f)}
 function addPending(){let n=$("finName").value.trim();if(!n)return alert("Enter name");payments.push({name:n,amount:parseInt($("finAmount").value)||2000,status:"pending",date:new Date().toLocaleDateString()});localStorage.setItem("quizora_payments",JSON.stringify(payments));$("finName").value="";renderFinancial();refreshStats()}
 function renderFinancial(){let pend=payments.filter(p=>p.status==="pending"),app=payments.filter(p=>p.status==="approved");$("finPending").textContent=pend.length;$("finRevenue").textContent="₦"+app.reduce((s,p)=>s+parseInt(p.amount||0),0).toLocaleString();$("finList").innerHTML=pend.length?pend.map((p,i)=>{let idx=payments.indexOf(p);return `<div class="qitem"><b>${p.name}</b> - ₦${p.amount} - ${p.date}<br><button class="btn b-small b-green" onclick="approvePay(${idx})">Approve ✅</button> <button class="btn b-small b-red" onclick="rejectPay(${idx})">Reject</button></div>`}).join(""):"No pending payments.";$("finApproved").innerHTML=app.length?app.map(p=>`<div class="qitem">✅ ${p.name} - ₦${p.amount} - ${p.date}</div>`).join(""):"No approved payments yet."}
