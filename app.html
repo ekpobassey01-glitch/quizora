@@ -6,130 +6,115 @@
 <title>Quizora - JAMB CBT</title>
 <style>
 *{box-sizing:border-box;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
-body{margin:0;background:#f6f7fb;color:#111}
-header{background:#0f172a;color:#fff;padding:14px 16px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:10}
+body{margin:0;background:#f6f7fb;color:#111;overflow-x:hidden}
+header{background:#0f172a;color:#fff;padding:14px 16px;display:flex;justify-content:space-between;align-items:center}
 header b{font-size:20px} header b span{color:#22c55e}
-button{border:0;border-radius:10px;padding:10px 14px;cursor:pointer;font-weight:600}
+button{border:0;border-radius:10px;padding:11px 14px;cursor:pointer;font-weight:600}
 .btn{background:#0f172a;color:#fff}.green{background:#22c55e;color:#fff}.red{background:#ef4444;color:#fff}.ghost{background:#e2e8f0}.small{padding:6px 10px;font-size:13px}
-input,select,textarea{width:100%;padding:11px;border:1px solid #cbd5e1;border-radius:10px;margin:6px 0;background:#fff}
+input,select,textarea{width:100%;padding:11px;border:1px solid #cbd5e1;border-radius:10px;margin:6px 0;background:#fff;font-size:15px}
 .card{background:#fff;border-radius:14px;padding:16px;margin:12px;box-shadow:0 2px 10px rgba(0,0,0,.05)}
-.row{display:flex;gap:10px;flex-wrap:wrap}.row>*{flex:1;min-width:140px}
+/* CORRECTION 1: FRONTPAGE - NO FLEX, NO SIDE-BY-SIDE. Stacked, centered, no sideways scroll */
+.login-wrap{max-width:520px;margin:0 auto}
+.login-box{width:100%}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(44px,1fr));gap:6px}
 .cell{padding:10px 0;text-align:center;border-radius:8px;background:#e2e8f0;font-weight:700;cursor:pointer}
 .cell.blue{background:#22c55e;color:#fff}.cell.active{outline:3px solid #0f172a}
-.stat{background:#0f172a;color:#fff;border-radius:12px;padding:14px;text-align:center}.stat b{font-size:24px;display:block}.stat small{opacity:.8}
+.stat{background:#0f172a;color:#fff;border-radius:12px;padding:14px;text-align:center}.stat b{font-size:22px;display:block}
 .palette{display:flex;flex-wrap:wrap;gap:6px}.palette button{width:40px;height:40px;padding:0;border-radius:8px;background:#e2e8f0}.palette button.ans{background:#22c55e;color:#fff}.palette button.cur{outline:3px solid #0f172a}
 .qbox{font-size:18px;font-weight:600;margin:10px 0}.opt{display:block;width:100%;text-align:left;background:#f1f5f9;margin:6px 0;padding:12px;border-radius:10px;border:2px solid transparent}.opt.sel{border-color:#22c55e;background:#dcfce7}
 table{width:100%;border-collapse:collapse}td,th{padding:8px;border-bottom:1px solid #e2e8f0;text-align:left;font-size:14px}
 .badge{background:#dcfce7;padding:4px 8px;border-radius:20px;font-size:12px;font-weight:700}.badge.free{background:#fef9c3}
 .hidden{display:none}.flex{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
-.topnav{display:flex;gap:8px;flex-wrap:wrap;margin:10px 12px}.topnav button{background:#fff;border:1px solid #cbd5e1}
-.topnav button.on{background:#0f172a;color:#fff}
+.topnav{display:flex;gap:8px;flex-wrap:wrap;margin:10px 12px}.topnav button{background:#fff;border:1px solid #cbd5e1}.topnav button.on{background:#0f172a;color:#fff}
+.row2{display:flex;gap:10px}.row2>*{flex:1}
+@media(max-width:600px){.row2{flex-direction:column}}
 </style>
 </head>
 <body>
 <header><b>QUIZORA <span>CBT</span></b><div id="hdrUser"></div></header>
 
-<!-- LOGIN -->
-<div id="loginPage" class="card">
-  <h2>Welcome to Quizora</h2>
-  <p>JAMB • WAEC • NECO • Post-UTME. FREE = Q1-Q20. Premium = All Questions. Unlimited Trials.</p>
-  <div class="row">
-    <div><h3>Student Login</h3>
+<!-- ============ FRONTPAGE - RESTORED ORIGINAL DESIGN - DO NOT CHANGE ============ -->
+<div id="loginPage">
+  <div class="login-wrap">
+    <div class="card" style="text-align:center">
+      <h2 style="margin:0">Welcome to Quizora</h2>
+      <p>JAMB • WAEC • NECO • Post-UTME<br>FREE = Q1-Q20 • Premium = All Questions • Unlimited Trials</p>
+    </div>
+    <div class="card login-box">
+      <h3>Student Login</h3>
+      <!-- CORRECTION: Phone REMOVED from frontpage. Only Name + Premium Code -->
       <input id="stuName" placeholder="Full Name e.g. Chiamaka Eze">
-      <input id="stuPhone" placeholder="Phone e.g. 0803...">
       <input id="stuCode" placeholder="Premium Code (optional) e.g. QUIZORA-XXXX">
       <button class="green" onclick="studentLogin()">Continue as Student →</button>
-      <p style="font-size:13px">No code? You enter as FREE. You can upgrade anytime.</p>
+      <p style="font-size:13px;color:#666">No code? You enter as FREE. You can upgrade anytime.</p>
     </div>
-    <div><h3>Admin Login</h3>
+    <div class="card login-box">
+      <h3>Admin Login</h3>
       <input id="adminPass" type="password" placeholder="Admin Password">
       <button class="btn" onclick="adminLogin()">Login as Admin</button>
-      <p style="font-size:13px">Default: admin123 - Change in Settings after login.</p>
+      <p style="font-size:13px;color:#666">Default: admin123 - Change in Settings after login.</p>
     </div>
   </div>
 </div>
 
-<!-- STUDENT -->
+<!-- ============ STUDENT ============ -->
 <div id="studentPage" class="hidden">
   <div class="topnav">
-    <button id="navHome" class="on" onclick="showStudentTab('home')">🏠 Home</button>
+    <button onclick="showStudentTab('home')">🏠 Home</button>
     <button onclick="showStudentTab('results')">📊 My Results</button>
     <button onclick="showStudentTab('wrong')">❌ My Wrong Questions</button>
     <button onclick="showStudentTab('saved')">🔖 Saved</button>
     <button onclick="showStudentTab('board')">🏆 Leaderboard</button>
     <button class="red" onclick="logout()">Logout</button>
   </div>
-
   <div id="stuHome">
     <div class="card">
       <h2 id="stuHello">Hello</h2>
-      <p><span id="stuBadge"></span> • Unlimited Trials • <span id="stuCount"></span></p>
-      <div class="row">
-        <div><label>Exam Body</label><select id="sBody"><option>JAMB</option><option>WAEC</option><option>NECO</option></select></div>
-        <div><label>Subject</label><select id="sSubject"><option>Biology</option><option>Chemistry</option><option>Physics</option><option>Mathematics</option><option>English</option></select></div>
-        <div><label>Your Time - YOU Choose</label>
-          <select id="sTime"><option value="0">No Timer - I Control My Time</option><option value="30">30 Minutes</option><option value="60">60 Minutes</option><option value="90">90 Minutes</option><option value="120">120 Minutes</option></select>
-        </div>
-      </div>
-      <div class="row">
-        <div><label>Number of Questions</label><select id="sNum"><option value="20">20 Questions</option><option value="40">40 Questions</option><option value="100">100 Questions</option><option value="all">All Available</option></select></div>
-        <div><label>Mode</label><select id="sMode"><option value="shuffle">Shuffle Questions</option><option value="order">In Order</option></select></div>
-      </div>
+      <p><span id="stuBadge"></span> • Unlimited Trials</p>
+      <label>Exam Body</label><select id="sBody"><option>JAMB</option><option>WAEC</option><option>NECO</option></select>
+      <label>Subject</label><select id="sSubject"><option>Biology</option><option>Chemistry</option><option>Physics</option><option>Mathematics</option><option>English</option></select>
+      <!-- CORRECTION: NO forced 40 mins. Student chooses own time -->
+      <label>Your Time - YOU Choose</label>
+      <select id="sTime"><option value="0">No Timer - I Control My Time</option><option value="30">30 Minutes</option><option value="60">60 Minutes</option><option value="90">90 Minutes</option><option value="120">120 Minutes</option></select>
+      <label>Number of Questions</label><select id="sNum"><option value="20">20 Questions</option><option value="40">40 Questions</option><option value="100">100 Questions</option><option value="all">All Available</option></select>
+      <label>Mode</label><select id="sMode"><option value="shuffle">Shuffle Questions</option><option value="order">In Order</option></select>
       <button class="green" onclick="startExam()">▶ Start Exam</button>
       <button class="ghost" onclick="startWrongOnly()">❌ Practice Only My Wrong Questions</button>
       <p id="freeNote" style="font-size:13px;color:#666"></p>
     </div>
     <div class="card"><h3>📊 Quick Stats</h3><div id="stuStats"></div></div>
-    <div class="card"><h3>🏆 Leaderboard - This Week</h3><div id="boardMini"></div></div>
+    <div class="card"><h3>🏆 Leaderboard - Top 5</h3><div id="boardMini"></div></div>
   </div>
-
   <div id="stuResults" class="hidden"><div class="card"><h3>My Results History</h3><div id="resultList"></div></div></div>
   <div id="stuWrong" class="hidden"><div class="card"><h3>My Wrong Questions</h3><div id="wrongList"></div></div></div>
   <div id="stuSaved" class="hidden"><div class="card"><h3>Saved / Bookmarked</h3><div id="savedList"></div></div></div>
   <div id="stuBoard" class="hidden"><div class="card"><h3>Leaderboard</h3><div id="boardFull"></div></div></div>
-
-  <!-- EXAM -->
   <div id="examBox" class="hidden card">
     <div class="flex"><b id="examTitle"></b><span id="timerText" style="margin-left:auto;font-weight:800;color:#dc2626"></span></div>
     <div class="palette" id="palette"></div>
     <div class="qbox" id="examQ"></div>
     <div id="examOpts"></div>
-    <div class="flex">
-      <button class="ghost" onclick="prevQ()">← Prev</button>
-      <button class="btn" onclick="nextQ()">Next →</button>
-      <button onclick="toggleSave()">🔖 Save / Bookmark</button>
-      <button class="green" onclick="submitExam()">Submit Exam</button>
-    </div>
+    <div class="flex"><button class="ghost" onclick="prevQ()">← Prev</button><button class="btn" onclick="nextQ()">Next →</button><button onclick="toggleSave()">🔖 Save</button><button class="green" onclick="submitExam()">Submit Exam</button></div>
   </div>
-
-  <!-- REVIEW -->
   <div id="reviewBox" class="hidden card"><h3>Review - With Explanation</h3><div id="reviewList"></div><button class="btn" onclick="backHome()">Back Home</button></div>
 </div>
 
-<!-- ADMIN -->
+<!-- ============ ADMIN ============ -->
 <div id="adminPage" class="hidden">
   <div class="topnav">
-    <button id="aNavOver" class="on" onclick="showAdminTab('over')">📊 Overview</button>
+    <button onclick="showAdminTab('over')">📊 Overview</button>
     <button onclick="showAdminTab('ques')">❓ Questions</button>
     <button onclick="showAdminTab('stu')">👥 Students</button>
     <button onclick="showAdminTab('prem')">💎 Premium Codes</button>
     <button onclick="showAdminTab('set')">⚙️ Settings</button>
     <button class="red" onclick="logout()">Logout Admin</button>
   </div>
-
-  <div id="admOver">
-    <div class="card"><h3>Overview</h3><div class="row" id="overStats"></div><div id="overDetail"></div></div>
-    <div class="card"><h3>Top Students</h3><div id="overTop"></div></div>
-  </div>
-
+  <div id="admOver"><div class="card"><h3>Overview</h3><div class="row2" id="overStats"></div><div id="overDetail"></div></div><div class="card"><h3>Top Students</h3><div id="overTop"></div></div></div>
   <div id="admQues" class="hidden">
     <div class="card">
       <h3>Questions - Admin</h3>
-      <div class="row">
-        <div><label>Body</label><select id="qmBody" onchange="renderQM()"><option>JAMB</option><option>WAEC</option><option>NECO</option></select></div>
-        <div><label>Subject</label><select id="qmSubject" onchange="renderQM()"><option>Biology</option><option>Chemistry</option><option>Physics</option><option>Mathematics</option><option>English</option></select></div>
-      </div>
+      <label>Body</label><select id="qmBody" onchange="renderQM()"><option>JAMB</option><option>WAEC</option><option>NECO</option></select>
+      <label>Subject</label><select id="qmSubject" onchange="renderQM()"><option>Biology</option><option>Chemistry</option><option>Physics</option><option>Mathematics</option><option>English</option></select>
       <input id="qSearch" placeholder="🔍 Search questions... e.g. photosynthesis" oninput="renderQM()">
       <div><b>Cells - Blue = Filled. Tap a cell to edit it.</b></div>
       <div class="grid" id="cellGrid"></div>
@@ -137,9 +122,9 @@ table{width:100%;border-collapse:collapse}td,th{padding:8px;border-bottom:1px so
     <div class="card">
       <h3>Add / Edit Question</h3>
       <input id="qmQ" placeholder="Question">
-      <div class="row"><input id="qmA" placeholder="Option A"><input id="qmB" placeholder="Option B"></div>
-      <div class="row"><input id="qmC" placeholder="Option C"><input id="qmD" placeholder="Option D"></div>
-      <div class="row"><select id="qmCorrect"><option value="A">Correct: A</option><option value="B">Correct: B</option><option value="C">Correct: C</option><option value="D">Correct: D</option></select><input id="qmExp" placeholder="Explanation"></div>
+      <div class="row2"><input id="qmA" placeholder="Option A"><input id="qmB" placeholder="Option B"></div>
+      <div class="row2"><input id="qmC" placeholder="Option C"><input id="qmD" placeholder="Option D"></div>
+      <div class="row2"><select id="qmCorrect"><option value="A">Correct: A</option><option value="B">Correct: B</option><option value="C">Correct: C</option><option value="D">Correct: D</option></select><input id="qmExp" placeholder="Explanation"></div>
       <div class="flex"><button class="green" onclick="saveOneQ()">Save This Question</button><button class="ghost" onclick="clearQForm()">Clear Form</button><span id="editLabel"></span></div>
     </div>
     <div class="card">
@@ -147,61 +132,44 @@ table{width:100%;border-collapse:collapse}td,th{padding:8px;border-bottom:1px so
       <textarea id="pasteBox" rows="6" placeholder="Question | A | B | C | D | Correct | Explanation"></textarea>
       <button class="btn" onclick="importBatch()">Import Batch</button>
       <button class="ghost" onclick="exportQuestions()">⬇ Export / Backup This Subject</button>
-      <p style="font-size:13px">Format: Question | A | B | C | D | Correct | Explanation. Duplicate questions are automatically skipped.</p>
+      <p style="font-size:13px">Format: Question | A | B | C | D | Correct | Explanation. Duplicates are skipped.</p>
     </div>
     <div class="card"><h3>Question List - Shows immediately when you select Subject. No tapping needed.</h3><div id="questionList"></div></div>
   </div>
-
-  <div id="admStu" class="hidden"><div class="card"><h3>Students</h3><input id="stuSearch" placeholder="Search student by name/phone" oninput="renderStudents()"><div id="studentList"></div></div></div>
-
-  <div id="admPrem" class="hidden"><div class="card"><h3>Premium Codes</h3>
-    <div class="row"><input id="codeDays" type="number" value="30" placeholder="Days"><button class="green" onclick="genCode()">+ Generate New Code</button></div>
-    <div id="codeList"></div><p style="font-size:13px">Give code to student after they pay ₦2,000. Student enters code at login.</p></div></div>
-
-  <div id="admSet" class="hidden"><div class="card"><h3>Settings</h3>
-    <label>FREE Limit</label><select id="setFree"><option value="20">FREE = Q1 - Q20</option><option value="10">FREE = Q1 - Q10</option></select>
-    <label>Admin Password</label><input id="setPass" value="admin123">
-    <label>Premium Price</label><input id="setPrice" value="2000">
-    <button class="green" onclick="saveSettings()">Save Settings</button>
-    <hr><button class="red" onclick="clearAllData()">⚠ Clear All Data (Danger - Deletes Everything)</button>
-  </div></div>
+  <div id="admStu" class="hidden"><div class="card"><h3>Students</h3><input id="stuSearch" placeholder="Search student by name" oninput="renderStudents()"><div id="studentList"></div></div></div>
+  <div id="admPrem" class="hidden"><div class="card"><h3>Premium Codes</h3><div class="row2"><input id="codeDays" type="number" value="30"><button class="green" onclick="genCode()">+ Generate New Code</button></div><div id="codeList"></div><p style="font-size:13px">Give code to student after they pay. Student enters code at login.</p></div></div>
+  <div id="admSet" class="hidden"><div class="card"><h3>Settings</h3><label>FREE Limit</label><select id="setFree"><option value="20">FREE = Q1 - Q20</option><option value="10">FREE = Q1 - Q10</option></select><label>Admin Password</label><input id="setPass" value="admin123"><label>Premium Price</label><input id="setPrice" value="2000"><button class="green" onclick="saveSettings()">Save Settings</button><hr><button class="red" onclick="clearAllData()">⚠ Clear All Data (Danger)</button></div></div>
 </div>
 
 <script>
-// ---------- STORAGE ----------
 function load(k,d){try{return JSON.parse(localStorage.getItem(k))||d}catch(e){return d}}
 function save(k,v){localStorage.setItem(k,JSON.stringify(v))}
-let customQ = load('quizora_customQ', {}); // key: BODY_SUBJECT -> array
-let students = load('quizora_students', []);
-let results = load('quizora_results', []);
-let codes = load('quizora_codes', []);
-let savedQ = load('quizora_saved', {}); // phone -> array of {body,subject,idx}
-let wrongQ = load('quizora_wrong', {}); // phone -> array
-let settings = load('quizora_settings', {freeLimit:20, adminPass:'admin123', price:2000});
-let curUser=null, curExam=[], curIdx=0, curAnswers={}, timerInt=null, timeLeft=0, editingIdx=-1;
-
-// Default demo questions so app never looks empty
-if(!customQ['JAMB_Biology'] || customQ['JAMB_Biology'].length<2){
+let customQ=load('quizora_customQ',{});
+let students=load('quizora_students',[]);
+let results=load('quizora_results',[]);
+let codes=load('quizora_codes',[]);
+let savedQ=load('quizora_saved',{});
+let wrongQ=load('quizora_wrong',{});
+let settings=load('quizora_settings',{freeLimit:20,adminPass:'admin123',price:2000});
+let curUser=null,curExam=[],curIdx=0,curAnswers={},timerInt=null,timeLeft=0,editingIdx=-1;
+if(!customQ['JAMB_Biology']||customQ['JAMB_Biology'].length<2){
   customQ['JAMB_Biology']=[
-    {q:'Which of the following is a characteristic of fungi?',a:'They are autotrophic',b:'They have chlorophyll',c:'They are heterotrophic',d:'They have roots',correct:'C',exp:'Fungi are heterotrophic, they feed on organic matter.'},
+    {q:'Which of the following is a characteristic of fungi?',a:'They are autotrophic',b:'They have chlorophyll',c:'They are heterotrophic',d:'They have roots',correct:'C',exp:'Fungi are heterotrophic.'},
     {q:'The organ that produces ova is the',a:'Testis',b:'Ovary',c:'Uterus',d:'Vagina',correct:'B',exp:'Ovary produces ova.'}
   ]; save('quizora_customQ',customQ);
 }
-function getQuestions(body,subject){ return customQ[body+'_'+subject]||[]; }
-function setQuestions(body,subject,arr){ customQ[body+'_'+subject]=arr; save('quizora_customQ',customQ); }
-
-// ---------- AUTH ----------
+function getQuestions(body,subject){return customQ[body+'_'+subject]||[]}
+function setQuestions(body,subject,arr){customQ[body+'_'+subject]=arr;save('quizora_customQ',customQ)}
 function studentLogin(){
   let name=document.getElementById('stuName').value.trim();
-  let phone=document.getElementById('stuPhone').value.trim();
   let code=document.getElementById('stuCode').value.trim().toUpperCase();
-  if(!name||!phone) return alert('Enter Name and Phone');
-  let isPrem=false, codeObj=null;
-  if(code){ codeObj=codes.find(c=>c.code===code && !c.used); if(codeObj){isPrem=true; codeObj.used=1; codeObj.usedBy=phone; save('quizora_codes',codes);} else { let old=codes.find(c=>c.code===code); if(old) alert('This code was already used. You will enter as FREE.'); else alert('Code not found. You will enter as FREE.'); } }
-  let ex=students.find(s=>s.phone===phone);
-  if(!ex){ ex={name,phone,premium:isPrem,blocked:0,joined:Date.now()}; students.push(ex);} else { ex.name=name; if(isPrem) ex.premium=1; }
-  save('quizora_students',students);
-  curUser=ex; if(ex.blocked) return alert('This account is blocked. Contact Admin.');
+  if(!name) return alert('Enter Your Name');
+  let isPrem=false;
+  if(code){let c=codes.find(x=>x.code===code&&!x.used); if(c){isPrem=true;c.used=1;c.usedBy=name;save('quizora_codes',codes)} else alert('Code not found or already used. You will enter as FREE.')}
+  let ex=students.find(s=>s.name.toLowerCase()===name.toLowerCase());
+  if(!ex){ex={name,phone:'',premium:isPrem,blocked:0,joined:Date.now()};students.push(ex)} else {if(isPrem) ex.premium=1}
+  save('quizora_students',students); curUser=ex;
+  if(ex.blocked) return alert('This account is blocked. Contact Admin.');
   document.getElementById('loginPage').classList.add('hidden');
   document.getElementById('studentPage').classList.remove('hidden');
   document.getElementById('hdrUser').textContent=ex.name+' '+(ex.premium?'💎 Premium':'🆓 FREE');
@@ -215,25 +183,23 @@ function adminLogin(){
   document.getElementById('hdrUser').textContent='Admin';
   showAdminTab('over'); renderQM(); renderStudents(); renderCodes(); renderOverview();
 }
-function logout(){ location.reload(); }
-
-// ---------- STUDENT ----------
+function logout(){location.reload()}
 function showStudentTab(t){
   ['stuHome','stuResults','stuWrong','stuSaved','stuBoard'].forEach(id=>document.getElementById(id).classList.add('hidden'));
   document.getElementById('examBox').classList.add('hidden'); document.getElementById('reviewBox').classList.add('hidden');
   if(t==='home') document.getElementById('stuHome').classList.remove('hidden');
-  if(t==='results'){ document.getElementById('stuResults').classList.remove('hidden'); renderResults(); }
-  if(t==='wrong'){ document.getElementById('stuWrong').classList.remove('hidden'); renderWrong(); }
-  if(t==='saved'){ document.getElementById('stuSaved').classList.remove('hidden'); renderSaved(); }
-  if(t==='board'){ document.getElementById('stuBoard').classList.remove('hidden'); renderBoard(); }
+  if(t==='results'){document.getElementById('stuResults').classList.remove('hidden');renderResults()}
+  if(t==='wrong'){document.getElementById('stuWrong').classList.remove('hidden');renderWrong()}
+  if(t==='saved'){document.getElementById('stuSaved').classList.remove('hidden');renderSaved()}
+  if(t==='board'){document.getElementById('stuBoard').classList.remove('hidden');renderBoard()}
   refreshStudentHome();
 }
 function refreshStudentHome(){
   if(!curUser) return;
   document.getElementById('stuHello').textContent='Hello, '+curUser.name;
   document.getElementById('stuBadge').innerHTML=curUser.premium?'<span class="badge">💎 PREMIUM - All Questions</span>':'<span class="badge free">🆓 FREE - Q1 to Q20 Only</span>';
-  let my=results.filter(r=>r.phone===curUser.phone);
-  document.getElementById('stuStats').innerHTML=`Exams: <b>${my.length}</b> | Best: <b>${my.length?Math.max(...my.map(x=>x.pct)):0}%</b> | Avg: <b>${my.length?Math.round(my.reduce((a,b)=>a+b.pct,0)/my.length):0}%</b> | Wrong to fix: <b>${(wrongQ[curUser.phone]||[]).length}</b> | Saved: <b>${(savedQ[curUser.phone]||[]).length}</b>`;
+  let my=results.filter(r=>r.name===curUser.name);
+  document.getElementById('stuStats').innerHTML=`Exams: <b>${my.length}</b> | Best: <b>${my.length?Math.max(...my.map(x=>x.pct)):0}%</b> | Avg: <b>${my.length?Math.round(my.reduce((a,b)=>a+b.pct,0)/my.length):0}%</b> | Wrong: <b>${(wrongQ[curUser.name]||[]).length}</b> | Saved: <b>${(savedQ[curUser.name]||[]).length}</b>`;
   document.getElementById('freeNote').textContent=curUser.premium?'You have Premium - You see ALL questions. Unlimited trials.':'FREE: You see Q1-Q20 only. Enter a Premium Code at login to unlock ALL. Unlimited trials.';
   renderBoardMini();
 }
@@ -241,29 +207,28 @@ function startExam(){
   let body=document.getElementById('sBody').value, subj=document.getElementById('sSubject').value;
   let all=getQuestions(body,subj);
   if(all.length===0) return alert('No questions for '+body+' '+subj+' yet. Ask Admin to import.');
-  let limit = curUser.premium ? all.length : settings.freeLimit;
-  let pool = all.slice(0, limit);
+  // CORRECTION: FREE = 20, Premium = ALL
+  let limit=curUser.premium?all.length:settings.freeLimit;
+  let pool=all.slice(0,limit);
   let num=document.getElementById('sNum').value;
-  let take = num==='all' ? pool : pool.slice(0, parseInt(num));
+  let take=num==='all'?pool:pool.slice(0,parseInt(num));
   if(document.getElementById('sMode').value==='shuffle') take=[...take].sort(()=>Math.random()-0.5);
-  // Keep original index for wrong/saved tracking
-  curExam=take.map(q=>({...q, _orig: all.indexOf(q), _body:body, _subj:subj}));
+  curExam=take.map(q=>({...q,_orig:all.indexOf(q),_body:body,_subj:subj}));
   curAnswers={}; curIdx=0;
   let t=parseInt(document.getElementById('sTime').value);
   timeLeft=t*60; clearInterval(timerInt);
-  if(t>0){ timerInt=setInterval(()=>{ timeLeft--; let m=Math.floor(timeLeft/60), s=timeLeft%60; document.getElementById('timerText').textContent=`⏰ ${m}:${s<10?'0':''}${s} - You chose this time`; if(timeLeft<=0){clearInterval(timerInt); alert('Time up - Auto submitting'); submitExam();} },1000); } else document.getElementById('timerText').textContent='⏰ No Timer - You Control Your Time';
+  if(t>0){timerInt=setInterval(()=>{timeLeft--;let m=Math.floor(timeLeft/60),s=timeLeft%60;document.getElementById('timerText').textContent=`⏰ ${m}:${s<10?'0':''}${s} - You chose this time`;if(timeLeft<=0){clearInterval(timerInt);alert('Time up - Auto submitting');submitExam()}},1000)} else document.getElementById('timerText').textContent='⏰ No Timer - You Control Your Time';
   document.getElementById('stuHome').classList.add('hidden'); document.getElementById('examBox').classList.remove('hidden');
-  document.getElementById('examTitle').textContent=`${body} - ${subj} | Question 1 of ${curExam.length} | ${curUser.premium?'Premium':'FREE Q1-Q20'}`;
+  document.getElementById('examTitle').textContent=`${body} - ${subj} | Question 1 of ${curExam.length}`;
   renderQ();
 }
 function startWrongOnly(){
-  let list=wrongQ[curUser.phone]||[];
+  let list=wrongQ[curUser.name]||[];
   if(!list.length) return alert('No wrong questions yet. Take an exam first.');
-  curExam=list.map(w=>{let all=getQuestions(w.body,w.subject); return {...all[w.idx], _orig:w.idx, _body:w.body, _subj:w.subject}});
-  curAnswers={}; curIdx=0; timeLeft=0; clearInterval(timerInt); document.getElementById('timerText').textContent='⏰ No Timer - Practice Mode';
-  document.getElementById('stuHome').classList.add('hidden'); document.getElementById('examBox').classList.remove('hidden');
-  document.getElementById('examTitle').textContent=`Practice - My Wrong Questions (${curExam.length})`;
-  renderQ();
+  curExam=list.map(w=>{let all=getQuestions(w.body,w.subject);return {...all[w.idx],_orig:w.idx,_body:w.body,_subj:w.subject}});
+  curAnswers={};curIdx=0;clearInterval(timerInt);document.getElementById('timerText').textContent='⏰ No Timer - Practice Mode';
+  document.getElementById('stuHome').classList.add('hidden');document.getElementById('examBox').classList.remove('hidden');
+  document.getElementById('examTitle').textContent=`Practice - My Wrong Questions (${curExam.length})`;renderQ();
 }
 function renderQ(){
   let q=curExam[curIdx];
@@ -272,138 +237,98 @@ function renderQ(){
   document.getElementById('examQ').textContent=`Q${curIdx+1}: ${q.q}`;
   document.getElementById('examOpts').innerHTML=['A','B','C','D'].map(L=>`<button class="opt ${curAnswers[curIdx]===L?'sel':''}" onclick="curAnswers[${curIdx}]='${L}';renderQ()"><b>${L}.</b> ${q[L.toLowerCase()]}</button>`).join('');
 }
-function prevQ(){ if(curIdx>0){curIdx--; renderQ();} }
-function nextQ(){ if(curIdx<curExam.length-1){curIdx++; renderQ();} }
+function prevQ(){if(curIdx>0){curIdx--;renderQ()}}
+function nextQ(){if(curIdx<curExam.length-1){curIdx++;renderQ()}}
 function toggleSave(){
-  let q=curExam[curIdx]; let arr=savedQ[curUser.phone]||[];
-  let key=q._body+'_'+q._subj+'_'+q._orig;
+  let q=curExam[curIdx];let arr=savedQ[curUser.name]||[];let key=q._body+'_'+q._subj+'_'+q._orig;
   if(arr.find(x=>x.key===key)) arr=arr.filter(x=>x.key!==key); else arr.push({key,body:q._body,subject:q._subj,idx:q._orig});
-  savedQ[curUser.phone]=arr; save('quizora_saved',savedQ); alert('Saved / Unsaved'); refreshStudentHome();
+  savedQ[curUser.name]=arr;save('quizora_saved',savedQ);alert('Saved / Unsaved');refreshStudentHome();
 }
 function submitExam(){
   clearInterval(timerInt);
-  let total=curExam.length, correct=0; let myWrong=wrongQ[curUser.phone]||[];
-  curExam.forEach((q,i)=>{ if(curAnswers[i]===q.correct) correct++; else { let key=q._body+'_'+q._subj+'_'+q._orig; if(!myWrong.find(x=>x.key===key)) myWrong.push({key,body:q._body,subject:q._subj,idx:q._orig}); } });
-  wrongQ[curUser.phone]=myWrong; save('quizora_wrong',wrongQ);
-  let pct=Math.round(correct/total*100);
-  let body=curExam[0]._body, subj=curExam[0]._subj;
-  results.push({phone:curUser.phone,name:curUser.name,body,subject:subj,score:correct,total,pct,date:new Date().toLocaleString(),answers:{...curAnswers},exam:curExam});
+  let total=curExam.length,correct=0;let myWrong=wrongQ[curUser.name]||[];
+  curExam.forEach((q,i)=>{if(curAnswers[i]===q.correct)correct++;else{let key=q._body+'_'+q._subj+'_'+q._orig;if(!myWrong.find(x=>x.key===key))myWrong.push({key,body:q._body,subject:q._subj,idx:q._orig})}});
+  wrongQ[curUser.name]=myWrong;save('quizora_wrong',wrongQ);
+  let pct=Math.round(correct/total*100);let body=curExam[0]._body,subj=curExam[0]._subj;
+  results.push({name:curUser.name,body,subject:subj,score:correct,total,pct,date:new Date().toLocaleString(),answers:{...curAnswers},exam:curExam});
   save('quizora_results',results);
   document.getElementById('examBox').classList.add('hidden');
-  let rev=document.getElementById('reviewBox'); rev.classList.remove('hidden');
-  document.getElementById('reviewList').innerHTML=`<h2>Score: ${correct}/${total} = ${pct}%</h2><p>${pct>=50?'🎉 Passed':'📚 Keep practicing - Check explanations below'}</p>`+curExam.map((q,i)=>{
-    let mine=curAnswers[i]||'Not Answered'; let ok=mine===q.correct;
-    return `<div style="border:1px solid #e2e8f0;padding:10px;border-radius:10px;margin:8px 0"><b>Q${i+1}: ${q.q}</b><br>Your Answer: <b style="color:${ok?'green':'red'}">${mine}</b> | Correct: <b style="color:green">${q.correct} - ${q[q.correct.toLowerCase()]}</b><br><i>Explanation: ${q.exp||'No explanation'}</i></div>`;
-  }).join('');
+  let rev=document.getElementById('reviewBox');rev.classList.remove('hidden');
+  document.getElementById('reviewList').innerHTML=`<h2>Score: ${correct}/${total} = ${pct}%</h2><p>${pct>=50?'🎉 Passed':'📚 Keep practicing - Check explanations below'}</p>`+curExam.map((q,i)=>{let mine=curAnswers[i]||'Not Answered';let ok=mine===q.correct;return `<div style="border:1px solid #e2e8f0;padding:10px;border-radius:10px;margin:8px 0"><b>Q${i+1}: ${q.q}</b><br>Your Answer: <b style="color:${ok?'green':'red'}">${mine}</b> | Correct: <b style="color:green">${q.correct} - ${q[q.correct.toLowerCase()]}</b><br><i>Explanation: ${q.exp||'No explanation'}</i></div>`}).join('');
   refreshStudentHome();
 }
-function backHome(){ document.getElementById('reviewBox').classList.add('hidden'); showStudentTab('home'); }
-function renderResults(){ let my=results.filter(r=>r.phone===curUser.phone).slice().reverse(); document.getElementById('resultList').innerHTML=my.length?my.map(r=>`<div><b>${r.subject}</b> - ${r.score}/${r.total} (${r.pct}%) - ${r.date}</div>`).join(''):'No results yet.'; }
-function renderWrong(){ let list=wrongQ[curUser.phone]||[]; document.getElementById('wrongList').innerHTML=list.length?list.map(w=>{let q=getQuestions(w.body,w.subject)[w.idx]; return q?`<div><b>${w.subject} Q${w.idx+1}:</b> ${q.q} - Correct: ${q.correct}</div>`:''}).join('')+'<br><button class="green" onclick="startWrongOnly()">Practice These Now</button>':'No wrong questions. Great!'; }
-function renderSaved(){ let list=savedQ[curUser.phone]||[]; document.getElementById('savedList').innerHTML=list.length?list.map(w=>{let q=getQuestions(w.body,w.subject)[w.idx]; return q?`<div><b>${w.subject}:</b> ${q.q}</div>`:''}).join(''):'No saved questions.'; }
-function renderBoard(){ let map={}; results.forEach(r=>{ if(!map[r.phone]) map[r.phone]={name:r.name,total:0,count:0,best:0}; map[r.phone].total+=r.pct; map[r.phone].count++; map[r.phone].best=Math.max(map[r.phone].best,r.pct); }); let arr=Object.values(map).sort((a,b)=>b.best-a.best).slice(0,20); document.getElementById('boardFull').innerHTML=arr.map((s,i)=>`<div>${i+1}. <b>${s.name}</b> - Best ${s.best}% - Exams ${s.count}</div>`).join('')||'No exams yet.'; }
-function renderBoardMini(){ let map={}; results.forEach(r=>{ if(!map[r.phone]) map[r.phone]={name:r.name,best:0}; map[r.phone].best=Math.max(map[r.phone].best,r.pct); }); let arr=Object.values(map).sort((a,b)=>b.best-a.best).slice(0,5); document.getElementById('boardMini').innerHTML=arr.map((s,i)=>`<div>${i+1}. ${s.name} - ${s.best}%</div>`).join('')||'No exams yet.'; }
-
-// ---------- ADMIN ----------
-function showAdminTab(t){
-  ['admOver','admQues','admStu','admPrem','admSet'].forEach(id=>document.getElementById(id).classList.add('hidden'));
-  document.getElementById('adm'+(t==='over'?'Over':t==='ques'?'Ques':t==='stu'?'Stu':t==='prem'?'Prem':'Set')).classList.remove('hidden');
-  if(t==='over') renderOverview();
-}
+function backHome(){document.getElementById('reviewBox').classList.add('hidden');showStudentTab('home')}
+function renderResults(){let my=results.filter(r=>r.name===curUser.name).slice().reverse();document.getElementById('resultList').innerHTML=my.length?my.map(r=>`<div><b>${r.subject}</b> - ${r.score}/${r.total} (${r.pct}%) - ${r.date}</div>`).join(''):'No results yet.'}
+function renderWrong(){let list=wrongQ[curUser.name]||[];document.getElementById('wrongList').innerHTML=list.length?list.map(w=>{let q=getQuestions(w.body,w.subject)[w.idx];return q?`<div><b>${w.subject} Q${w.idx+1}:</b> ${q.q} - Correct: ${q.correct}</div>`:''}).join('')+'<br><button class="green" onclick="startWrongOnly()">Practice These Now</button>':'No wrong questions. Great!'}
+function renderSaved(){let list=savedQ[curUser.name]||[];document.getElementById('savedList').innerHTML=list.length?list.map(w=>{let q=getQuestions(w.body,w.subject)[w.idx];return q?`<div><b>${w.subject}:</b> ${q.q}</div>`:''}).join(''):'No saved questions.'}
+function renderBoard(){let map={};results.forEach(r=>{if(!map[r.name])map[r.name]={name:r.name,total:0,count:0,best:0};map[r.name].total+=r.pct;map[r.name].count++;map[r.name].best=Math.max(map[r.name].best,r.pct)});let arr=Object.values(map).sort((a,b)=>b.best-a.best).slice(0,20);document.getElementById('boardFull').innerHTML=arr.map((s,i)=>`<div>${i+1}. <b>${s.name}</b> - Best ${s.best}% - Exams ${s.count}</div>`).join('')||'No exams yet.'}
+function renderBoardMini(){let map={};results.forEach(r=>{if(!map[r.name])map[r.name]={name:r.name,best:0};map[r.name].best=Math.max(map[r.name].best,r.pct)});let arr=Object.values(map).sort((a,b)=>b.best-a.best).slice(0,5);document.getElementById('boardMini').innerHTML=arr.map((s,i)=>`<div>${i+1}. ${s.name} - ${s.best}%</div>`).join('')||'No exams yet.'}
+function showAdminTab(t){['admOver','admQues','admStu','admPrem','admSet'].forEach(id=>document.getElementById(id).classList.add('hidden'));document.getElementById('adm'+(t==='over'?'Over':t==='ques'?'Ques':t==='stu'?'Stu':t==='prem'?'Prem':'Set')).classList.remove('hidden');if(t==='over')renderOverview()}
 function renderOverview(){
   let totalQ=Object.values(customQ).reduce((a,b)=>a+b.length,0);
   let prem=students.filter(s=>s.premium).length;
-  let today=results.filter(r=>r.date.includes(new Date().toLocaleDateString())).length;
-  document.getElementById('overStats').innerHTML=`<div class="stat"><b>${totalQ}</b><small>Total Questions</small></div><div class="stat"><b>${students.length}</b><small>Total Students</small></div><div class="stat"><b>${prem}</b><small>Premium Students</small></div><div class="stat"><b>${results.length}</b><small>Exams Taken</small></div><div class="stat"><b>${results.length?Math.round(results.reduce((a,b)=>a+b.pct,0)/results.length):0}%</b><small>Average Score</small></div>`;
-  let bySub={}; results.forEach(r=>{bySub[r.subject]=(bySub[r.subject]||0)+1});
+  document.getElementById('overStats').innerHTML=`<div class="stat"><b>${totalQ}</b><small>Total Questions</small></div><div class="stat"><b>${students.length}</b><small>Total Students</small></div><div class="stat"><b>${prem}</b><small>Premium</small></div><div class="stat"><b>${results.length}</b><small>Exams Taken</small></div><div class="stat"><b>${results.length?Math.round(results.reduce((a,b)=>a+b.pct,0)/results.length):0}%</b><small>Average Score</small></div>`;
+  let bySub={};results.forEach(r=>{bySub[r.subject]=(bySub[r.subject]||0)+1});
   document.getElementById('overDetail').innerHTML='<h4>Exams by Subject</h4>'+Object.entries(bySub).map(([k,v])=>`<div>${k}: ${v} exams</div>`).join('')||'No exams yet';
-  let map={}; results.forEach(r=>{if(!map[r.phone]) map[r.phone]={name:r.name,best:0}; map[r.phone].best=Math.max(map[r.phone].best,r.pct)}); let arr=Object.values(map).sort((a,b)=>b.best-a.best).slice(0,5);
+  let map={};results.forEach(r=>{if(!map[r.name])map[r.name]={name:r.name,best:0};map[r.name].best=Math.max(map[r.name].best,r.pct)});let arr=Object.values(map).sort((a,b)=>b.best-a.best).slice(0,5);
   document.getElementById('overTop').innerHTML=arr.map((s,i)=>`<div>${i+1}. ${s.name} - ${s.best}%</div>`).join('')||'No exams yet';
 }
+// CORRECTION 2: Admin now reads dropdown EVERY time, not saved old value
 function renderQM(){
   let body=document.getElementById('qmBody').value, subj=document.getElementById('qmSubject').value;
   let qs=getQuestions(body,subj);
   let search=(document.getElementById('qSearch').value||'').toLowerCase();
-  // Cells - Blue if filled for THIS body+subject
-  let grid=document.getElementById('cellGrid'); grid.innerHTML='';
-  for(let i=1;i<=Math.max(100, qs.length+20);i++){
-    let b=document.createElement('button'); b.textContent=i; b.className='cell'+(qs[i-1]?' blue':'')+(editingIdx===i-1?' active':'');
-    b.onclick=()=>editCell(i-1); grid.appendChild(b);
-  }
-  // List - Shows immediately, no tapping needed, filtered by search
+  let grid=document.getElementById('cellGrid');grid.innerHTML='';
+  for(let i=1;i<=Math.max(100,qs.length+20);i++){let b=document.createElement('button');b.textContent=i;b.className='cell'+(qs[i-1]?' blue':'')+(editingIdx===i-1?' active':'');b.onclick=()=>editCell(i-1);grid.appendChild(b)}
   let list=document.getElementById('questionList');
-  let filtered=qs.map((q,idx)=>({...q,idx})).filter(q=>!search || q.q.toLowerCase().includes(search));
+  let filtered=qs.map((q,idx)=>({...q,idx})).filter(q=>!search||q.q.toLowerCase().includes(search));
   if(!qs.length) list.innerHTML=`No custom questions for ${body} - ${subj} yet. Use Add Question or Import Batch.`;
   else if(!filtered.length) list.innerHTML='No match for search.';
   else list.innerHTML=`<p><b>Showing ${filtered.length} of ${qs.length} for ${body} - ${subj}</b></p>`+filtered.map(q=>`<div style="border-bottom:1px solid #eee;padding:8px 0"><b>Q${q.idx+1}:</b> ${q.q}<br>A: ${q.a} | B: ${q.b} | C: ${q.c} | D: ${q.d} | Correct: ${q.correct} | Exp: ${q.exp||''}<br><button class="small ghost" onclick="editCell(${q.idx})">Edit</button> <button class="small red" onclick="delQ(${q.idx})">Delete</button></div>`).join('');
 }
 function editCell(idx){
   let body=document.getElementById('qmBody').value, subj=document.getElementById('qmSubject').value;
-  let qs=getQuestions(body,subj); let q=qs[idx];
-  editingIdx=idx; document.getElementById('editLabel').textContent='Editing Q'+(idx+1)+' - Tap Save to update';
-  if(!q){ clearQForm(); document.getElementById('editLabel').textContent='Editing Q'+(idx+1)+' - New Cell (Empty)'; return; }
-  document.getElementById('qmQ').value=q.q; document.getElementById('qmA').value=q.a; document.getElementById('qmB').value=q.b; document.getElementById('qmC').value=q.c; document.getElementById('qmD').value=q.d; document.getElementById('qmCorrect').value=q.correct; document.getElementById('qmExp').value=q.exp||'';
-  renderQM(); window.scrollTo({top:0,behavior:'smooth'});
+  let qs=getQuestions(body,subj);let q=qs[idx];
+  editingIdx=idx;document.getElementById('editLabel').textContent='Editing Q'+(idx+1);
+  if(!q){clearQForm();document.getElementById('editLabel').textContent='Editing Q'+(idx+1)+' - New Cell (Empty)';return}
+  document.getElementById('qmQ').value=q.q;document.getElementById('qmA').value=q.a;document.getElementById('qmB').value=q.b;document.getElementById('qmC').value=q.c;document.getElementById('qmD').value=q.d;document.getElementById('qmCorrect').value=q.correct;document.getElementById('qmExp').value=q.exp||'';
+  renderQM();window.scrollTo({top:0,behavior:'smooth'});
 }
-function clearQForm(){ ['qmQ','qmA','qmB','qmC','qmD','qmExp'].forEach(id=>document.getElementById(id).value=''); document.getElementById('qmCorrect').value='A'; editingIdx=-1; document.getElementById('editLabel').textContent=''; }
+function clearQForm(){['qmQ','qmA','qmB','qmC','qmD','qmExp'].forEach(id=>document.getElementById(id).value='');document.getElementById('qmCorrect').value='A';editingIdx=-1;document.getElementById('editLabel').textContent=''}
 function saveOneQ(){
   let body=document.getElementById('qmBody').value, subj=document.getElementById('qmSubject').value;
   let q={q:document.getElementById('qmQ').value.trim(),a:document.getElementById('qmA').value.trim(),b:document.getElementById('qmB').value.trim(),c:document.getElementById('qmC').value.trim(),d:document.getElementById('qmD').value.trim(),correct:document.getElementById('qmCorrect').value,exp:document.getElementById('qmExp').value.trim()};
   if(!q.q||!q.a) return alert('Enter Question and Options');
   let qs=getQuestions(body,subj);
-  if(editingIdx>=0) qs[editingIdx]=q; else { // Duplicate check
-    if(qs.find(x=>x.q.toLowerCase()===q.q.toLowerCase())) return alert('Duplicate - This question already exists. Not saved.');
-    qs.push(q); editingIdx=qs.length-1;
-  }
-  setQuestions(body,subj,qs); renderQM(); renderOverview(); alert('Saved Q'+(editingIdx+1));
+  if(editingIdx>=0) qs[editingIdx]=q; else {if(qs.find(x=>x.q.toLowerCase()===q.q.toLowerCase())) return alert('Duplicate - Already exists.');qs.push(q);editingIdx=qs.length-1}
+  setQuestions(body,subj,qs);renderQM();renderOverview();alert('Saved Q'+(editingIdx+1));
 }
-function delQ(idx){
-  if(!confirm('Delete Q'+(idx+1)+'?')) return;
-  let body=document.getElementById('qmBody').value, subj=document.getElementById('qmSubject').value;
-  let qs=getQuestions(body,subj); qs.splice(idx,1); setQuestions(body,subj,qs); renderQM();
-}
+function delQ(idx){if(!confirm('Delete Q'+(idx+1)+'?'))return;let body=document.getElementById('qmBody').value, subj=document.getElementById('qmSubject').value;let qs=getQuestions(body,subj);qs.splice(idx,1);setQuestions(body,subj,qs);renderQM()}
 function importBatch(){
   let body=document.getElementById('qmBody').value, subj=document.getElementById('qmSubject').value;
-  let txt=document.getElementById('pasteBox').value.trim(); if(!txt) return alert('Paste questions first');
-  let qs=getQuestions(body,subj); let added=0, skipped=0;
-  txt.split('\n').forEach(line=>{
-    let p=line.split('|').map(s=>s.trim()); if(p.length<6) return;
-    let q={q:p[0],a:p[1],b:p[2],c:p[3],d:p[4],correct:(p[5]||'A').toUpperCase(),exp:p[6]||''};
-    if(qs.find(x=>x.q.toLowerCase()===q.q.toLowerCase())){skipped++; return;}
-    qs.push(q); added++;
-  });
-  setQuestions(body,subj,qs); document.getElementById('pasteBox').value=''; renderQM(); renderOverview(); alert(`Imported ${added}, Skipped Duplicate ${skipped}. Total now ${qs.length}`);
+  let txt=document.getElementById('pasteBox').value.trim();if(!txt) return alert('Paste questions first');
+  let qs=getQuestions(body,subj);let added=0,skipped=0;
+  txt.split('\n').forEach(line=>{let p=line.split('|').map(s=>s.trim());if(p.length<6)return;let q={q:p[0],a:p[1],b:p[2],c:p[3],d:p[4],correct:(p[5]||'A').toUpperCase(),exp:p[6]||''};if(qs.find(x=>x.q.toLowerCase()===q.q.toLowerCase())){skipped++;return}qs.push(q);added++});
+  setQuestions(body,subj,qs);document.getElementById('pasteBox').value='';renderQM();renderOverview();alert(`Imported ${added}, Skipped Duplicate ${skipped}. Total now ${qs.length}`);
 }
 function exportQuestions(){
   let body=document.getElementById('qmBody').value, subj=document.getElementById('qmSubject').value;
-  let qs=getQuestions(body,subj); if(!qs.length) return alert('No questions to export');
+  let qs=getQuestions(body,subj);if(!qs.length) return alert('No questions to export');
   let txt=qs.map(q=>`${q.q} | ${q.a} | ${q.b} | ${q.c} | ${q.d} | ${q.correct} | ${q.exp||''}`).join('\n');
-  let blob=new Blob([txt],{type:'text/plain'}); let a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download=`Quizora-${body}-${subj}-${qs.length}.txt`; a.click();
-  alert('Backup Downloaded - Keep it safe!');
+  let blob=new Blob([txt],{type:'text/plain'});let a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=`Quizora-${body}-${subj}-${qs.length}.txt`;a.click();alert('Backup Downloaded - Keep it safe!');
 }
 function renderStudents(){
   let s=(document.getElementById('stuSearch').value||'').toLowerCase();
-  let list=students.filter(x=>!s || x.name.toLowerCase().includes(s) || x.phone.includes(s));
-  document.getElementById('studentList').innerHTML=list.length?`<table><tr><th>Name</th><th>Phone</th><th>Status</th><th>Action</th></tr>${list.map((st,i)=>{let idx=students.indexOf(st); let my=results.filter(r=>r.phone===st.phone); return `<tr><td>${st.name}</td><td>${st.phone}</td><td>${st.blocked?'🚫 Blocked':st.premium?'💎 Premium':'🆓 FREE'}</td><td><button class="small green" onclick="togglePrem(${idx})">${st.premium?'Remove Premium':'Give Premium'}</button> <button class="small red" onclick="toggleBlock(${idx})">${st.blocked?'Unblock':'Block'}</button> <span>Exams ${my.length} | Best ${my.length?Math.max(...my.map(x=>x.pct)):0}%</span></td></tr>`}).join('')}</table>`:'No students yet';
+  let list=students.filter(x=>!s||x.name.toLowerCase().includes(s));
+  document.getElementById('studentList').innerHTML=list.length?`<table><tr><th>Name</th><th>Status</th><th>Action</th></tr>${list.map((st,i)=>{let idx=students.indexOf(st);let my=results.filter(r=>r.name===st.name);return `<tr><td>${st.name}</td><td>${st.blocked?'🚫 Blocked':st.premium?'💎 Premium':'🆓 FREE'}</td><td><button class="small green" onclick="togglePrem(${idx})">${st.premium?'Remove Premium':'Give Premium'}</button> <button class="small red" onclick="toggleBlock(${idx})">${st.blocked?'Unblock':'Block'}</button> <span>Exams ${my.length} | Best ${my.length?Math.max(...my.map(x=>x.pct)):0}%</span></td></tr>`}).join('')}</table>`:'No students yet';
 }
-function togglePrem(i){ students[i].premium=students[i].premium?0:1; save('quizora_students',students); renderStudents(); }
-function toggleBlock(i){ students[i].blocked=students[i].blocked?0:1; save('quizora_students',students); renderStudents(); }
-function genCode(){
-  let days=parseInt(document.getElementById('codeDays').value)||30;
-  let code='QUIZORA-'+Math.random().toString(36).substring(2,6).toUpperCase()+'-'+Math.random().toString(36).substring(2,6).toUpperCase();
-  codes.push({code,days,used:0,created:new Date().toLocaleString()}); save('quizora_codes',codes); renderCodes(); alert('New Code: '+code+' - Give to student after payment');
-}
-function renderCodes(){
-  document.getElementById('codeList').innerHTML=codes.length?codes.map(c=>`<div>${c.code} - ${c.days} days - ${c.used?'Used by '+c.usedBy:'✅ Not Used'} - ${c.created}</div>`).join(''):'No codes yet. Generate one.';
-}
-function saveSettings(){
-  settings.freeLimit=parseInt(document.getElementById('setFree').value);
-  settings.adminPass=document.getElementById('setPass').value;
-  settings.price=document.getElementById('setPrice').value;
-  save('quizora_settings',settings); alert('Settings Saved - FREE = Q1-Q'+settings.freeLimit);
-}
-function clearAllData(){ if(confirm('Are you sure? This deletes ALL questions, students, results. Export first!')){ localStorage.clear(); location.reload(); } }
-document.getElementById('setFree').value=settings.freeLimit; document.getElementById('setPass').value=settings.adminPass; document.getElementById('setPrice').value=settings.price;
+function togglePrem(i){students[i].premium=students[i].premium?0:1;save('quizora_students',students);renderStudents()}
+function toggleBlock(i){students[i].blocked=students[i].blocked?0:1;save('quizora_students',students);renderStudents()}
+function genCode(){let days=parseInt(document.getElementById('codeDays').value)||30;let code='QUIZORA-'+Math.random().toString(36).substring(2,6).toUpperCase()+'-'+Math.random().toString(36).substring(2,6).toUpperCase();codes.push({code,days,used:0,created:new Date().toLocaleString()});save('quizora_codes',codes);renderCodes();alert('New Code: '+code+' - Give to student after payment')}
+function renderCodes(){document.getElementById('codeList').innerHTML=codes.length?codes.map(c=>`<div>${c.code} - ${c.days} days - ${c.used?'Used by '+c.usedBy:'✅ Not Used'} - ${c.created}</div>`).join(''):'No codes yet.'}
+function saveSettings(){settings.freeLimit=parseInt(document.getElementById('setFree').value);settings.adminPass=document.getElementById('setPass').value;settings.price=document.getElementById('setPrice').value;save('quizora_settings',settings);alert('Settings Saved - FREE = Q1-Q'+settings.freeLimit)}
+function clearAllData(){if(confirm('Are you sure? This deletes ALL. Export first!')){localStorage.clear();location.reload()}}
+document.getElementById('setFree').value=settings.freeLimit;document.getElementById('setPass').value=settings.adminPass;document.getElementById('setPrice').value=settings.price;
 </script>
 </body>
 </html>
