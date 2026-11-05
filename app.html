@@ -52,4 +52,146 @@ function showExam(){let q=examQs[examIdx];let html='<h3>Q'+(examIdx+1)+' / '+exa
 function pickAns(L){answers[examIdx]=L;showExam();}function nextExam(){if(examIdx<examQs.length-1){examIdx++;showExam();}else{let score=0;examQs.forEach((q,i)=>{if(answers[i]==q.ans)score++;});document.getElementById('examArea').innerHTML='<h2>Result: '+score+' / '+examQs.length+'</h2><button class="btn btn-green" onclick="startExam()">Retake</button>';}}
 let bf=document.getElementById('bulkFile');if(bf)bf.addEventListener('change',e=>{let f=e.target.files[0];if(!f)return;let r=new FileReader();r.onload=()=>{document.getElementById('bulkBox').value=r.result;};r.readAsText(f);});
 loadLive();
-</script></body></html>
+</script><!-- ===== QUIZORA FULL PATCH - PASTE ONCE ===== -->
+<style>
+.quizora-admin-box{background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:16px;margin:14px 0;box-shadow:0 4px 14px rgba(0,0,0,.06)}
+.quizora-admin-box h3{margin:0 0 10px 0;font-size:17px}
+.quizora-stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.quizora-stat{background:#f8fafc;border-radius:12px;padding:12px;text-align:center}
+.quizora-stat b{font-size:20px;display:block}
+.quizora-table{width:100%;border-collapse:collapse;font-size:13px}
+.quizora-table th,.quizora-table td{border-bottom:1px solid #eee;padding:8px;text-align:left}
+.quizora-btn{padding:8px 12px;border-radius:10px;border:0;cursor:pointer;font-weight:700}
+.quizora-btn-gold{background:#facc15}
+.quizora-btn-red{background:#ef4444;color:#fff}
+.quizora-btn-green{background:#22c55e;color:#fff}
+.quizora-btn-blue{background:#2563eb;color:#fff}
+.quizora-input{width:100%;padding:10px;border:1px solid #ddd;border-radius:10px;margin:6px 0}
+</style>
+
+<div id="quizoraEngineRoom" style="display:block">
+  <div class="quizora-admin-box">
+    <h3>💰 Financial Engine - Opay</h3>
+    <p><b>Opay:</b> 8147699555 - Ekpo Bassey | <b>WhatsApp:</b> 08147699555 | <b>Price:</b> ₦2,000 / 1 Year</p>
+    <div class="quizora-stat-grid">
+      <div class="quizora-stat"><span>Total Revenue</span><b id="qTotalRevenue">₦0</b><small>Premium IDs x ₦2,000</small></div>
+      <div class="quizora-stat"><span>Premium Sold</span><b id="qPremiumSold">0</b></div>
+      <div class="quizora-stat"><span>Pending Payments</span><b id="qPending">0</b></div>
+      <div class="quizora-stat"><span>Free Users</span><b id="qFreeUsers">0</b></div>
+    </div>
+    <h4>Generate Premium ID (Admin Only)</h4>
+    <input id="qNewUserName" class="quizora-input" placeholder="Student Name e.g. Adaeze">
+    <button class="quizora-btn quizora-btn-green" onclick="quizoraGenerateID()">Generate Unique ID + Activate 1 Year</button>
+    <p id="qNewIDResult"></p>
+  </div>
+  <div class="quizora-admin-box">
+    <h3>👥 Manage Users - Device Binding</h3>
+    <input id="qUserSearch" class="quizora-input" placeholder="Search name or ID..." oninput="quizoraRenderUsers()">
+    <div id="qUserList">Loading users...</div>
+  </div>
+  <div class="quizora-admin-box">
+    <h3>📊 Reports & Leaderboard</h3>
+    <div id="qReports">No results yet.</div>
+    <h4>🏆 Leaderboard - Top Scores</h4>
+    <div id="qLeaderboard">No results yet.</div>
+  </div>
+  <div class="quizora-admin-box">
+    <h3>⚙️ System Status + Settings</h3>
+    <p>🟢 <b>All Systems Online</b> | <span id="qLastUpdated"></span></p>
+    <p><b>Latest Activity:</b> <span id="qLatestActivity">No activity yet</span></p>
+    <input id="qNewAdminPass" class="quizora-input" placeholder="Change Admin Password - Type new password">
+    <button class="quizora-btn quizora-btn-blue" onclick="quizoraChangeAdminPass()">Change Admin Password</button>
+    <br><br>
+    <button class="quizora-btn quizora-btn-red" onclick="if(confirm('Clear ALL data?')){localStorage.clear();alert('Cleared');location.reload()}">Clear All Data (Admin Only)</button>
+  </div>
+</div>
+
+<script>
+// 1. ALL 14 SUBJECTS - ALWAYS SHOW
+const ALL_SUBJECTS = ["Mathematics","English Language","Biology","Chemistry","Physics","Economics","Agricultural Science","Geography","Computer Studies","Marketing","Civic Education","Literature in English","CRS","Government"];
+function fillAllSubjectDropdowns(){
+  document.querySelectorAll('select[data-subjects], #subjectSelect, #adminSubjectSelect, #studentSubjectSelect').forEach(sel=>{
+    sel.innerHTML = ALL_SUBJECTS.map(s=>`<option value="${s}">${s}</option>`).join('');
+  });
+}
+// 2. ACCESS - FREE Q1-Q20, PREMIUM Q1-Q1000
+function getAllowedQuestions(allQuestions, user){
+  const isPremium = user && user.plan === 'premium' && user.uniqueId;
+  return allQuestions.slice(0, isPremium ? 1000 : 20);
+}
+function checkAccess(qNum, user){
+  if(qNum <= 20) return true;
+  if(user && user.plan === 'premium' && qNum <= 1000) return true;
+  return false;
+}
+// 3. TIMER - REGULATE BEFORE START, LOCK AFTER
+let examTimer=null, examSecondsLeft=0, examStarted=false;
+function startExamTimer(minutes, onEnd){
+  if(examStarted) return; examStarted=true; examSecondsLeft=minutes*60;
+  const ti=document.getElementById('examTimeInput'); if(ti) ti.disabled=true;
+  const el=document.getElementById('timerDisplay'); clearInterval(examTimer);
+  examTimer=setInterval(()=>{
+    examSecondsLeft--; const m=Math.floor(examSecondsLeft/60), s=examSecondsLeft%60;
+    if(el) el.textContent=`${m}:${s.toString().padStart(2,'0')}`;
+    if(el){ if(examSecondsLeft>600) el.style.color='#2563eb'; else if(examSecondsLeft>60) el.style.color='#eab308'; else { el.style.color='#ef4444'; el.style.opacity=examSecondsLeft%2===0?'0.4':'1'; if(examSecondsLeft===60) alert('⚠️ 1 minute left! Save your work and submit!'); } }
+    if(examSecondsLeft<=0){ clearInterval(examTimer); alert('⏰ Time up! Saving and submitting...'); if(onEnd) onEnd(); }
+  },1000);
+}
+// 4. HIDE ANSWERS UNTIL SUBMIT
+let examSubmitted=false;
+function submitExam(answers, questions){
+  examSubmitted=true; clearInterval(examTimer);
+  let score=0; answers.forEach((a,i)=>{ if(a===questions[i].correct) score++; });
+  const total=questions.length, percent=Math.round((score/total)*100);
+  let comment=percent>=90?'Super':percent>=80?'Excellent':percent>=70?'Merit':percent>=60?'Credit':percent>=50?'Pass':percent>=40?'Fair':'Failed';
+  return {score,total,percent,comment};
+}
+// 5. DEVICE BINDING - 1 ID = 1 DEVICE
+function getDeviceId(){ let id=localStorage.getItem('quizora_device_id'); if(!id){ id='DEV-'+Math.random().toString(36).slice(2,10).toUpperCase(); localStorage.setItem('quizora_device_id',id);} return id; }
+function checkDeviceBinding(user){
+  if(!user||user.plan!=='premium') return {ok:true};
+  const d=getDeviceId(), bound=localStorage.getItem('quizora_bound_'+user.uniqueId);
+  if(!bound){ localStorage.setItem('quizora_bound_'+user.uniqueId,d); return {ok:true}; }
+  if(bound!==d) return {ok:false,msg:'This ID is already bound to another device. Contact Admin on WhatsApp to unbind.'};
+  return {ok:true};
+}
+// 6. UNLIMITED TRIALS
+function canRetake(){ return true; }
+// 7. ADMIN ENGINE
+function quizoraGetUsers(){ try{return JSON.parse(localStorage.getItem('quizora_users')||'[]');}catch(e){return[];} }
+function quizoraSaveUsers(u){ localStorage.setItem('quizora_users',JSON.stringify(u)); }
+function quizoraGetResults(){ try{return JSON.parse(localStorage.getItem('quizora_results')||'[]');}catch(e){return[];} }
+function quizoraGenerateID(){
+  const name=document.getElementById('qNewUserName').value.trim(); if(!name) return alert('Type student name first');
+  const id='QZ-'+Math.random().toString(36).slice(2,6).toUpperCase()+'-'+Math.random().toString(36).slice(2,6).toUpperCase();
+  const users=quizoraGetUsers(); const expiry=new Date(); expiry.setFullYear(expiry.getFullYear()+1);
+  users.push({name,uniqueId:id,plan:'premium',expiry:expiry.toISOString().slice(0,10),device:null,created:new Date().toISOString().slice(0,10)});
+  quizoraSaveUsers(users);
+  document.getElementById('qNewIDResult').innerHTML=`<b>Created for ${name}:</b><br>Unique ID: <b>${id}</b><br>Expiry: ${expiry.toISOString().slice(0,10)}<br>Send this ID on WhatsApp. 1 ID = 1 device.`;
+  quizoraRenderEngine();
+}
+function quizoraRenderUsers(){
+  const users=quizoraGetUsers(); const q=(document.getElementById('qUserSearch')?.value||'').toLowerCase();
+  const f=users.filter(u=>(u.name+u.uniqueId).toLowerCase().includes(q));
+  if(!f.length){ document.getElementById('qUserList').innerHTML='No users yet.'; return; }
+  document.getElementById('qUserList').innerHTML=`<table class="quizora-table"><tr><th>Name</th><th>ID</th><th>Plan</th><th>Expiry</th><th>Action</th></tr>`+f.map(u=>`<tr><td>${u.name}</td><td>${u.uniqueId||'-'}</td><td>${u.plan}</td><td>${u.expiry||'-'}</td><td><button class="quizora-btn quizora-btn-gold" onclick="quizoraUnbind('${u.uniqueId}')">Unbind</button> <button class="quizora-btn quizora-btn-red" onclick="quizoraDeleteUser('${u.uniqueId}')">Delete</button></td></tr>`).join('')+`</table>`;
+}
+function quizoraUnbind(id){ localStorage.removeItem('quizora_bound_'+id); quizoraSaveUsers(quizoraGetUsers().map(u=>u.uniqueId===id?{...u,device:null}:u)); alert('Unbound '+id); quizoraRenderEngine(); }
+function quizoraDeleteUser(id){ if(!confirm('Delete '+id+'?')) return; quizoraSaveUsers(quizoraGetUsers().filter(u=>u.uniqueId!==id)); quizoraRenderEngine(); }
+function quizoraChangeAdminPass(){ const p=document.getElementById('qNewAdminPass').value.trim(); if(!p) return alert('Type new password'); localStorage.setItem('quizora_admin_pass',p); alert('Admin password changed.'); }
+function quizoraRenderEngine(){
+  const users=quizoraGetUsers(); const premium=users.filter(u=>u.plan==='premium').length; const free=users.filter(u=>u.plan!=='premium').length;
+  const elR=document.getElementById('qTotalRevenue'); if(elR) elR.textContent='₦'+(premium*2000).toLocaleString();
+  const elP=document.getElementById('qPremiumSold'); if(elP) elP.textContent=premium;
+  const elF=document.getElementById('qFreeUsers'); if(elF) elF.textContent=free;
+  const elL=document.getElementById('qLastUpdated'); if(elL) elL.textContent='Last Updated: '+new Date().toLocaleString();
+  const results=quizoraGetResults(); const repEl=document.getElementById('qReports');
+  if(repEl){ repEl.innerHTML=!results.length?'No results yet.':`<table class="quizora-table"><tr><th>Name</th><th>ID</th><th>Body / Subject</th><th>Score</th><th>Comment</th></tr>`+results.map(r=>`<tr><td>${r.name||'-'}</td><td>${r.uniqueId||'FREE'}</td><td>${r.body||''} / ${r.subject||''}</td><td>${r.score}/${r.total} (${r.percent}%)</td><td>${r.comment||''}</td></tr>`).join('')+`</table>`; }
+  const leadEl=document.getElementById('qLeaderboard');
+  if(leadEl){ leadEl.innerHTML=!results.length?'No results yet.':[...results].sort((a,b)=>b.percent-a.percent).slice(0,10).map((r,i)=>`<p>${i+1}. ${r.name||'Student'} - ${r.percent}% (${r.score}/${r.total}) - ${r.subject||''}</p>`).join(''); }
+  quizoraRenderUsers();
+}
+document.addEventListener('DOMContentLoaded',()=>{ fillAllSubjectDropdowns(); quizoraRenderEngine(); });
+fillAllSubjectDropdowns(); quizoraRenderEngine();
+</script>
+<!-- ===== END FULL PATCH ===== --></body></html>
