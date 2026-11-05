@@ -2,125 +2,161 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>QUIZORA - CBT</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QUIZORA - 200 Questions</title>
 <style>
-*{box-sizing:border-box}html,body{margin:0;padding:0;width:100%;overflow-x:hidden}body{font-family:Arial,sans-serif;background:#f1f5f9}
-.hero{background:radial-gradient(circle at 20% 20%, #1e3aff 0%, #0a1a7a 45%, #020a3a 100%);color:#fff;text-align:center;padding:20px 10px 14px;position:relative;overflow:hidden}
-.hero:before{content:"";position:absolute;inset:0;background-image:radial-gradient(#ffd700 1px, transparent 1px);background-size:70px 70px;opacity:.35}
-.hero-inner{position:relative;z-index:1}
-.hero-quizora{font-size:44px;font-weight:900;line-height:1;background:linear-gradient(180deg,#fff3a0,#ffd700 45%,#b8860b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 3px 0 #7a5a00)}
-.hero-cbt{font-size:48px;font-weight:900;line-height:1;background:linear-gradient(180deg,#fff3a0,#ffd700 45%,#b8860b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 3px 0 #7a5a00)}
-.hero-tag{font-size:12px;margin-top:6px}.hero-exams{font-size:11px;font-weight:800;color:#ffd700;margin-top:4px}
-.hero-q{width:110px;height:110px;margin:14px auto 0;border-radius:50%;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle,#1a3aff,#0a1a7a 60%);border:8px solid #ffd700;outline:3px solid #ffdf5a;box-shadow:0 0 25px #ffd700}
-.hero-q span{font-size:72px;font-weight:900;background:linear-gradient(180deg,#fff3a0,#ffd700 50%,#b8860b);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.hero-powered{font-size:12px;font-weight:800;color:#ffd700;margin-top:10px}
-.wrap{max-width:720px;margin:auto;padding:10px;width:100%}
-.card{background:#fff;border-radius:16px;padding:14px;margin:10px 0;box-shadow:0 4px 14px rgba(0,0,0,.07);width:100%;overflow:hidden}
-.btn{width:100%;padding:13px;border:0;border-radius:12px;font-weight:800;cursor:pointer;font-size:15px;margin:6px 0;display:block}
-.b-blue{background:#2563eb;color:#fff}.b-purple{background:#7c3aed;color:#fff}.b-gold{background:#facc15;color:#111}.b-green{background:#22c55e;color:#fff}.b-red{background:#ef4444;color:#fff}.b-grey{background:#e5e7eb;color:#111}.b-orange{background:#f97316;color:#fff}.b-small{width:auto;display:inline-block;padding:8px 12px;font-size:13px}
-.input,.select,textarea{width:100%;padding:12px;border:1px solid #ddd;border-radius:10px;margin:6px 0;font-size:15px;background:#fff}
-.cells{display:grid;grid-template-columns:repeat(10,1fr);gap:4px;max-height:240px;overflow-y:auto}.cell{padding:8px 0;text-align:center;border-radius:8px;background:#e5e7eb;font-weight:700;font-size:11px;cursor:pointer;border:1px solid #ddd}.cell.hasQ{background:#dbeafe;border-color:#2563eb}.cell.current{background:#7c3aed;color:#fff}.cell.answered{background:#22c55e;color:#fff}
-.statgrid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}.stat{border-radius:14px;padding:10px;text-align:center;color:#fff}.s1{background:#2563eb}.s2{background:#7c3aed}.s3{background:#f59e0b}.stat b{font-size:19px;display:block}
-.tabs{display:flex;gap:6px;overflow-x:auto;padding:4px 0}.tab{white-space:nowrap;padding:10px 14px;border-radius:999px;border:1px solid #ddd;background:#fff;font-weight:800;cursor:pointer;font-size:13px}.tab.active{background:#2563eb;color:#fff}
-.qitem{border:1px solid #eee;border-radius:12px;padding:10px;margin:8px 0}.hide{display:none!important}.small{font-size:13px;color:#555}
-#timerDisplay{text-align:center;font-weight:900;font-size:24px;color:#2563eb}
-.floatAdmin{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);background:#7c3aed;color:#fff;padding:12px 18px;border-radius:999px;font-weight:900;border:0;box-shadow:0 6px 18px rgba(0,0,0,.25);z-index:999;white-space:nowrap}
+  body{font-family:Arial,sans-serif;background:#f4f4f8;margin:0;padding:16px}
+  .box{background:#fff;max-width:900px;margin:auto;padding:20px;border-radius:12px;box-shadow:0 2px 10px rgba(0,0,0,.1)}
+  h1{margin:0} h1 span{color:#6a00ff}
+  textarea{width:100%;height:180px;padding:12px;font-size:15px;border:2px solid #6a00ff;border-radius:8px;box-sizing:border-box}
+  button{padding:12px 18px;border:0;border-radius:8px;font-size:16px;cursor:pointer;margin:6px 6px 6px 0}
+  .purple{background:#6a00ff;color:#fff} .green{background:#0a9d4d;color:#fff} .red{background:#e11d48;color:#fff} .grey{background:#e5e7eb}
+  select,input{padding:10px;font-size:16px;border-radius:8px;border:1px solid #ccc;width:100%;box-sizing:border-box;margin:6px 0}
+  .q{border:1px solid #ddd;border-radius:8px;padding:12px;margin:10px 0}
+  .q b{font-size:17px}
+  .correct{color:green;font-weight:bold}
+  small{color:#666}
 </style>
 </head>
 <body>
-<div class="hero"><div class="hero-inner"><div class="hero-quizora">QUIZORA</div><div class="hero-cbt">CBT</div><div class="hero-tag">(Your Exam Preparation Platform)</div><div class="hero-exams">JAMB | WAEC | NECO | NABTEB | CAMBRIDGE</div><div class="hero-q"><span>Q</span></div><div class="hero-powered">Powered by Mr. B</div></div></div>
-<div class="wrap">
-<div id="createPassView" class="card hide" style="border:3px solid #7c3aed"><h2>🔐 Create Your Admin Password - First Time Only</h2><input id="newPass1" type="password" class="input" placeholder="Create Admin Password"><input id="newPass2" type="password" class="input" placeholder="Confirm Password"><button class="btn b-purple" onclick="createFirstPassword()">Create Password & Save ✅</button></div>
-<div id="homeView" class="card"><h2 style="text-align:center;margin:0">Welcome to QUIZORA</h2><input id="studentName" class="input" placeholder="Your Full Name"><input id="studentID" class="input" placeholder="Premium ID (Optional - Leave empty for FREE)"><button class="btn b-blue" onclick="startAsStudent()">Start as Student</button><button class="btn b-grey" onclick="showAdminLogin()">Admin Login</button></div>
-<div id="adminLoginView" class="card hide"><h3>Admin Login</h3><input id="adminPassInput" type="password" class="input" placeholder="Your Admin Password"><button class="btn b-blue" onclick="adminLogin()">Login as Admin</button><button class="btn b-grey" onclick="showHome()">Back</button></div>
-<div id="dashView" class="card hide"><h3 id="welcomeText">Hello</h3><p id="planText" class="small"></p><label>Select Body</label><select id="bodySelect" class="select"><option>JAMB</option><option>WAEC</option><option>NECO</option><option>NABTEB</option><option>CAMBRIDGE</option></select><label>Select Subject</label><select id="subjectSelect" class="select"></select><label>⏰ Set Countdown Timer (Minutes)</label><select id="examTimeInput" class="select"><option value="10">10 Minutes</option><option value="20">20 Minutes</option><option value="30" selected>30 Minutes - Default</option><option value="45">45 Minutes</option><option value="60">60 Minutes</option><option value="90">90 Minutes</option><option value="120">120 Minutes</option></select><label>🔀 Question Order</label><select id="shuffleSelect" class="select"><option value="shuffle">Shuffle - Q1 is Different For Every Student (Recommended)</option><option value="normal">Normal - Same Q1 For Everyone</option></select><button class="btn b-blue" onclick="startExam()">Start Exam</button><button class="btn b-gold" onclick="buyPremium()">Buy Premium - <span id="buyPriceLabel">₦2,000</span></button><button class="btn b-grey" onclick="logout()">Logout</button><div id="studentHistory" class="small" style="margin-top:10px"></div></div>
-<div id="examView" class="card hide"><div id="timerDisplay">00:30:00</div>
-<button class="btn b-gold" onclick="toggleCalc()">🧮 Calculator - Tap to Open / Close</button>
-<div id="calcBox" class="card hide" style="background:#111;color:#fff;text-align:center;margin:5px 0;padding:10px">
-<input id="calcDisplay" class="input" readonly style="text-align:right;font-size:22px;font-weight:900;background:#fff" value="0">
-<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:8px">
-<button class="btn b-red" onclick="calcClear()">C</button><button class="btn b-grey" onclick="calcBack()">⌫</button><button class="btn b-grey" onclick="calcPress('%')">%</button><button class="btn b-orange" onclick="calcPress('/')">÷</button>
-<button class="btn b-grey" onclick="calcPress('7')">7</button><button class="btn b-grey" onclick="calcPress('8')">8</button><button class="btn b-grey" onclick="calcPress('9')">9</button><button class="btn b-orange" onclick="calcPress('*')">×</button>
-<button class="btn b-grey" onclick="calcPress('4')">4</button><button class="btn b-grey" onclick="calcPress('5')">5</button><button class="btn b-grey" onclick="calcPress('6')">6</button><button class="btn b-orange" onclick="calcPress('-')">-</button>
-<button class="btn b-grey" onclick="calcPress('1')">1</button><button class="btn b-grey" onclick="calcPress('2')">2</button><button class="btn b-grey" onclick="calcPress('3')">3</button><button class="btn b-orange" onclick="calcPress('+')">+</button>
-<button class="btn b-grey" onclick="calcPress('0')">0</button><button class="btn b-grey" onclick="calcPress('00')">00</button><button class="btn b-grey" onclick="calcPress('.')">.</button><button class="btn b-green" onclick="calcEquals()">=</button>
-</div><p class="small" style="color:#aaa">Simple Calculator Only - No Scientific</p>
+<div class="box">
+  <h1>QUIZORA <span>200</span></h1>
+  <p>Batch size: <b>200 questions</b> | Total loaded: <b id="count">0</b></p>
+
+  <label>Subject</label>
+  <select id="subject">
+    <option>Mathematics</option>
+    <option>English</option>
+    <option>Science</option>
+    <option>General Knowledge</option>
+  </select>
+
+  <h3>Paste Batch Here - 200 Questions</h3>
+  <p><small>Format per line: Question | Option A | Option B | Option C | Option D | Correct Letter | Explanation</small></p>
+  <textarea id="pasteBox" placeholder="Paste your 200 questions here, one question per line..."></textarea>
+  <br>
+  <button class="purple" onclick="importPasted()">Import Pasted Questions (Up to 200)</button>
+  <button class="purple" onclick="reshuffleAll()">Reshuffle All Correct Options</button>
+  <button class="green" onclick="load200()">Load 200 Mathematics Questions Now - Reshuffled</button>
+  <button class="red" onclick="clearAll()">Delete All</button>
+  <button class="grey" onclick="exportCSV()">Export CSV</button>
+
+  <h3>Questions List</h3>
+  <div id="list"><p>No questions yet. Paste and Import, or tap Load 200.</p></div>
 </div>
-<h3 id="examTitle"></h3><p id="qCount" class="small"></p><div id="qBox"></div><p class="small"><b>Cells:</b> 🟢 Answered | ⬜ Unanswered | 🟣 Current</p><div class="cells" id="examCells"></div><button class="btn b-blue" onclick="nextQ()">Next Question</button><button class="btn b-green" onclick="submitExamUI()">Submit Exam</button></div>
-<div id="resultView" class="card hide"><h3>Result - Scored</h3><div id="resultBox"></div><button class="btn b-blue" onclick="retake()">Retake Again - Unlimited ♾️</button><button class="btn b-grey" onclick="backToDash()">Back to Dashboard</button></div>
-<div id="adminView" class="hide"><div class="card" style="border:3px solid #7c3aed"><h2 style="color:#7c3aed;margin:0">Admin Dashboard 👑</h2><p class="small">Tap a tab below. Only Admin sees this.</p><div class="tabs"><button class="tab active" onclick="showAdminTab('overview',this)">🏠 Overview</button><button class="tab" onclick="showAdminTab('questions',this)">📝 Questions</button><button class="tab" onclick="showAdminTab('financial',this)">💰 Financial</button><button class="tab" onclick="showAdminTab('subs',this)">👥 Subscriptions</button><button class="tab" onclick="showAdminTab('candidates',this)">👥 Candidates</button><button class="tab" onclick="showAdminTab('performance',this)">📊 Performance</button><button class="tab" onclick="showAdminTab('settings',this)">⚙️ Settings</button></div><button class="btn b-orange" onclick="previewAsStudent()">👁️ Preview as Student</button><button class="btn b-grey" onclick="logout()">Logout Admin</button></div>
-<div id="tab-overview" class="card"><div class="statgrid"><div class="stat s1"><span>Candidates</span><b id="statCandidates">0</b></div><div class="stat s2"><span>Questions</span><b id="statQuestions">1000</b></div><div class="stat s3"><span>Premium IDs</span><b id="statPremium">0</b></div></div><div class="statgrid" style="margin-top:8px"><div class="stat" style="background:#22c55e"><span>Total Revenue</span><b id="qTotalRevenue">₦0</b></div><div class="stat" style="background:#f97316"><span>Free Users</span><b id="qFreeUsers">0</b></div><div class="stat" style="background:#06b6d4"><span>Pending</span><b id="qPending">0</b></div></div><p class="small" id="overviewPay">Opay: 8147699555 - Ekpo Bassey | WhatsApp: 08147699555 | Price: ₦2,000 / 1 Year</p><p class="small">🟢 All Systems Online | <b>Latest:</b> <span id="qLatestActivity">No activity yet</span></p></div>
-<div id="tab-questions" class="card hide"><h3>📝 Question Management</h3><select id="qmBody" class="select"><option>JAMB</option><option>WAEC</option><option>NECO</option><option>NABTEB</option><option>CAMBRIDGE</option></select><select id="qmSubject" class="select"></select><input id="qmSearch" class="input" placeholder="🔍 Search questions..." oninput="renderQuestionList()"><textarea id="qmQuestion" class="input" placeholder="Type Question..."></textarea><input id="qmA" class="input" placeholder="Option A"><input id="qmB" class="input" placeholder="Option B"><input id="qmC" class="input" placeholder="Option C"><input id="qmD" class="input" placeholder="Option D"><input id="qmExplain" class="input" placeholder="Explanation (Shown ONLY after Submit)"><label>Correct Answer</label><select id="qmCorrect" class="select"><option value="0">A is Correct</option><option value="1">B is Correct</option><option value="2">C is Correct</option><option value="3">D is Correct</option></select><button class="btn b-blue" onclick="addQuestion()">+ Add Question & Save</button><button class="btn b-purple" onclick="importBatch()">📥 Import Batch of 100</button><label>Or Import CSV (Question,A,B,C,D,Correct,Explanation)</label><input type="file" id="csvFile" accept=".csv" class="input" onchange="importCSV(event)"><h3>🔢 Cells 1 to 1000 - Tap a Cell to Edit</h3><p class="small">Page <span id="pageLabel">1</span> / 10 | 🔵 Blue = Has Question</p><div class="cells" id="adminCells"></div><button class="btn b-grey" onclick="prevPage()">← Previous</button><button class="btn b-grey" onclick="nextPage()">Next →</button><h3>📋 Question List</h3><div id="questionList">Loading...</div></div>
-<div id="tab-financial" class="card hide"><h3>💰 Financial - Payments & Revenue</h3><p><b>Total Revenue:</b> <span id="finRevenue">₦0</span> | <b>Pending:</b> <span id="finPending">0</span></p><input id="finName" class="input" placeholder="Student Name for Pending Payment"><input id="finAmount" class="input" placeholder="Amount e.g. 2000" value="2000"><button class="btn b-gold" onclick="addPending()">+ Add Pending Payment</button><div id="finList">No pending payments.</div><h4>✅ Approved Payments History</h4><div id="finApproved">No approved payments yet.</div></div>
-<div id="tab-subs" class="card hide"><h3>👥 Subscriptions - Premium IDs</h3><p class="small">1 ID = 1 Device. Cannot be transferred. Only Admin can Unbind.</p><input id="qNewUserName" class="input" placeholder="Student Name e.g. Adaeze"><button class="btn b-green" onclick="quizoraGenerateID()">Generate Unique ID + Activate 1 Year</button><p id="qNewIDResult"></p><input id="qUserSearch" class="input" placeholder="Search name or ID..." oninput="quizoraRenderUsers()"><div id="qUserList">Loading...</div></div>
-<div id="tab-candidates" class="card hide"><h3>👥 All Candidates</h3><input id="candSearch" class="input" placeholder="Search candidate..." oninput="renderCandidates()"><div id="candList">Loading...</div></div>
-<div id="tab-performance" class="card hide"><h3>📊 Performance + Leaderboard</h3><div id="qReports">No results yet.</div><h4>🏆 Leaderboard - Top 10</h4><div id="qLeaderboard">No results yet.</div></div>
-<div id="tab-settings" class="card hide"><h3>⚙️ Settings - Control Your App</h3><label>Premium Price (₦)</label><input id="setPrice" class="input" placeholder="2000" value="2000"><label>Opay Number</label><input id="setOpay" class="input" placeholder="8147699555" value="8147699555"><label>Opay Name</label><input id="setOpayName" class="input" placeholder="Ekpo Bassey" value="Ekpo Bassey"><label>WhatsApp Number</label><input id="setWhats" class="input" placeholder="08147699555" value="08147699555"><label>FREE Limit</label><select id="setFreeLimit" class="select"><option value="2">Q1 - Q2 (Default)</option><option value="5">Q1 - Q5</option><option value="10">Q1 - Q10</option></select><label>Default Timer (Minutes)</label><select id="setTimer" class="select"><option value="30">30 Minutes</option><option value="60">60 Minutes</option><option value="90">90 Minutes</option></select><button class="btn b-blue" onclick="saveSettings()">Save Settings ✅</button><hr><h4>Change Admin Password</h4><input id="changePassOld" type="password" class="input" placeholder="Old Password"><input id="changePassNew" type="password" class="input" placeholder="New Password"><button class="btn b-purple" onclick="changePassword()">Change Password</button><hr><h4>Danger Zone</h4><button class="btn b-red" onclick="clearAllData()">Clear All Data (Reset App)</button></div>
-</div></div>
-<button id="floatBackBtn" class="floatAdmin hide" onclick="backToAdmin()">⬅ Back to Admin</button>
+
 <script>
-const SUBJECTS=["Mathematics","English Language","Physics","Chemistry","Biology","Economics","Geography","Government","Literature","CRS","IRS","Commerce","Accounting","Further Mathematics"];
-let settings=JSON.parse(localStorage.getItem("quizora_settings")||'{"price":2000,"opay":"8147699555","opayName":"Ekpo Bassey","whats":"08147699555","freeLimit":2,"timer":30}');
-let users=JSON.parse(localStorage.getItem("quizora_users")||"[]");let payments=JSON.parse(localStorage.getItem("quizora_payments")||"[]");let results=JSON.parse(localStorage.getItem("quizora_results")||"[]");let candidates=JSON.parse(localStorage.getItem("quizora_candidates")||"[]");let customQ=JSON.parse(localStorage.getItem("quizora_customQ")||"[]");
-let currentUser=null,isAdminPreview=false,currentPage=1,editIndex=-1,examQs=[],examIdx=0,answers={},timerInt=null,timeLeft=1800,examSubmitted=false;
-let calcVal="";function toggleCalc(){ $("calcBox").classList.toggle("hide"); }function calcPress(v){ if(calcVal==="0" && v!==".") calcVal=""; calcVal+=v; $("calcDisplay").value=calcVal; }function calcClear(){ calcVal=""; $("calcDisplay").value="0"; }function calcBack(){ calcVal=calcVal.slice(0,-1); $("calcDisplay").value=calcVal||"0"; }function calcEquals(){ try{ let r=eval(calcVal.replace(/%/g,"/100")); $("calcDisplay").value=r; calcVal=String(r); }catch(e){ $("calcDisplay").value="Error"; calcVal=""; } }
-function shuffleArray(a){ for(let i=a.length-1;i>0;i--){ let j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
-function cleanQText(q){ let t=q; t=t.replace(/^(JAMB|WAEC|NECO|NABTEB|CAMBRIDGE)\s*-\s*[^ ]+\s*-\s*Question\s*\d+\s*:\s*/i,""); t=t.replace(/^Question\s*\d+\s*:\s*/i,""); t=t.replace(/^Q\d+\s*:\s*/i,""); return t; }
-function $(id){return document.getElementById(id)}
-function hideAll(){["createPassView","homeView","adminLoginView","dashView","examView","resultView","adminView"].forEach(i=>$(i).classList.add("hide"))}
-function showHome(){hideAll();$("homeView").classList.remove("hide");$("floatBackBtn").classList.add("hide");isAdminPreview=false;updateHome()}
-function updateHome(){if($("buyPriceLabel"))$("buyPriceLabel").textContent="₦"+settings.price.toLocaleString()}
-function init(){fillSubjects();fillQMSubjects();let p=localStorage.getItem("quizora_admin_pass");if(!p){hideAll();$("createPassView").classList.remove("hide")}else showHome();refreshStats()}
-function fillSubjects(){let s=$("subjectSelect");s.innerHTML="";SUBJECTS.forEach(x=>{let o=document.createElement("option");o.textContent=x;s.appendChild(o)})}
-function fillQMSubjects(){let s=$("qmSubject");s.innerHTML="";SUBJECTS.forEach(x=>{let o=document.createElement("option");o.textContent=x;s.appendChild(o)})}
-function createFirstPassword(){let a=$("newPass1").value,b=$("newPass2").value;if(!a||a.length<4)return alert("Password must be at least 4 characters");if(a!==b)return alert("Passwords do not match");localStorage.setItem("quizora_admin_pass",a);alert("Password created! Now login.");showHome()}
-function showAdminLogin(){hideAll();$("adminLoginView").classList.remove("hide")}
-function adminLogin(){let p=localStorage.getItem("quizora_admin_pass");if($("adminPassInput").value===p){hideAll();$("adminView").classList.remove("hide");showAdminTab("overview",document.querySelector(".tab"));refreshStats();renderQuestionList();renderCells();quizoraRenderUsers();renderCandidates();renderReports();renderFinancial()}else alert("Wrong password")}
-function showAdminTab(name,btn){document.querySelectorAll(".tab").forEach(t=>t.classList.remove("active"));if(btn)btn.classList.add("active");["overview","questions","financial","subs","candidates","performance","settings"].forEach(t=>$("tab-"+t).classList.add("hide"));$("tab-"+name).classList.remove("hide");if(name==="financial")renderFinancial();if(name==="subs")quizoraRenderUsers();if(name==="candidates")renderCandidates();if(name==="performance")renderReports();if(name==="settings")loadSettings()}
-function startAsStudent(){let n=$("studentName").value.trim();if(!n)return alert("Enter your full name");let id=$("studentID").value.trim();let isPrem=false;if(id){let u=users.find(u=>u.id===id);if(!u)return alert("Invalid Premium ID");if(new Date(u.expiry)<new Date())return alert("This ID has expired");isPrem=true;currentUser={name:n,id:id,premium:true}}else currentUser={name:n,id:"FREE",premium:false};if(!candidates.find(c=>c.name===n))candidates.push({name:n,id:currentUser.id,premium:isPrem,joined:new Date().toLocaleDateString()});localStorage.setItem("quizora_candidates",JSON.stringify(candidates));hideAll();$("dashView").classList.remove("hide");$("welcomeText").textContent="Hello, "+n;$("planText").textContent=isPrem?"PREMIUM - Q1-Q1000 Unlocked":"FREE - Q1-Q"+settings.freeLimit+" Only";renderHistory()}
-function previewAsStudent(){isAdminPreview=true;hideAll();$("dashView").classList.remove("hide");currentUser={name:"Test Student (Preview)",id:"FREE",premium:false};$("welcomeText").textContent="Hello, Test Student";$("planText").textContent="FREE - Q1-Q"+settings.freeLimit+" Only (Preview)";$("floatBackBtn").classList.remove("hide");renderHistory()}
-function backToAdmin(){isAdminPreview=false;$("floatBackBtn").classList.add("hide");hideAll();$("adminView").classList.remove("hide");showAdminTab("overview",document.querySelector(".tab"))}
-function logout(){currentUser=null;isAdminPreview=false;$("floatBackBtn").classList.add("hide");showHome()}
-function buyPremium(){alert(`Pay ₦${settings.price.toLocaleString()} to Opay ${settings.opay} - ${settings.opayName}. Then send receipt on WhatsApp ${settings.whats}. Admin will give you a Premium ID.`);window.open(`https://wa.me/234${settings.whats.replace(/^0/,"")}?text=`+encodeURIComponent("Hello, I want to buy QUIZORA Premium. I have paid."))}
-function getQuestions(body,subject){let base=[];for(let i=1;i<=1000;i++){base.push({q:`What is the correct answer for this ${subject} question? (Sample ${i})`,opts:["Option A for Q"+i,"Option B for Q"+i,"Option C for Q"+i,"Option D for Q"+i],correct:i%4,explain:`Explanation for this question`})}let custom=customQ.filter(x=>x.body===body&&x.subject===subject);custom.forEach((c,idx)=>{if(idx<1000)base[idx]=c});return base}
-function startExam(){let body=$("bodySelect").value,subj=$("subjectSelect").value;let all=getQuestions(body,subj);let limit=currentUser.premium?1000:settings.freeLimit;examQs=all.slice(0,limit);if($("shuffleSelect").value==="shuffle"){ examQs=shuffleArray(examQs); }examIdx=0;answers={};examSubmitted=false;let mins=parseInt($("examTimeInput").value);timeLeft=mins*60;hideAll();$("examView").classList.remove("hide");$("examTitle").textContent=body+" - "+subj;if(!$("calcBox").classList.contains("hide"))$("calcBox").classList.add("hide");calcClear();renderExam();startTimer()}
-function renderExam(){let total=examQs.length;$("qCount").textContent=`Question ${examIdx+1} of ${total}`;let q=examQs[examIdx];let clean=cleanQText(q.q);let html=`<p><b>Q${examIdx+1}: ${clean}</b></p>`;q.opts.forEach((o,i)=>{let checked=answers[examIdx]===i?"checked":"";html+=`<label style="display:block;margin:8px 0"><input type="radio" name="opt" value="${i}" ${checked} onchange="answers[${examIdx}]=${i};renderCellsExam()"> ${String.fromCharCode(65+i)}. ${o}</label>`});$("qBox").innerHTML=html;renderCellsExam()}
-function renderCellsExam(){let c=$("examCells");c.innerHTML="";examQs.forEach((_,i)=>{let d=document.createElement("div");d.className="cell"+(i===examIdx?" current":"")+(answers[i]!==undefined?" answered":"");d.textContent=i+1;d.onclick=()=>{examIdx=i;renderExam()};c.appendChild(d)})}
-function nextQ(){if(examIdx<examQs.length-1){examIdx++;renderExam()}else submitExamUI()}
-function startTimer(){clearInterval(timerInt);updateTimer();timerInt=setInterval(()=>{timeLeft--;updateTimer();if(timeLeft<=10 && timeLeft>0){ $("timerDisplay").style.color="#ef4444"; }if(timeLeft<=0){clearInterval(timerInt);if(!examSubmitted){ alert("⏰ Time Up! Auto-Submitting your exam..."); submitExamUI(); }}},1000)}
-function updateTimer(){let h=Math.floor(timeLeft/3600),m=Math.floor((timeLeft%3600)/60),s=timeLeft%60;$("timerDisplay").textContent=`${String(h).padStart(2,"0")}:${String(m).padStart(2,"0")}:${String(s).padStart(2,"0")}`}
-function submitExamUI(){if(examSubmitted) return; examSubmitted=true; clearInterval(timerInt);let correct=0;examQs.forEach((q,i)=>{if(answers[i]===q.correct)correct++});let total=examQs.length,score=Math.round((correct/total)*100);let res={name:currentUser.name,body:$("bodySelect").value,subject:$("subjectSelect").value,score:score,correct:correct,wrong:total-correct,total:total,date:new Date().toLocaleString()};results.push(res);localStorage.setItem("quizora_results",JSON.stringify(results));hideAll();$("resultView").classList.remove("hide");let html=`<p><b>Score: ${score}%</b></p><p>Correct: ${correct} | Wrong: ${total-correct} | Unanswered: ${total-Object.keys(answers).length}</p><hr><h4>Review</h4>`;examQs.forEach((q,i)=>{let your=answers[i]===undefined?"Not Answered":String.fromCharCode(65+answers[i]);let corr=String.fromCharCode(65+q.correct);let col=answers[i]===q.correct?"#22c55e":"#ef4444";let clean=cleanQText(q.q);html+=`<div class="qitem"><b>Q${i+1}: ${clean}</b><br>Your Answer: <b style="color:${col}">${your}</b> | Correct: <b>${corr}</b><br><small>${q.explain}</small></div>`});$("resultBox").innerHTML=html;$("qLatestActivity").textContent=`${res.name} scored ${score}% in ${res.subject}`;refreshStats()}
-function retake(){hideAll();$("dashView").classList.remove("hide")}
-function backToDash(){hideAll();if(isAdminPreview){previewAsStudent();return}$("dashView").classList.remove("hide");renderHistory()}
-function renderHistory(){let h=results.filter(r=>r.name===currentUser.name);if(!h.length){$("studentHistory").innerHTML="No exams yet.";return}$("studentHistory").innerHTML="<b>Your History:</b><br>"+h.slice(-5).map(r=>`${r.subject} - ${r.score}% - ${r.date}`).join("<br>")}
-function refreshStats(){let approved=payments.filter(p=>p.status==="approved");let total=approved.reduce((s,p)=>s+parseInt(p.amount||0),0);$("statCandidates").textContent=candidates.length||1248;$("statQuestions").textContent=1000+customQ.length;$("statPremium").textContent=users.length;$("qTotalRevenue").textContent="₦"+total.toLocaleString();$("qFreeUsers").textContent=candidates.filter(c=>!c.premium).length;$("qPending").textContent=payments.filter(p=>p.status==="pending").length;updateHome()}
-function renderCells(){let c=$("adminCells");c.innerHTML="";let start=(currentPage-1)*100;for(let i=start;i<start+100;i++){let d=document.createElement("div");d.className="cell";if(i<customQ.filter(x=>x.body===$("qmBody").value&&x.subject===$("qmSubject").value).length)d.classList.add("hasQ");d.textContent=i+1;d.onclick=()=>editCell(i);c.appendChild(d)}$("pageLabel").textContent=currentPage}
-function editCell(num){let list=customQ.filter(x=>x.body===$("qmBody").value&&x.subject===$("qmSubject").value);if(list[num]){let q=list[num];$("qmQuestion").value=q.q;$("qmA").value=q.opts[0];$("qmB").value=q.opts[1];$("qmC").value=q.opts[2];$("qmD").value=q.opts[3];$("qmCorrect").value=q.correct;$("qmExplain").value=q.explain||"";editIndex=customQ.indexOf(q);alert("Editing Q"+(num+1))}else{$("qmQuestion").value="";$("qmA").value="";$("qmB").value="";$("qmC").value="";$("qmD").value="";$("qmExplain").value="";editIndex=-1;alert("Cell "+(num+1)+" is empty. Type question and Add.")}}
-function prevPage(){if(currentPage>1){currentPage--;renderCells()}}
-function nextPage(){if(currentPage<10){currentPage++;renderCells()}}
-function addQuestion(){let q=$("qmQuestion").value.trim();if(!q)return alert("Type question");let obj={body:$("qmBody").value,subject:$("qmSubject").value,q:q,opts:[$("qmA").value||"A",$("qmB").value||"B",$("qmC").value||"C",$("qmD").value||"D"],correct:parseInt($("qmCorrect").value),explain:$("qmExplain").value};if(editIndex>=0){customQ[editIndex]=obj;editIndex=-1}else customQ.push(obj);localStorage.setItem("quizora_customQ",JSON.stringify(customQ));["qmQuestion","qmA","qmB","qmC","qmD","qmExplain"].forEach(i=>$(i).value="");renderQuestionList();renderCells();refreshStats();alert("Question Saved ✅")}
-function renderQuestionList(){let body=$("qmBody").value,subj=$("qmSubject").value,search=($("qmSearch").value||"").toLowerCase();let list=customQ.filter(x=>x.body===body&&x.subject===subj);if(search)list=list.filter(x=>x.q.toLowerCase().includes(search));if(!list.length){$("questionList").innerHTML=`<p class="small">No custom questions for ${body} - ${subj} yet. Use Add Question above or Import Batch.</p>`;return}$("questionList").innerHTML=list.map((q,i)=>{let idx=customQ.indexOf(q);return `<div class="qitem"><b>Q${i+1}: ${q.q}</b><br>${q.opts.map((o,j)=>`${String.fromCharCode(65+j)}. ${o} ${j===q.correct?"✅":""}`).join("<br>")}<br><small>${q.explain||""}</small><br><button class="btn b-small b-red" onclick="deleteQ(${idx})">Delete</button> <button class="btn b-small b-blue" onclick="editQ(${idx})">Edit</button></div>`}).join("")}
-function deleteQ(idx){if(confirm("Delete this question?")){customQ.splice(idx,1);localStorage.setItem("quizora_customQ",JSON.stringify(customQ));renderQuestionList();renderCells();refreshStats()}}
-function editQ(idx){let q=customQ[idx];$("qmQuestion").value=q.q;$("qmA").value=q.opts[0];$("qmB").value=q.opts[1];$("qmC").value=q.opts[2];$("qmD").value=q.opts[3];$("qmCorrect").value=q.correct;$("qmExplain").value=q.explain||"";editIndex=idx;window.scrollTo(0,0);alert("Editing - Tap Add Question to save")}
-function importBatch(){let body=$("qmBody").value,subj=$("qmSubject").value;for(let i=1;i<=100;i++){customQ.push({body:body,subject:subj,q:`Batch Question ${i} for ${subj}`,opts:["Option A","Option B","Option C","Option D"],correct:i%4,explain:"Batch explanation"})}localStorage.setItem("quizora_customQ",JSON.stringify(customQ));renderQuestionList();renderCells();refreshStats();alert("100 Questions Imported ✅")}
-function importCSV(e){let f=e.target.files[0];if(!f)return;let r=new FileReader();r.onload=function(){let lines=r.result.split("\n");lines.forEach(l=>{let p=l.split(",");if(p.length>=6){customQ.push({body:$("qmBody").value,subject:$("qmSubject").value,q:p[0],opts:[p[1],p[2],p[3],p[4]],correct:["A","B","C","D"].indexOf((p[5]||"A").trim().toUpperCase()),explain:p[6]||""})}});localStorage.setItem("quizora_customQ",JSON.stringify(customQ));renderQuestionList();renderCells();alert("CSV Imported ✅")};r.readAsText(f)}
-function addPending(){let n=$("finName").value.trim();if(!n)return alert("Enter name");payments.push({name:n,amount:parseInt($("finAmount").value)||2000,status:"pending",date:new Date().toLocaleDateString()});localStorage.setItem("quizora_payments",JSON.stringify(payments));$("finName").value="";renderFinancial();refreshStats()}
-function renderFinancial(){let pend=payments.filter(p=>p.status==="pending"),app=payments.filter(p=>p.status==="approved");$("finPending").textContent=pend.length;$("finRevenue").textContent="₦"+app.reduce((s,p)=>s+parseInt(p.amount||0),0).toLocaleString();$("finList").innerHTML=pend.length?pend.map((p,i)=>{let idx=payments.indexOf(p);return `<div class="qitem"><b>${p.name}</b> - ₦${p.amount} - ${p.date}<br><button class="btn b-small b-green" onclick="approvePay(${idx})">Approve ✅</button> <button class="btn b-small b-red" onclick="rejectPay(${idx})">Reject</button></div>`}).join(""):"No pending payments.";$("finApproved").innerHTML=app.length?app.map(p=>`<div class="qitem">✅ ${p.name} - ₦${p.amount} - ${p.date}</div>`).join(""):"No approved payments yet."}
-function approvePay(idx){payments[idx].status="approved";localStorage.setItem("quizora_payments",JSON.stringify(payments));renderFinancial();refreshStats();alert("Payment Approved ✅")}
-function rejectPay(idx){payments.splice(idx,1);localStorage.setItem("quizora_payments",JSON.stringify(payments));renderFinancial();refreshStats()}
-function quizoraGenerateID(){let n=$("qNewUserName").value.trim();if(!n)return alert("Enter name");let id="QZ-"+Math.random().toString(36).substring(2,8).toUpperCase();let exp=new Date();exp.setFullYear(exp.getFullYear()+1);let u={name:n,id:id,expiry:exp.toISOString().split("T")[0],device:"Not Bound",premium:true};users.push(u);localStorage.setItem("quizora_users",JSON.stringify(users));$("qNewIDResult").innerHTML=`<b style="color:#22c55e">✅ ID for ${n}: ${id} | Expiry: ${u.expiry}</b>`;$("qNewUserName").value="";quizoraRenderUsers();refreshStats()}
-function quizoraRenderUsers(){let s=($("qUserSearch").value||"").toLowerCase();let list=users.filter(u=>u.name.toLowerCase().includes(s)||u.id.toLowerCase().includes(s));if(!list.length){$("qUserList").innerHTML="No Premium IDs yet.";return}$("qUserList").innerHTML=list.map(u=>{let idx=users.indexOf(u);return `<div class="qitem"><b>${u.name}</b><br>ID: <b>${u.id}</b><br>Expiry: ${u.expiry} | Device: ${u.device}<br><button class="btn b-small b-orange" onclick="renewID(${idx})">Renew 1 Year</button> <button class="btn b-small b-grey" onclick="unbindID(${idx})">Unbind Device</button> <button class="btn b-small b-red" onclick="deleteID(${idx})">Delete</button></div>`}).join("")}
-function renewID(idx){let d=new Date(users[idx].expiry);d.setFullYear(d.getFullYear()+1);users[idx].expiry=d.toISOString().split("T")[0];localStorage.setItem("quizora_users",JSON.stringify(users));quizoraRenderUsers()}
-function unbindID(idx){users[idx].device="Not Bound";localStorage.setItem("quizora_users",JSON.stringify(users));quizoraRenderUsers();alert("Device Unbound ✅")}
-function deleteID(idx){if(confirm("Delete this ID?")){users.splice(idx,1);localStorage.setItem("quizora_users",JSON.stringify(users));quizoraRenderUsers();refreshStats()}}
-function renderCandidates(){let s=($("candSearch").value||"").toLowerCase();let list=candidates.filter(c=>c.name.toLowerCase().includes(s));if(!list.length){$("candList").innerHTML="No candidates yet.";return}$("candList").innerHTML=list.map(c=>`<div class="qitem"><b>${c.name}</b> - ${c.premium?"⭐ Premium":"FREE"} - ID: ${c.id} - Joined: ${c.joined}</div>`).join("")}
-function renderReports(){if(!results.length){$("qReports").innerHTML="No results yet.";$("qLeaderboard").innerHTML="No results yet.";return}$("qReports").innerHTML=results.map(r=>`<div class="qitem"><b>${r.name}</b> - ${r.body} ${r.subject} - Score: ${r.score}% (${r.correct}/${r.total}) - ${r.date}</div>`).join("");let sorted=[...results].sort((a,b)=>b.score-a.score).slice(0,10);$("qLeaderboard").innerHTML=sorted.map((r,i)=>`<div class="qitem">#${i+1} ${r.name} - ${r.score}% - ${r.subject}</div>`).join("")}
-function loadSettings(){$("setPrice").value=settings.price;$("setOpay").value=settings.opay;$("setOpayName").value=settings.opayName;$("setWhats").value=settings.whats;$("setFreeLimit").value=settings.freeLimit;$("setTimer").value=settings.timer}
-function saveSettings(){settings={price:parseInt($("setPrice").value)||2000,opay:$("setOpay").value,opayName:$("setOpayName").value,whats:$("setWhats").value,freeLimit:parseInt($("setFreeLimit").value),timer:parseInt($("setTimer").value)};localStorage.setItem("quizora_settings",JSON.stringify(settings));$("overviewPay").textContent=`Opay: ${settings.opay} - ${settings.opayName} | WhatsApp: ${settings.whats} | Price: ₦${settings.price.toLocaleString()} / 1 Year`;alert("Settings Saved ✅");updateHome()}
-function changePassword(){let old=localStorage.getItem("quizora_admin_pass");if($("changePassOld").value!==old)return alert("Old password wrong");if(!$("changePassNew").value)return alert("Enter new password");localStorage.setItem("quizora_admin_pass",$("changePassNew").value);alert("Password Changed ✅")}
-function clearAllData(){if(confirm("Delete EVERYTHING?")){localStorage.clear();location.reload()}}
-init();
+let questions = JSON.parse(localStorage.getItem('quizora200') || '[]');
+
+function save(){ localStorage.setItem('quizora200', JSON.stringify(questions)); render(); }
+
+// Shuffle an array - Fisher-Yates, no pattern
+function shuffleArray(arr){
+  for(let i=arr.length-1;i>0;i--){
+    const j = Math.floor(Math.random()*(i+1));
+    [arr[i],arr[j]]=[arr[j],arr[i]];
+  }
+  return arr;
+}
+
+function importPasted(){
+  const text = document.getElementById('pasteBox').value.trim();
+  if(!text){ alert('Paste box is empty. Paste your 200 questions first.'); return; }
+  const lines = text.split('\n').filter(l=>l.trim().length>0);
+  if(lines.length > 200){ alert('You pasted '+lines.length+'. Only first 200 will be used.'); }
+  const subject = document.getElementById('subject').value;
+  let added = 0;
+  for(let line of lines.slice(0,200)){
+    const p = line.split('|');
+    if(p.length < 6) continue;
+    questions.push({
+      subject: subject,
+      question: p[0].trim(),
+      a: (p[1]||'').trim(),
+      b: (p[2]||'').trim(),
+      c: (p[3]||'').trim(),
+      d: (p[4]||'').trim(),
+      correct: (p[5]||'').trim().toUpperCase(),
+      explanation: (p[6]||'').trim()
+    });
+    added++;
+  }
+  document.getElementById('pasteBox').value='';
+  // Automatically reshuffle after import so there is no sequence
+  reshuffleAll(false);
+  save();
+  alert(added + ' Questions Imported and Reshuffled Successfully');
+}
+
+// Reshuffle correct options for all questions - no AAAA, no BBBB, no ABCD pattern
+function reshuffleAll(showAlert=true){
+  const letters = ['A','B','C','D'];
+  questions.forEach(q=>{
+    // Get correct text
+    const correctText = q[q.correct.toLowerCase()];
+    // Put all options in array and shuffle
+    let opts = shuffleArray([q.a, q.b, q.c, q.d]);
+    // Find where correct text ended up after shuffle
+    const newIndex = opts.indexOf(correctText);
+    q.a = opts[0]; q.b = opts[1]; q.c = opts[2]; q.d = opts[3];
+    q.correct = letters[newIndex];
+  });
+  save();
+  if(showAlert) alert('All Correct Options Reshuffled Successfully');
+}
+
+function load200(){
+  const subject = document.getElementById('subject').value;
+  if(!confirm('This will add 200 Mathematics questions with reshuffled answers. Continue?')) return;
+  const letters = ['A','B','C','D'];
+  for(let i=1;i<=200;i++){
+    const a = 2 + i;
+    const b = 3 + (i % 11);
+    const ans = a + b;
+    // Create options, then shuffle them so correct is random
+    let opts = shuffleArray([String(ans-2), String(ans), String(ans+1), String(ans+3)]);
+    const correctIndex = opts.indexOf(String(ans));
+    questions.push({
+      subject: subject,
+      question: `What is ${a} + ${b}?`,
+      a: opts[0], b: opts[1], c: opts[2], d: opts[3],
+      correct: letters[correctIndex],
+      explanation: `${a} + ${b} = ${ans}`
+    });
+  }
+  save();
+  alert('200 Questions Loaded With Reshuffled Answers');
+}
+
+function deleteOne(i){ if(confirm('Delete this question?')){ questions.splice(i,1); save(); } }
+function clearAll(){ if(confirm('Delete ALL questions?')){ questions=[]; save(); } }
+
+function exportCSV(){
+  if(!questions.length){ alert('No questions to export'); return; }
+  let csv = 'Question,Option A,Option B,Option C,Option D,Correct,Explanation,Subject\n';
+  questions.forEach(q=>{
+    csv += `"${q.question}","${q.a}","${q.b}","${q.c}","${q.d}","${q.correct}","${q.explanation}","${q.subject}"\n`;
+  });
+  const blob = new Blob([csv],{type:'text/csv'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'quizora_200.csv';
+  a.click();
+}
+
+function render(){
+  document.getElementById('count').innerText = questions.length;
+  const list = document.getElementById('list');
+  if(!questions.length){ list.innerHTML='<p>No questions yet. Paste and Import, or tap Load 200.</p>'; return; }
+  list.innerHTML = questions.map((q,i)=>`
+    <div class="q">
+      <b>Q${i+1}: ${q.question}</b> <small>(${q.subject})</small><br>
+      A. ${q.a}<br>B. ${q.b}<br>C. ${q.c}<br>D. ${q.d}<br>
+      <span class="correct">Correct: ${q.correct}</span> ${q.explanation? ' - '+q.explanation:''}<br>
+      <button class="red" onclick="deleteOne(${i})">Delete</button>
+    </div>`).join('');
+}
+render();
 </script>
 </body>
 </html>
