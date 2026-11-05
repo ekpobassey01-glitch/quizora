@@ -1,0 +1,17 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>QUIZORA</title><style>
+*{box-sizing:border-box}body{margin:0;font-family:system-ui;background:#EAF2FF}
+.top{background:#1A0B2E;color:#fff;padding:10px 14px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:30}
+.top b{font-size:18px}.btn{width:100%;padding:13px;border-radius:11px;border:none;font-weight:800;cursor:pointer;margin:6px 0}
+.btn-green{background:#16A34A;color:#fff}.btn-blue{background:#1A56DB;color:#fff}.btn-purple{background:#7C3AED;color:#fff}.btn-yellow{background:#FDE68A}.btn-red{background:#DC2626;color:#fff}.btn-ghost{background:#fff;border:2px solid #CBD5E1}
+.card{background:#fff;border-radius:14px;border:2px solid #BFDBFE;padding:14px;margin:10px auto;max-width:700px}
+.inp{width:100%;padding:11px;border-radius:10px;border:2px solid #BFDBFE;margin:6px 0;background:#F8FAFF}
+.cells{display:grid;grid-template-columns:repeat(10,1fr);gap:5px;padding:6px;background:#F1F5FF;border-radius:12px;border:2px solid #BFDBFE;max-height:300px;overflow:auto}
+.cell{padding:8px 2px;text-align:center;border-radius:8px;border:2px solid #E2E8F0;background:#fff;font-size:11px;cursor:pointer;font-weight:800}.cell.on{background:#10B981;color:#fff}.cell.view{outline:3px solid #1A56DB}
+.hidden{display:none!important}.opt{padding:12px;border:2px solid #E2E8F0;border-radius:10px;margin:6px 0;cursor:pointer;background:#fff}.opt.sel{border-color:#1A56DB;background:#EFF6FF}
+</style></head><body>
+<div class="top"><b>QUIZORA</b><span><button onclick="showPage('home')" style="padding:8px 12px;border-radius:20px;border:none;font-weight:800">Home</button> <button onclick="showPage('login')" style="padding:8px 12px;border-radius:20px;border:none;background:#FDE68A;font-weight:800">Login</button></span></div>
+<div id="homePage">
+<div class="card"><h2>Welcome to QUIZORA</h2><p>JAMB - WAEC - NECO - 1000 Questions</p><button class="btn btn-blue" onclick="showPage('student')">View Student Page</button><button class="btn btn-ghost" onclick="showPage('login')">Admin Login</button><p id="liveCount" style="font-weight:800;color:#16A34A">Loading live questions...</p></div>
+</div>
+<div id="studentPage" class="hidden"><div class="card"><h3>Student Exam</h3><select id="sBody" class="inp"><option>JAMB</option><option>WAEC</option><option>NECO</option></select><select id="sSub" class="inp"><option>Mathematics</option><option>English Language</option><option>CRS</option><option>Biology</option><option>Chemistry</option><option>Physics</option></select><button class="btn btn-blue" onclick="startExam()">Start Exam</button><div id="examArea"></div></div></div>
+<div id="loginPage" class="hidden"><div class="card"><h3>Admin Login</h3><input id="adminPass" class="inp" type="password" placeholder="Enter Admin Password"><button class="btn btn-blue" onclick="adminLogin()">Login as Admin</button><p style="font-size:12px">Default password: <b>admin123</b></p></div></div>
