@@ -1,0 +1,5 @@
+[
+  {"q":"Characteristic of fungi is","opts":["Chlorophyll","Chitin cell wall","Photosynthesis","Seeds"],"correct":1,"explain":"Fungi have chitin wall, no chlorophyll"},
+  {"q":"Organ that produces ova is","opts":["Testis","Uterus","Ovary","Fallopian tube"],"correct":2,"explain":"Ovary produces ova"},
+  {"q":"Function of skin is","opts":["Circulation","Respiration","Protection of body","Digestion"],"correct":2,"explain":"Skin protects body"}
+]
