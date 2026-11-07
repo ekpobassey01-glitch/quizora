@@ -1,4 +1,22 @@
 [
 {"q":"Nearest to ABATE.","opts":["lessen / reduce","increase","hate","grow"],"correct":0,"explain":"Lessen."},
-{"q":"Nearest to ABHOR.","opts":["love","hate / detest","like","enjoy"],"correct":1,"explain":"Hate."}
+{"q":"Nearest to ABHOR.","opts":["love","hate / detest","like","enjoy"],"correct":1,"explain":"Hate."},
+{"q":"Nearest to ABSTRUSE.","opts":["easy","clear","difficult / obscure","simple"],"correct":2,"explain":"Difficult."},
+{"q":"Nearest to ACRIMONIOUS.","opts":["kind","sweet","gentle","bitter / hostile"],"correct":3,"explain":"Bitter."},
+{"q":"Nearest to ADAMANT.","opts":["firm / unyielding","flexible","soft","weak"],"correct":0,"explain":"Firm."},
+{"q":"Nearest to ADROIT.","opts":["clumsy","skillful / clever","slow","dull"],"correct":1,"explain":"Skillful."},
+{"q":"Nearest to ALACRITY.","opts":["sadness","laziness","eagerness / speed","anger"],"correct":2,"explain":"Eagerness."},
+{"q":"Nearest to ALLEVIATE.","opts":["worsen","increase","harm","relieve / reduce"],"correct":3,"explain":"Relieve."},
+{"q":"Nearest to AMBIVALENT.","opts":["uncertain / mixed feelings","certain","clear","decided"],"correct":0,"explain":"Uncertain."},
+{"q":"Nearest to AMELIORATE.","opts":["worsen","improve / make better","harm","ignore"],"correct":1,"explain":"Improve."},
+{"q":"Nearest to ANATHEMA.","opts":["blessing","praise","something hated / cursed","gift"],"correct":2,"explain":"Hated thing."},
+{"q":"Nearest to APATHY.","opts":["passion","energy","interest","indifference / lack of feeling"],"correct":3,"explain":"Indifference."},
+{"q":"Nearest to ARDENT.","opts":["passionate / enthusiastic","cold","lazy","dull"],"correct":0,"explain":"Passionate."},
+{"q":"Nearest to ASCETIC.","opts":["luxurious","self-denying / austere","rich","greedy"],"correct":1,"explain":"Self-denying."},
+{"q":"Nearest to ASSIDUOUS.","opts":["lazy","careless","diligent / hardworking","slow"],"correct":2,"explain":"Diligent."},
+{"q":"Nearest to AUSTERE.","opts":["soft","kind","luxurious","severe / strict"],"correct":3,"explain":"Severe."},
+{"q":"Nearest to AVARICE.","opts":["greed / love of money","generosity","kindness","honesty"],"correct":0,"explain":"Greed."},
+{"q":"Nearest to BELLICOSE.","opts":["peaceful","warlike / aggressive","calm","kind"],"correct":1,"explain":"Warlike."},
+{"q":"Nearest to BEQUEATH.","opts":["take","steal","leave in a will","borrow"],"correct":2,"explain":"Leave in will."},
+{"q":"Nearest to BUCOLIC.","opts":["urban","modern","industrial","rural / pastoral"],"correct":3,"explain":"Rural."}
 ]
