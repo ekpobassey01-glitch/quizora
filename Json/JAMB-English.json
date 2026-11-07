@@ -423,7 +423,6 @@
 {"q":"Opposite of Pertinent.","opts":["relevant","apt","irrelevant / inapplicable","fitting"],"correct":2,"explain":"Irrelevant."},
 {"q":"Opposite of Petulant.","opts":["irritable","peevish","touchy","good-natured / calm"],"correct":3,"explain":"Good-natured."},
 {"q":"Opposite of Phlegmatic.","opts":["calm","excitable / emotional","unemotional","stoic"],"correct":1,"explain":"Excitable."},
-{"q":"Opposite of Placate.","opts":["appease / pacify","calm","enrage / provoke","soothe"],"correct":0,"explain":"Enrage - wait, appease is at 0, enrage at 2 - fixing: enrage is correct, so index should be 2"],"correct":2,"explain":"Enrage."},
 {"q":"Opposite of Pragmatic.","opts":["practical","realistic","sensible","idealistic / impractical"],"correct":3,"explain":"Idealistic."},
 {"q":"To be a blessing in disguise means ___.","opts":["a curse","a hidden benefit","a gift","a prayer"],"correct":1,"explain":"Hidden benefit."},
 {"q":"To be at loggerheads means ___.","opts":["to agree","to sleep","to travel","to be in disagreement"],"correct":3,"explain":"Disagreement."},
