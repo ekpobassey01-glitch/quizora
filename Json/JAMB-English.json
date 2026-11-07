@@ -258,5 +258,14 @@
 {"q":"She ___ her grandmother.","opts":["looks after","looks for","looks at","looks in"],"correct":0,"explain":"Looks after."},
 {"q":"Don't ___ your dreams.","opts":["give up on","give in to","give out","give off"],"correct":0,"explain":"Give up on."},
 {"q":"The plane ___ on time.","opts":["took off","took in","took up","took over"],"correct":0,"explain":"Took off."},
-{"q":"He ___ the offer.","opts":["turned down","turned up","turned in","turned on"],"correct":0,"explain":"Turned down."}
+{"q":"He ___ the offer.","opts":["turned down","turned up","turned in","turned on"],"correct":0,"explain":"Turned down."},{"q":"Reported: He said, 'I am tired.' -> He said that ___.","opts":["he is tired","he has been tired","he was tired","he will be tired"],"correct":2,"explain":"Was tired."},
+{"q":"Reported: She said, 'I will come.' -> She said that ___.","opts":["she would come","she will come","she comes","she came"],"correct":0,"explain":"Would come."},
+{"q":"Reported: He said, 'I have finished.' -> He said that ___.","opts":["he has finished","he finishes","he will finish","he had finished"],"correct":3,"explain":"Had finished."},
+{"q":"Reported: 'Are you coming?' he asked -> He asked if ___.","opts":["I am coming","I was coming","I will come","I had come"],"correct":1,"explain":"I was coming."},
+{"q":"Reported: She said, 'I can swim.' -> She said that ___.","opts":["she could swim","she can swim","she swims","she swam"],"correct":0,"explain":"Could swim."},
+{"q":"Reported: He said, 'I was reading.' -> He said that ___.","opts":["he was reading","he is reading","he had been reading","he reads"],"correct":2,"explain":"Had been reading."},
+{"q":"Reported: 'Where are you?' she asked -> She asked where ___.","opts":["I am","I was","I will be","I had been"],"correct":1,"explain":"I was."},
+{"q":"Reported: He said, 'I will help you.' -> He said that ___.","opts":["he will help","he helps","he helped","he would help"],"correct":3,"explain":"Would help."},
+{"q":"Conditional: If it rains, we ___ inside.","opts":["will stay","stay","stayed","would stay"],"correct":0,"explain":"Will stay."},
+{"q":"Conditional: If I ___ rich, I would travel.","opts":["am","were","was","be"],"correct":1,"explain":"Were."}
 ]
