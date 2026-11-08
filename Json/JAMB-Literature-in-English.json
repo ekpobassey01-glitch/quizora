@@ -983,5 +983,10 @@
 {"q":"JAMB MOCK: Final tip: When unsure between two options in JAMB Literature, choose?","opts":["Longest option","Option that fits text evidence, not your opinion","First option","Most emotional option"],"correct":1,"explain":"Text evidence."},
 {"q":"JAMB MOCK: Final tip: When JAMB asks 'The author uses X to...' answer is about?","opts":["Plot","Purpose / effect","Character","Setting"],"correct":1,"explain":"Purpose/effect."},
 {"q":"JAMB MOCK: Final tip: When JAMB asks 'The tone is...' look at?","opts":["Plot","Word choice, diction","Length","Author name"],"correct":1,"explain":"Word choice."},
-{"q":"JAMB MOCK: Final tip: When JAMB asks 'The theme is...' look at?","opts":["One line","Repeated ideas, whole text","First line only","Title only"],"correct":1,"explain":"Whole text."}
+{"q":"JAMB MOCK: Final tip: When JAMB asks 'The theme is...' look at?","opts":["One line","Repeated ideas, whole text","First line only","Title only"],"correct":1,"explain":"Whole text."},{"q":"Who is the author of 'The Lion and the Jewel'?","opts":["Chinua Achebe","Wole Soyinka","Ngugi wa Thiong'o","Cyprian Ekwensi"],"correct":1,"explain":"Wole Soyinka wrote The Lion and the Jewel."},
+{"q":"In 'Things Fall Apart', what is Okonkwo's greatest fear?","opts":["Poverty","Being seen as weak like his father","Losing his farm","The white missionaries"],"correct":1,"explain":"Okonkwo fears being thought weak and unsuccessful like Unoka, his father."},
+{"q":"Which of these is a metaphor?","opts":["He is as brave as a lion","He is a lion in battle","He runs like a lion","He is braver than a lion"],"correct":1,"explain":"'He is a lion' directly calls him a lion, so it is a metaphor, not a simile."},
+{"q":"A Shakespearean sonnet has how many lines?","opts":["12 lines","16 lines","10 lines","14 lines"],"correct":3,"explain":"A Shakespearean sonnet has 14 lines, divided into 3 quatrains and a couplet."},
+{"q":"Who wrote the play 'The Gods Are Not To Blame'?","opts":["Wole Soyinka","Ola Rotimi","Femi Osofisan","John Pepper Clark"],"correct":1,"explain":"Ola Rotimi wrote The Gods Are Not To Blame, an adaptation of Oedipus Rex."},
+{"q":"What is hamartia in tragedy?","opts":["A happy ending","The tragic flaw of the hero","A song in a play","The narrator's voice"],"correct":1,"explain":"Hamartia is the tragic flaw or error that leads to the hero's downfall."}
 ]
