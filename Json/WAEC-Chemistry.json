@@ -737,5 +737,5 @@
 {"q": "What is the oxidation state of iron in sodium nitroprusside, Na₂[Fe(CN)₅(NO)]?", "opts": ["+2", "+3", "+1", "+4"], "correct": 1, "explain": "Treating NO as nitrosonium (NO⁺, charge +1) or using standard formal charges where CN⁻ is -1 and Na is +1: 2(+1) + x + 5(-1) + 1(+1) = 0 ⇒ 2 + x - 5 + 1 = 0 ⇒ x = +3 (iron is formally Fe(III))."}
 {"q": "Which polymer is synthesized via ring-opening polymerization rather than addition or condensation polymerization?", "opts": ["Nylon-6,6", "Polyethene", "Polycaprolactam (Nylon-6)", "Polystyrene"], "correct": 2, "explain": "Nylon-6 is produced industrially by the ring-opening polymerization of caprolactam."}
 {"q": "According to the Hard-Soft Acid-Base (HSAB) principle, which ion combination forms the most thermodynamically stable complex?", "opts": ["Hard acid with hard base (e.g., Ti⁴⁺ with F⁻)", "Soft acid with hard base (e.g., Pt²⁺ with H₂O)", "Hard acid with soft base (e.g., Na⁺ with I⁻)", "Hard base with soft acid in aqueous solution"], "correct": 0, "explain": "The HSAB principle states that hard acids prefer to coordinate with hard bases, and soft acids prefer soft bases, forming ionic/electrostatic interactions for hard-hard pairs and covalent interactions for soft-soft pairs."}
-[
+]
 
