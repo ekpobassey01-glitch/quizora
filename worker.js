@@ -30,6 +30,21 @@ const BODIES=["JAMB","WAEC","NECO","Cambridge"];
 const LS_Q='quizora_v2_q', LS_R='quizora_v2_results', LS_P='quizora_admin_pass', LS_PREM='quizora_prem_ids', LS_DEV='quizora_dev_id', LS_PREM_ACT='quizora_prem_active';
 let DB=JSON.parse(localStorage.getItem(LS_Q)||'null');
 if(!DB){DB={}; BODIES.forEach(b=>{DB[b]={}; SUBJECTS.forEach(s=>{DB[b][s]=[];});}); function seed(b,s,n){return {q:'['+b+'-'+s+'] Q'+n+': Sample syllabus question '+n+'?',opts:['Opt A'+n,'Opt B'+n,'Opt C'+n,'Opt D'+n],ans:n%4,num:n,diff:b=='JAMB'||b=='Cambridge'?'Hardest':'Hard'};} BODIES.forEach(b=>{SUBJECTS.forEach(s=>{for(let i=1;i<=25;i++) DB[b][s].push(seed(b,s,i));});}); localStorage.setItem(LS_Q,JSON.stringify(DB));}
+const GH_BASE = "https://raw.githubusercontent.com/ekpobassey01-glitch/quizora/refs/heads/main/Json/";
+async function loadFromGitHub(body, subject){
+  const file = body + "-" + subject + ".json";
+  const res = await fetch(GH_BASE + encodeURIComponent(file));
+  if(!res.ok){ alert("Not found: " + file); return; }
+  const data = await res.json();
+  const arr = Array.isArray(data) ? data : (data.questions || []);
+  DB[body][subject] = arr.map((q,i)=>{
+    let ans = typeof q.correct === "number" ? q.correct : q.opts.indexOf(q.correct);
+    if(typeof q.ans === "number") ans = q.ans;
+    return { q:q.q, opts:q.opts, ans:ans, num:i+1, diff:"Hard" };
+  });
+  saveDB(); initSel(); renderAdminGrid(); renderQPreview();
+  alert("Loaded " + arr.length + " Qs for " + body + "/" + subject);
+}
 function saveDB(){localStorage.setItem(LS_Q,JSON.stringify(DB));}
 let curBody='JAMB', curSub='Mathematics', curQIndex=0;
 let exam={qs:[],idx:0,answers:{},skipped:{},name:'',phone:'',duration:20,timeLeft:0,timer:null,body:'',sub:''};
