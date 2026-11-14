@@ -1,1 +1,167 @@
-
+[
+{
+  "q": "What is the primary factor responsible for the exceptionally high stability of transition metal complexes containing polydentate ligands compared to unidentate ligands?",
+  "opts": [
+    "Enthalpy stabilization alone",
+    "The chelate effect, driven by a favorable increase in entropy",
+    "Decreased ligand-ligand electrostatic repulsion",
+    "Formation of ionic bonds instead of coordinate covalent bonds"
+  ],
+  "correct": 1,
+  "explain": "The chelate effect describes the enhanced thermodynamic stability of chelating ligand complexes, which is primarily driven by the positive entropy change (ΔS > 0) when multiple solvent molecules are released upon binding of a single polydentate ligand."
+}
+{
+  "q": "In the mechanism of aromatic electrophilic substitution, what is the exact role of anhydrous aluminium chloride (AlCl₃) in the Friedel-Crafts alkylation of benzene?",
+  "opts": [
+    "It acts as a Brønsted-Lowry acid to protonate the benzene ring",
+    "It acts as a nucleophile to attack the alkyl halide",
+    "It acts as a Lewis acid to coordinate with the alkyl halide, generating a reactive carbocation or polarized electrophilic species",
+    "It forms a stable radical intermediate with benzene"
+  ],
+  "correct": 2,
+  "explain": "AlCl₃ is a strong Lewis acid that coordinates to the halogen atom of an alkyl halide, weakening the C-X bond and facilitating the formation of an electrophilic carbocation or acylium ion complex."
+}
+{
+  "q": "Calculate the root-mean-square speed (u_rms) of carbon dioxide gas at 300 K. (R = 8.314 J/(mol·K), M = 0.044 kg/mol)",
+  "opts": [
+    "412 m/s",
+    "285 m/s",
+    "517 m/s",
+    "345 m/s"
+  ],
+  "correct": 0,
+  "explain": "u_rms = √(3RT / M) = √[(3 × 8.314 × 300) / 0.044] = √(7482.6 / 0.044) = √169,604.5 ≈ 411.8 m/s."
+}
+{
+  "q": "Which of the following compounds will exhibit optical activity in the absence of a traditional chiral carbon atom?",
+  "opts": [
+    "cis-1,2-dichlorocyclohexane",
+    "trans-1,4-dimethylcyclohexane",
+    "2,3-pentadiene (an allene with distinct substituents)",
+    "Meso-tartaric acid"
+  ],
+  "correct": 2,
+  "explain": "Substituted allenes like 2,3-pentadiene lack a plane of symmetry perpendicular to the molecular axis due to orthogonal π-bonds, resulting in axial chirality and optical activity."
+}
+{
+  "q": "What happens to the ionic conductivity of a weak electrolyte solution upon infinite dilution?",
+  "opts": [
+    "It approaches zero because ionization ceases",
+    "Molar conductivity increases sharply as the degree of dissociation approaches unity",
+    "It remains entirely constant regardless of concentration changes",
+    "It decreases exponentially due to interionic attraction"
+  ],
+  "correct": 1,
+  "explain": "According to Ostwald's dilution law, as a weak electrolyte is diluted to infinite dilution, the degree of dissociation (α) approaches 1, causing a sharp, steep increase in molar conductivity."
+}
+{
+  "q": "Which of the following statements correctly describes the Jahn-Teller distortion in octahedral transition metal complexes?",
+  "opts": [
+    "It occurs only in complexes with symmetrically filled t_{2g} orbitals",
+    "It removes orbital degeneracy in electronically non-degenerate ground states",
+    "It removes orbital degeneracy in non-linearly symmetric molecules possessing a degenerate electronic ground state, lowering overall energy",
+    "It prevents ligand exchange reactions completely"
+  ],
+  "correct": 2,
+  "explain": "The Jahn-Teller theorem states that any non-linear molecular system in a degenerate electronic state will undergo a geometric distortion that removes the degeneracy and lowers the overall molecular energy (most commonly seen in high-spin d⁴ and low-spin d⁷ or d⁹ octahedral complexes)."
+}
+{
+  "q": "What is the major product when 1-butanol is treated with phosphorus tribromide (PBr₃)?",
+  "opts": [
+    "1-bromobutane via an S_N2 mechanism",
+    "2-bromobutane via carbocation rearrangement",
+    "Butanal via oxidation",
+    "Diethyl ether via condensation"
+  ],
+  "correct": 0,
+  "explain": "PBr₃ converts primary and secondary alcohols into alkyl bromides via an S_N2 mechanism involving a good chlorophosphite/bromophosphite leaving group, avoiding carbocation rearrangements."
+}
+{
+  "q": "For the electrochemical cell: Zn(s) | Zn²⁺(1.0 M) || Cu²⁺(0.001 M) | Cu(s) at 25 °C, what is the effect on the cell potential E_cell compared to standard conditions?",
+  "opts": [
+    "E_cell increases because reactant concentration is lower",
+    "E_cell decreases because product/reactant ratio shifts the Nernst term, reducing voltage",
+    "E_cell remains exactly equal to E°_cell",
+    "The cell potential becomes zero immediately"
+  ],
+  "correct": 1,
+  "explain": "Using the Nernst equation, E = E° - (RT/nF)ln([Zn²⁺]/[Cu²⁺]). Since [Cu²⁺] is low (0.001 M), the logarithmic term increases, making E_cell lower than E°_cell."
+}
+{
+  "q": "Which intermediate is formed during the acid-catalyzed rearrangement of pinacol to pinacolone?",
+  "opts": [
+    "A free radical",
+    "A carbanion",
+    "A tertiary carbocation stabilized by adjacent oxygen hyperconjugation",
+    "A carbene"
+  ],
+  "correct": 2,
+  "explain": "The pinacol rearrangement proceeds via protonation of a hydroxyl group, departure of water to form a carbocation, 1,2-methyl shift to a more stable oxygen-stabilized carbocation, and final deprotonation."
+}
+{
+  "q": "What is the coordination number and geometry of the [Ag(NH₃)₂]⁺ complex ion?",
+  "opts": [
+    "Coordination number 6, octahedral",
+    "Coordination number 4, tetrahedral",
+    "Coordination number 2, linear",
+    "Coordination number 4, square planar"
+  ],
+  "correct": 2,
+  "explain": "Silver(I) is a d¹⁰ metal ion that typically forms two-coordinate complexes with a linear geometry (sp hybridization)."
+}
+{
+  "q": "In collision theory of reaction rates, what does the steric factor (P) account for?",
+  "opts": [
+    "The fraction of collisions that possess energy equal to or greater than the activation energy",
+    "The correct spatial orientation required between colliding molecules for a successful reaction",
+    "The average velocity of reactant molecules",
+    "The solvent viscosity effects"
+  ],
+  "correct": 1,
+  "explain": "The steric (or probability) factor P corrects the simple collision rate to account for the fact that reacting molecules must collide with appropriate relative spatial orientations to break and form bonds."
+}
+{
+  "q": "Which of the following compounds exhibits the highest boiling point due to intermolecular hydrogen bonding?",
+  "opts": [
+    "Diethyl ether",
+    "Butane",
+    "1-butanol",
+    "2-methylpropane"
+  ],
+  "correct": 2,
+  "explain": "1-butanol possesses a hydroxyl group (-OH) capable of strong intermolecular hydrogen bonding, requiring significantly more thermal energy to vaporize compared to alkanes or ethers."
+}
+{
+  "q": "What is the oxidation state of iron in sodium nitroprusside, Na₂[Fe(CN)₅(NO)]?",
+  "opts": [
+    "+2",
+    "+3",
+    "+1",
+    "+4"
+  ],
+  "correct": 1,
+  "explain": "Treating NO as nitrosonium (NO⁺, charge +1) or using standard formal charges where CN⁻ is -1 and Na is +1: 2(+1) + x + 5(-1) + 1(+1) = 0 ⇒ 2 + x - 5 + 1 = 0 ⇒ x = +3 (iron is formally Fe(III))."
+}
+{
+  "q": "Which polymer is synthesized via ring-opening polymerization rather than addition or condensation polymerization?",
+  "opts": [
+    "Nylon-6,6",
+    "Polyethene",
+    "Polycaprolactam (Nylon-6)",
+    "Polystyrene"
+  ],
+  "correct": 2,
+  "explain": "Nylon-6 is produced industrially by the ring-opening polymerization of caprolactam."
+}
+{
+  "q": "According to the Hard-Soft Acid-Base (HSAB) principle, which ion combination forms the most thermodynamically stable complex?",
+  "opts": [
+    "Hard acid with hard base (e.g., Ti⁴⁺ with F⁻)",
+    "Soft acid with hard base (e.g., Pt²⁺ with H₂O)",
+    "Hard acid with soft base (e.g., Na⁺ with I⁻)",
+    "Hard base with soft acid in aqueous solution"
+  ],
+  "correct": 0,
+  "explain": "The HSAB principle states that hard acids prefer to coordinate with hard bases, and soft acids prefer soft bases, forming ionic/electrostatic interactions for hard-hard pairs and covalent interactions for soft-soft pairs."
+}
+]
