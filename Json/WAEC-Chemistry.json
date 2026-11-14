@@ -223,5 +223,4 @@
 {"q":"What is the product of Fe + S?","opts":["FeS","FeS₂","Fe₂S₃","FeO"],"correct":0,"explain":"Fe + S → FeS."},
 {"q":"Which is a use of H₂O₂?","opts":["Bleaching, disinfectant","Making fertiliser","Making steel","Making glass"],"correct":0,"explain":"H₂O₂ oxidising bleach."},
 {"q":"What is the shape of SO₃?","opts":["Trigonal planar","Bent","Tetrahedral","Linear"],"correct":0,"explain":"3 bonds, no lone pair on S."},
-{"q":"What is the volume of 1 mol of gas at STP?","opts":["22.4 dm³","11.2 dm³","44.8 dm³","2.24 dm³"],"correct":0,"explain":"Molar volume 22.4 dm³."}
-]
+{"q":"What is the volume of 1 mol of gas at STP?","opts":["22.4 dm³","11.2 dm³","44.8 dm³","2.24 dm³"],"correct":0,"explain":"Molar volume 22.4 dm³."}]
