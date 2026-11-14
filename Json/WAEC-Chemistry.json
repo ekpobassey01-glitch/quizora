@@ -1,42 +1,2902 @@
 [
-{"q": "Which of the following statements best explains why the first ionization energy of sulfur is lower than that of phosphorus?", "opts": ["Sulfur has a larger atomic radius than phosphorus", "Paired electrons in the 3p orbital of sulfur experience increased inter-electronic repulsion", "Phosphorus has a completely filled valence shell", "Sulfur exhibits greater nuclear shielding due to d-orbital electrons"], "correct": 1, "explain": "Phosphorus has a half-filled 3p³ subshell, whereas sulfur has a 3p⁴ configuration where two electrons occupy the same 3p orbital, creating electrostatic repulsion that lowers the energy required to remove one electron."}
-{"q": "What is the major product obtained from the hydroboration-oxidation of 1-methylcyclohexene?", "opts": ["1-methylcyclohexanol", "cis-2-methylcyclohexanol", "trans-2-methylcyclohexanol", "Methylenecyclohexane"], "correct": 2, "explain": "Hydroboration-oxidation proceeds via concerted syn-addition of H and BH₂ to the less sterically hindered carbon, followed by oxidation with retention of configuration, yielding trans-2-methylcyclohexanol."}
-{"q": "Calculate the pH of a 1.0 × 10⁻⁸ mol/dm³ aqueous solution of HCl at 25 °C. (K_w = 1.0 × 10⁻¹⁴)", "opts": ["8.00", "6.00", "6.98", "7.02"], "correct": 2, "explain": "At ultra-low acid concentrations, autoionization of water contributes significantly: [H⁺]² - 10⁻⁸[H⁺] - 10⁻¹⁴ = 0, giving [H⁺] ≈ 1.05 × 10⁻⁷ mol/dm³ and pH = -log(1.05 × 10⁻⁷) ≈ 6.98."}
-{"q": "In mass spectrometry, what is the primary driving force behind the McLafferty rearrangement in carbonyl compounds?", "opts": ["Loss of a stable radical cation", "Six-membered cyclic transition state transfer of a γ-hydrogen to the carbonyl oxygen, eliminating a neutral alkene", "Direct cleavage of the alpha carbon-carbon bond", "Formation of a four-membered cyclic oxetane ring"], "correct": 1, "explain": "Carbonyl compounds containing a γ-hydrogen undergo cleavage of the α-β bond via a favorable six-membered cyclic transition state, expelling a neutral alkene molecule and forming an enol radical cation."}
-{"q": "Which complex ion is diamagnetic and exhibits an octahedral geometry?", "opts": ["[CoF₆]³⁻", "[Fe(H₂O)₆]³⁺", "[Co(NH₃)₆]³⁺", "[Ni(H₂O)₆]²⁺"], "correct": 2, "explain": "In [Co(NH₃)₆]³⁺, Co³⁺ is a d⁶ ion and NH₃ acts as a strong-field ligand, forcing all six electrons to pair in the lower-energy t₂g orbitals (t₂g⁶ e_g⁰), resulting in zero unpaired electrons (diamagnetic)."}
-{"q": "For a zero-order reaction A → Products with rate constant k = 0.025 mol/(dm³·s) and initial concentration [A]₀ = 0.50 mol/dm³, how long does it take for 80% of the reactant to be consumed?", "opts": ["16 s", "20 s", "32 s", "8 s"], "correct": 0, "explain": "80% consumption means 0.40 mol/dm³ reacts, leaving 0.10 mol/dm³. For zero-order kinetics, t = ([A]₀ - [A]) / k = 0.40 / 0.025 = 16 s."}
-{"q": "Which of the following reagents selectively oxidizes an allylic or benzylic alcohol to the corresponding aldehyde or ketone without affecting isolated saturated alcohols?", "opts": ["Jones reagent (CrO₃/H₂SO₄)", "Manganese(IV) oxide (MnO₂)", "Potassium permanganate (KMnO₄)", "Sodium dichromate (Na₂Cr₂O₇)"], "correct": 1, "explain": "Activated MnO₂ is a mild, chemoselective oxidizing agent that oxidizes allylic and benzylic alcohols via a radical intermediate stabilized by conjugation."}
-{"q": "Determine the crystal field stabilization energy (CFSE) in terms of Δ_o (excluding pairing energy) for a high-spin d⁶ octahedral complex.", "opts": ["-0.4 Δ_o", "-2.4 Δ_o", "0.0 Δ_o", "-0.8 Δ_o"], "correct": 0, "explain": "A high-spin d⁶ configuration is t₂g⁴ e_g². CFSE = 4(-0.4 Δ_o) + 2(+0.6 Δ_o) = -1.6 Δ_o + 1.2 Δ_o = -0.4 Δ_o."}
-{"q": "What is the stereochemical outcome of the thermal electrocyclic ring closure of (2E,4Z,6E)-octa-2,4,6-triene?", "opts": ["Conrotatory closure giving trans-5,6-dimethylcyclohexa-1,3-diene", "Disrotatory closure giving cis-5,6-dimethylcyclohexa-1,3-diene", "Disrotatory closure giving trans-5,6-dimethylcyclohexa-1,3-diene", "Conrotatory closure giving cis-5,6-dimethylcyclohexa-1,3-diene"], "correct": 1, "explain": "According to Woodward-Hoffmann rules, a 6π-electron conjugated system undergoes thermal electrocyclic ring closure via a disrotatory motion, placing both terminal methyl groups cis to each other."}
-{"q": "Which thermodynamic relation is valid for an ideal gas undergoing a reversible isothermal expansion?", "opts": ["ΔU > 0 and q = 0", "ΔU = 0 and w = -nRT ln(V₂/V₁)", "ΔH < 0 and ΔS = 0", "ΔG = 0 and w = 0"], "correct": 1, "explain": "For an ideal gas, internal energy depends solely on temperature (ΔU = 0 at constant T). By the first law, q = -w = nRT ln(V₂/V₁)."}
-{"q": "Why does pyrrole undergo electrophilic aromatic substitution predominantly at the C-2 (alpha) position rather than C-3 (beta)?", "opts": ["C-2 is less sterically hindered than C-3", "Attack at C-2 generates a carbocation intermediate stabilized by three resonance contributors, whereas C-3 attack yields only two", "The nitrogen atom withdraws electron density inductively from C-3", "C-2 forms an anti-aromatic transition state"], "correct": 1, "explain": "Electrophilic attack at C-2 allows delocalization of the positive charge across three resonance structures without disrupting the aromatic sextet as severely as C-3 attack, which only permits two resonance forms."}
-{"q": "What is the bond angle and hybridization of the central xenon atom in xenon tetrafluoride (XeF₄)?", "opts": ["109.5°, sp³", "90°, sp³d²", "120°, sp³d", "180°, sp"], "correct": 1, "explain": "XeF₄ has 4 bonding pairs and 2 lone pairs (steric number 6), corresponding to sp³d² hybridization with a square planar molecular geometry and 90° F-Xe-F bond angles."}
-{"q": "Calculate the ionic strength (I) of an aqueous solution containing 0.10 mol/dm³ NaCl and 0.20 mol/dm³ CaCl₂.", "opts": ["0.30 mol/dm³", "0.50 mol/dm³", "0.70 mol/dm³", "0.90 mol/dm³"], "correct": 2, "explain": "I = ½ Σ c_i z_i² = ½ [0.10(1)² + 0.10(-1)² + 0.20(2)² + 0.40(-1)²] = ½ [0.10 + 0.10 + 0.80 + 0.40] = 0.70 mol/dm³."}
-{"q": "In NMR spectroscopy, why does the aldehydic proton (-CHO) appear far downfield around 9.5–10.0 ppm?", "opts": ["Strong electron donation by the alkyl group", "Magnetic anisotropy of the carbonyl π-bond combined with inductive deshielding by the electronegative oxygen atom", "Hydrogen bonding with the NMR solvent", "Spin-spin coupling with alpha protons"], "correct": 1, "explain": "The induced magnetic field generated by circulating π-electrons in the C=O bond reinforces the external magnetic field in the region of the aldehydic proton, strongly deshielding it alongside inductive withdrawal."}
-{"q": "Which of the following oxides exhibits amphoteric behavior by reacting with both strong acids and strong alkalis?", "opts": ["MgO", "SO₃", "BeO", "Na₂O"], "correct": 2, "explain": "Beryllium oxide (BeO) displays diagonal similarity to aluminum oxide (Al₂O₃), reacting with acids to form Be²⁺ salts and with concentrated alkalis to form beryllate ions, [Be(OH)₄]²⁻."}
-{"q": "What is the major product when cyclohexanone reacts with ethylmagnesium bromide followed by acidic workup?", "opts": ["1-ethylcyclohexanol", "2-ethylcyclohexanone", "Ethylcyclohexane", "Cyclohexanol"], "correct": 0, "explain": "Grignard reagents act as strong carbon nucleophiles that attack the electrophilic carbonyl carbon, yielding a tertiary alcohol (1-ethylcyclohexanol) upon protonation."}
-{"q": "Which quantum mechanical principle states that no two electrons in an atom can have the exact same set of four quantum numbers?", "opts": ["Hund's rule of maximum multiplicity", "Aufbau principle", "Pauli exclusion principle", "Heisenberg uncertainty principle"], "correct": 2, "explain": "The Pauli exclusion principle dictates that an atomic orbital can hold at most two electrons, and they must have opposite spins (m_s = +½ and -½)."}
-{"q": "In the contact process for sulfuric acid manufacture, why is sulfur trioxide (SO₃) absorbed in concentrated H₂SO₄ rather than directly in water?", "opts": ["SO₃ is completely insoluble in water", "Direct reaction with water is highly exothermic and produces a dense corrosive mist of sulfuric acid droplets that is difficult to condense", "Water decomposes SO₃ back into SO₂ and O₂", "Concentrated H₂SO₄ acts as a catalyst for the oxidation of SO₂"], "correct": 1, "explain": "Dissolving SO₃ directly in water releases immense heat that vaporizes water into an uncontrollable acid fog; absorbing it in 98% H₂SO₄ safely forms oleum (H₂S₂O₇)."}
-{"q": "What is the hybridization of each boron atom in diborane (B₂H₆)?", "opts": ["sp", "sp²", "sp³", "sp³d"], "correct": 2, "explain": "Each boron atom in B₂H₆ is bonded to two terminal hydrogens via normal 2c-2e bonds and two bridging hydrogens via 3c-2e banana bonds, adopting a distorted tetrahedral (sp³) geometry."}
-{"q": "Which catalyst is employed in the Ziegler-Natta polymerization of ethene to produce high-density polyethylene (HDPE)?", "opts": ["Finely divided nickel", "Titanium(IV) chloride (TiCl₄) and triethylaluminium (Al(C₂H₅)₃)", "Vanadium(V) oxide (V₂O₅)", "Concentrated phosphoric acid"], "correct": 1, "explain": "Ziegler-Natta catalysts consist of a transition metal halide (such as TiCl₄) and an organoaluminum co-catalyst, enabling stereoregular linear polymerization at low temperatures and pressures."}
-{"q": "Determine the standard enthalpy of reaction (ΔH°_rxn) for C₂H₄(g) + H₂(g) → C₂H₆(g), given bond dissociation energies: C=C (614 kJ/mol), C-C (348 kJ/mol), H-H (436 kJ/mol), and C-H (413 kJ/mol).", "opts": ["-124 kJ/mol", "+124 kJ/mol", "-286 kJ/mol", "-62 kJ/mol"], "correct": 0, "explain": "ΔH = Σ(Bonds broken) - Σ(Bonds formed) = [614 + 436] - [348 + 2(413)] = 1050 - 1174 = -124 kJ/mol."}
-{"q": "Which of the following molecules has a non-zero net dipole moment?", "opts": ["BF₃", "SF₆", "PCl₅", "ClF₃"], "correct": 3, "explain": "ClF₃ has 3 bonding pairs and 2 lone pairs on the central chlorine atom, adopting an asymmetric T-shaped geometry where bond dipoles do not cancel."}
-{"q": "What is the role of cryolite (Na₃AlF₆) in the electrolytic extraction of aluminum from purified bauxite?", "opts": ["It oxidizes impurities such as iron(III) oxide", "It lowers the melting point of alumina from ~2050 °C to ~950 °C and increases electrical conductivity", "It prevents the carbon anodes from burning in oxygen", "It reduces Al³⁺ ions chemically before electrolysis"], "correct": 1, "explain": "Adding molten cryolite dissolves Al₂O₃ at a much lower operating temperature, drastically reducing energy costs and enhancing ionic conductivity."}
-{"q": "During the ozonolysis of 2-methylbut-2-ene followed by reductive workup with dimethyl sulfide (Me₂S), what products are formed?", "opts": ["Propanone and ethanal", "Ethanal and methanal", "Butanone and methanal", "Propanal and ethanal"], "correct": 0, "explain": "Reductive ozonolysis cleaves the C=C double bond into two carbonyl fragments: the disubstituted carbon yields propanone (acetone), while the monosubstituted carbon yields ethanal (acetaldehyde)."}
-{"q": "Which phenomenon explains why a colloidal sol scatters a beam of visible light passing through it?", "opts": ["Brownian motion", "Electrophoresis", "Tyndall effect", "Dialysis"], "correct": 2, "explain": "The Tyndall effect occurs when dispersed colloidal particles have dimensions comparable to the wavelength of visible light, causing scattering."}
-{"q": "In acid-base titrations, why is phenolphthalein unsuitable as an indicator for titrating a weak base (like NH₃) with a strong acid (like HCl)?", "opts": ["Phenolphthalein decomposes in strong acids", "Its pH transition range (8.2–10.0) lies completely above the acidic equivalence point (pH ~5.3)", "It forms an insoluble precipitate with ammonium ions", "It has no color change in aqueous media"], "correct": 1, "explain": "The equivalence point of a weak base-strong acid titration falls in the acidic region (pH 4–6), where methyl orange (3.1–4.4) is required rather than alkaline-range phenolphthalein."}
-{"q": "What is the rate-determining step in the acid-catalyzed iodination of propanone (CH₃COCH₃)?", "opts": ["Attack of molecular iodine (I₂) on the enol double bond", "Protonation of the carbonyl oxygen", "Tautomerization of the keto form to the enol form", "Deprotonation of the alpha-iodo ketone"], "correct": 2, "explain": "The reaction rate is zero-order with respect to iodine concentration because the slow, rate-determining step is the acid-catalyzed enolization of propanone."}
-{"q": "Which lanthanide ion is colorless in aqueous solution due to having an empty 4f subshell?", "opts": ["Ce³⁺", "Nd³⁺", "La³⁺", "Eu³⁺"], "correct": 2, "explain": "La³⁺ has a [Xe] 4f⁰ electron configuration with no f-electrons available for f-f electronic transitions, rendering its aqueous solutions colorless."}
-{"q": "What happens to the boiling point of water when the external atmospheric pressure is reduced from 101.3 kPa to 50 kPa?", "opts": ["It increases above 100 °C", "It remains unchanged at 100 °C", "It decreases below 100 °C because vapor pressure equals external pressure at a lower temperature", "Water sublimes directly without boiling"], "correct": 2, "explain": "A liquid boils when its saturated vapor pressure equals the surrounding external pressure; lowering ambient pressure lowers the temperature required to reach that vapor pressure."}
-{"q": "Which type of isomerism is exhibited by the pair of coordination compounds [Cr(H₂O)₆]Cl₃ and [Cr(H₂O)₅Cl]Cl₂·H₂O?", "opts": ["Linkage isomerism", "Hydrate (solvate) isomerism", "Coordination position isomerism", "Optical isomerism"], "correct": 1, "explain": "Hydrate isomers differ in whether water molecules are directly coordinated to the central metal ion as ligands or held as uncoordinated water of crystallization in the lattice."}
-{"q": "Which intermediate is generated when chloroform (CHCl₃) reacts with a strong base such as potassium tert-butoxide?", "opts": ["Trichloromethyl carbocation", "Dichlorocarbene (:CCl₂)", "Chloromethyl radical", "Formyl anion"], "correct": 1, "explain": "Base abstracts the acidic proton from CHCl₃ to give CCl₃⁻, which undergoes α-elimination of Cl⁻ to form singlet dichlorocarbene (:CCl₂)."}
-{"q": "Calculate the pH of a 0.050 mol/dm³ solution of sodium acetate (CH₃COONa) at 25 °C. (K_a of CH₃COOH = 1.8 × 10⁻⁵)", "opts": ["5.28", "8.72", "9.12", "4.88"], "correct": 1, "explain": "K_b = K_w / K_a = 10⁻¹⁴ / (1.8 × 10⁻⁵) = 5.56 × 10⁻¹⁰. [OH⁻] = √(K_b × C) = √(5.56 × 10⁻¹⁰ × 0.050) = 5.27 × 10⁻⁶ M. pOH = 5.28, so pH = 14 - 5.28 = 8.72."}
-{"q": "In the Birch reduction of anisole (methoxybenzene) using sodium in liquid ammonia and ethanol, what is the major product?", "opts": ["1-methoxycyclohexa-1,4-diene", "3-methoxycyclohexa-1,4-diene", "Cyclohexanone", "Phenol"], "correct": 0, "explain": "Electron-donating groups like -OCH₃ stabilize radical anion intermediates at meta/ortho positions, leaving the methoxy-bearing carbon unreduced to give 1-methoxycyclohexa-1,4-diene."}
-{"q": "Which of the following is the correct order of decreasing basicity of methyl-substituted amines in aqueous solution?", "opts": ["(CH₃)₃N > (CH₃)₂NH > CH₃NH₂ > NH₃", "(CH₃)₂NH > CH₃NH₂ > (CH₃)₃N > NH₃", "CH₃NH₂ > (CH₃)₂NH > (CH₃)₃N > NH₃", "NH₃ > CH₃NH₂ > (CH₃)₂NH > (CH₃)₃N"], "correct": 1, "explain": "In aqueous phase, a balance of positive inductive effect (+I), steric hindrance, and solvation stabilization of the conjugate ammonium cation makes secondary dimethylamine the strongest base."}
-{"q": "What is the number of radial nodes present in a 4p atomic orbital?", "opts": ["1", "2", "3", "0"], "correct": 1, "explain": "The number of radial (spherical) nodes is given by n - l - 1. For a 4p orbital, n = 4 and l = 1, giving 4 - 1 - 1 = 2 radial nodes."}
-{"q": "Which reagent is used in the Wolff-Kishner reduction to convert an aldehyde or ketone directly into an alkane?", "opts": ["Zn(Hg) and concentrated HCl", "Hydrazine (NH₂NH₂) and KOH in ethylene glycol with heat", "LiAlH₄ in tetrahydrofuran", "NaBH₄ in methanol"], "correct": 1, "explain": "The Wolff-Kishner reduction converts carbonyl groups into methylene (-CH₂-) groups under strongly basic conditions via hydrazone formation and extrusion of N₂ gas."}
-{"q": "Why does white phosphorus (P₄) ignite spontaneously in air at room temperature whereas red phosphorus does not?", "opts": ["White phosphorus has higher molar mass", "White phosphorus possesses severe angle strain (60° bond angles) in discrete P₄ tetrahedra, making it highly reactive", "Red phosphorus is coated with an oxide layer", "White phosphorus is an ionic solid"], "correct": 1, "explain": "The 60° P-P-P bond angles in discrete P₄ molecules introduce substantial ring strain, lowering the activation energy for oxidation compared to polymeric red phosphorus."}
-{"q": "During the electrolysis of concentrated aqueous copper(II) sulfate using copper electrodes, what happens to the concentration of Cu²⁺ ions in the electrolyte?", "opts": ["It decreases steadily until the solution turns colorless", "It increases rapidly", "It remains virtually constant because copper dissolves from the anode at the same rate it deposits on the cathode", "It precipitates as copper(II) hydroxide"], "correct": 2, "explain": "Active copper electrodes participate in the redox process: Cu(s) → Cu²⁺(aq) + 2e⁻ at the anode balances Cu²⁺(aq) + 2e⁻ → Cu(s) at the cathode."}
-{"q": "Which of the following compounds undergoes decarboxylation most readily upon gentle heating?", "opts": ["Propanoic acid", "3-oxobutanoic acid (acetoacetic acid)", "Benzoic acid", "2-methylpropanoic acid"], "correct": 1, "explain": "β-Keto acids like 3-oxobutanoic acid decarboxylate easily upon mild heating via a concerted six-membered cyclic transition state, yielding an enol that tautomerizes to a ketone."}
-{"q": "What is the packing efficiency of atoms in a body-centered cubic (BCC) crystal lattice?", "opts": ["52.4%", "68.0%", "74.0%", "60.5%"], "correct": 1, "explain": "A BCC unit cell contains 2 atoms with edge length a = 4r/√3. Packing efficiency = [2 × (4/3)πr³] / (4r/√3)³ = (π√3)/8 ≈ 68.0%."}
+  {
+    "id": 1,
+    "question": "What is the standard enthalpy of formation of an element in its standard state at 298 K?",
+    "options": ["0.00 kJ/mol", "+100 kJ/mol", "-50 kJ/mol", "+1.00 kJ/mol"],
+    "correct_answer_index": 0,
+    "correct_answer": "0.00 kJ/mol",
+    "explanation": "By international convention, the standard enthalpy of formation of any element in its reference state is defined as exactly zero."
+  },
+  {
+    "id": 2,
+    "question": "For a reaction with rate law Rate = k[A]²[B], what is the overall reaction order?",
+    "options": ["First order", "Third order", "Second order", "Zero order"],
+    "correct_answer_index": 1,
+    "correct_answer": "Third order",
+    "explanation": "The overall order is the sum of concentration exponents: 2 + 1 = 3 (third order)."
+  },
+  {
+    "id": 3,
+    "question": "What mass of NaOH is required to prepare 250 cm³ of 0.2 mol/dm³ solution? (Na=23, O=16, H=1)",
+    "options": ["4.0 g", "3.0 g", "2.0 g", "5.0 g"],
+    "correct_answer_index": 2,
+    "correct_answer": "2.0 g",
+    "explanation": "Moles = 0.2 mol/dm³ × 0.250 dm³ = 0.05 mol; mass = 0.05 × 40 = 2.0 g."
+  },
+  {
+    "id": 4,
+    "question": "What volume of CO₂ at s.t.p. is produced by heating 25 g of CaCO₃? (Ca=40, C=12, O=16)",
+    "options": ["11.2 dm³", "2.8 dm³", "22.4 dm³", "5.6 dm³"],
+    "correct_answer_index": 3,
+    "correct_answer": "5.6 dm³",
+    "explanation": "0.25 mol CaCO₃ yields 0.25 mol CO₂ = 0.25 × 22.4 = 5.6 dm³."
+  },
+  {
+    "id": 5,
+    "question": "Calculate the percentage by mass of oxygen in CaCO₃.",
+    "options": ["48%", "32%", "16%", "64%"],
+    "correct_answer_index": 0,
+    "correct_answer": "48%",
+    "explanation": "Mass of O = 48 g / 100 g = 48%."
+  },
+  {
+    "id": 6,
+    "question": "What is the effect of a catalyst on activation energy?",
+    "options": ["Increases", "Lowers", "Unchanged", "Doubles"],
+    "correct_answer_index": 1,
+    "correct_answer": "Lowers",
+    "explanation": "Catalysts provide an alternative reaction pathway with lower activation energy."
+  },
+  {
+    "id": 7,
+    "question": "For an exothermic reaction, how does temperature increase affect the equilibrium constant K_c?",
+    "options": ["Increases", "Unchanged", "Decreases", "Quads"],
+    "correct_answer_index": 2,
+    "correct_answer": "Decreases",
+    "explanation": "Le Chatelier's principle shifts equilibrium backward when temperature rises, decreasing K_c."
+  },
+  {
+    "id": 8,
+    "question": "In N₂ + 3H₂ ⇌ 2NH₃, what is the effect of increasing pressure?",
+    "options": [
+      "Favors backward",
+      "No effect",
+      "Stops reaction",
+      "Favors forward"
+    ],
+    "correct_answer_index": 3,
+    "correct_answer": "Favors forward",
+    "explanation": "Higher pressure favors the side with fewer moles of gas (forward reaction)."
+  },
+  {
+    "id": 9,
+    "question": "What happens to the rate constant k when temperature increases according to Arrhenius?",
+    "options": ["Increases", "Decreases", "Unchanged", "Halves"],
+    "correct_answer_index": 0,
+    "correct_answer": "Increases",
+    "explanation": "The Arrhenius equation shows that k increases exponentially with temperature."
+  },
+  {
+    "id": 10,
+    "question": "What is the pH of a 0.01 mol/dm³ solution of HCl?",
+    "options": ["1", "2", "3", "4"],
+    "correct_answer_index": 1,
+    "correct_answer": "2",
+    "explanation": "pH = -log[H⁺] = -log(0.01) = 2."
+  },
+  {
+    "id": 11,
+    "question": "What is the conjugate acid of NH₃?",
+    "options": ["NH₂⁻", "N₂H₄", "NH₄⁺", "NO₃⁻"],
+    "correct_answer_index": 2,
+    "correct_answer": "NH₄⁺",
+    "explanation": "A conjugate acid is formed by adding a proton (H⁺) to a base, resulting in NH₄⁺."
+  },
+  {
+    "id": 12,
+    "question": "Which of the following is a Lewis acid?",
+    "options": ["NH₃", "H₂O", "OH⁻", "BF₃"],
+    "correct_answer_index": 3,
+    "correct_answer": "BF₃",
+    "explanation": "BF₃ has an incomplete octet and can accept an electron pair, making it a Lewis acid."
+  },
+  {
+    "id": 13,
+    "question": "What is the pH of a 0.001 mol/dm³ solution of NaOH?",
+    "options": ["11", "3", "12", "14"],
+    "correct_answer_index": 0,
+    "correct_answer": "11",
+    "explanation": "pOH = -log(0.001) = 3; pH = 14 - 3 = 11."
+  },
+  {
+    "id": 14,
+    "question": "Which salt undergoes hydrolysis to give an acidic solution?",
+    "options": ["NaCl", "NH₄Cl", "CH₃COONa", "KNO₃"],
+    "correct_answer_index": 1,
+    "correct_answer": "NH₄Cl",
+    "explanation": "NH₄Cl is a salt of a strong acid and a weak base, so it hydrolyzes to produce an acidic solution."
+  },
+  {
+    "id": 15,
+    "question": "What is the basicity of phosphoric acid (H₃PO₄)?",
+    "options": ["1", "2", "3", "4"],
+    "correct_answer_index": 2,
+    "correct_answer": "3",
+    "explanation": "Phosphoric acid is a triprotic acid, meaning each molecule can furnish three replaceable hydrogen ions."
+  },
+  {
+    "id": 16,
+    "question": "Which molecule exhibits a linear geometry?",
+    "options": ["H₂O", "NH₃", "CH₄", "CO₂"],
+    "correct_answer_index": 3,
+    "correct_answer": "CO₂",
+    "explanation": "CO₂ has two electron domains around the central carbon atom giving a bond angle of 180°."
+  },
+  {
+    "id": 17,
+    "question": "What is the hybridization of carbon in ethyne (C₂H₂)?",
+    "options": ["sp", "sp³", "sp²", "sp³d"],
+    "correct_answer_index": 0,
+    "correct_answer": "sp",
+    "explanation": "Ethyne has a triple bond requiring sp hybridization."
+  },
+  {
+    "id": 18,
+    "question": "Which intermolecular force is responsible for the abnormally high boiling point of HF?",
+    "options": [
+      "Van der Waals forces",
+      "Hydrogen bonding",
+      "Dipole-dipole interactions",
+      "Metallic bonding"
+    ],
+    "correct_answer_index": 1,
+    "correct_answer": "Hydrogen bonding",
+    "explanation": "Fluorine is highly electronegative, forming strong intermolecular hydrogen bonds."
+  },
+  {
+    "id": 19,
+    "question": "How many unpaired electrons are in a ground-state Fe³⁺ ion? (Fe = 26)",
+    "options": ["3", "4", "6", "5"],
+    "correct_answer_index": 2,
+    "correct_answer": "6",
+    "explanation": "Fe is [Ar] 3d⁶ 4s²; Fe³⁺ is [Ar] 3d⁵, containing 5 unpaired electrons."
+  },
+  {
+    "id": 20,
+    "question": "Which of the following quantum numbers determines the shape of an atomic orbital?",
+    "options": [
+      "Principal quantum number (n)",
+      "Magnetic quantum number (m_l)",
+      "Spin quantum number (m_s)",
+      "Azimuthal quantum number (l)"
+    ],
+    "correct_answer_index": 3,
+    "correct_answer": "Azimuthal quantum number (l)",
+    "explanation": "The azimuthal (angular momentum) quantum number l determines the orbital subshell shape (s, p, d, f)."
+  },
+  {
+    "id": 21,
+    "question": "What is the maximum number of electrons that can occupy the principal shell n = 3?",
+    "options": ["18", "8", "32", "2"],
+    "correct_answer_index": 0,
+    "correct_answer": "18",
+    "explanation": "Maximum electrons per shell are given by 2n² = 2(3)² = 18."
+  },
+  {
+    "id": 22,
+    "question": "Which species is isoelectronic with an argon atom (Ar = 18)?",
+    "options": ["Na⁺", "Cl⁻", "Mg²⁺", "Al³⁺"],
+    "correct_answer_index": 1,
+    "correct_answer": "Cl⁻",
+    "explanation": "Cl⁻ gains one electron, reaching 18 electrons like Argon."
+  },
+  {
+    "id": 23,
+    "question": "What is the bond order of the oxygen molecule (O₂) according to molecular orbital theory?",
+    "options": ["1.0", "1.5", "2.0", "2.5"],
+    "correct_answer_index": 2,
+    "correct_answer": "2.0",
+    "explanation": "Bond order = (bonding electrons - antibonding electrons) / 2 = (10 - 6) / 2 = 2.0."
+  },
+  {
+    "id": 24,
+    "question": "Which crystal lattice defect involves missing cations and anions in stoichiometric proportions?",
+    "options": [
+      "Frenkel defect",
+      "Interstitial defect",
+      "Metal excess defect",
+      "Schottky defect"
+    ],
+    "correct_answer_index": 3,
+    "correct_answer": "Schottky defect",
+    "explanation": "Schottky defect occurs when equal numbers of cations and anions are missing from the crystal lattice."
+  },
+  {
+    "id": 25,
+    "question": "What type of bonding is present in solid ammonium chloride (NH₄Cl)?",
+    "options": [
+      "Covalent, ionic, and coordinate covalent",
+      "Covalent only",
+      "Ionic only",
+      "Metallic only"
+    ],
+    "correct_answer_index": 0,
+    "correct_answer": "Covalent, ionic, and coordinate covalent",
+    "explanation": "NH₄Cl contains ionic bonding between NH₄⁺ and Cl⁻, covalent bonds within NH₄⁺, and a coordinate covalent bond."
+  },
+  {
+    "id": 26,
+    "question": "Which property generally decreases down a group in the periodic table?",
+    "options": [
+      "Atomic radius",
+      "Electronegativity",
+      "Metallic character",
+      "Density"
+    ],
+    "correct_answer_index": 1,
+    "correct_answer": "Electronegativity",
+    "explanation": "Electronegativity decreases down a group due to increased atomic radius and shielding."
+  },
+  {
+    "id": 27,
+    "question": "What type of radioactive emission is blocked by a thin sheet of paper?",
+    "options": ["Beta particles", "Gamma rays", "Alpha particles", "Neutrons"],
+    "correct_answer_index": 2,
+    "correct_answer": "Alpha particles",
+    "explanation": "Alpha particles have the lowest penetrating power and are stopped by a sheet of paper."
+  },
+  {
+    "id": 28,
+    "question": "Which element has the highest first ionization energy?",
+    "options": ["Sodium", "Magnesium", "Fluorine", "Helium"],
+    "correct_answer_index": 3,
+    "correct_answer": "Helium",
+    "explanation": "Helium possesses a full valence shell and a very high effective nuclear charge, giving it the highest first ionization energy."
+  },
+  {
+    "id": 29,
+    "question": "In radioactive decay, what is emitted during beta-minus (β⁻) decay?",
+    "options": [
+      "An electron",
+      "A helium nucleus",
+      "A positron",
+      "High-frequency electromagnetic wave"
+    ],
+    "correct_answer_index": 0,
+    "correct_answer": "An electron",
+    "explanation": "Beta-minus decay involves the conversion of a neutron into a proton, emitting a high-speed electron (beta particle)."
+  },
+  {
+    "id": 30,
+    "question": "Which group of elements is known as the halogens?",
+    "options": ["Group 1", "Group 17", "Group 2", "Group 18"],
+    "correct_answer_index": 1,
+    "correct_answer": "Group 17",
+    "explanation": "Group 17 elements (fluorine, chlorine, bromine, iodine) are collectively known as the halogens."
+  },
+  {
+    "id": 31,
+    "question": "Which compound exhibits optical isomerism without possessing a traditional asymmetric (chiral) carbon atom?",
+    "options": [
+      "2-chlorobutane",
+      "Lactic acid",
+      "1,3-diphenylallene",
+      "Tartaric acid"
+    ],
+    "correct_answer_index": 2,
+    "correct_answer": "1,3-diphenylallene",
+    "explanation": "1,3-diphenylallene possesses axial chirality due to restricted rotation and perpendicular planes."
+  },
+  {
+    "id": 32,
+    "question": "Why does the nitro group (-NO₂) in nitrobenzene direct incoming electrophiles primarily to the meta position?",
+    "options": [
+      "It activates ortho/para positions via hyperconjugation",
+      "It acts as a strong nucleophile preferring the meta position",
+      "It sterically blocks meta positions while leaving others open",
+      "It withdraws electron density inductively and by resonance, destabilizing ortho/para carbocation intermediates"
+    ],
+    "correct_answer_index": 3,
+    "correct_answer": "It withdraws electron density inductively and by resonance, destabilizing ortho/para carbocation intermediates",
+    "explanation": "The -NO₂ group is strongly electron-withdrawing (-I and -R), destabilizing positive charges on ortho/para resonance structures more severely."
+  },
+  {
+    "id": 33,
+    "question": "Which reagent distinguishes terminal alkynes from internal alkynes?",
+    "options": [
+      "Ammoniacal silver nitrate",
+      "Bromine water",
+      "Acidified KMnO₄",
+      "NaOH"
+    ],
+    "correct_answer_index": 0,
+    "correct_answer": "Ammoniacal silver nitrate",
+    "explanation": "Terminal alkynes form white precipitates with ammoniacal AgNO₃ (silver acetylides)."
+  },
+  {
+    "id": 34,
+    "question": "What is the major product when propene reacts with HBr without peroxides?",
+    "options": [
+      "1-bromopropane",
+      "2-bromopropane",
+      "1,2-dibromopropane",
+      "Bromocyclopropane"
+    ],
+    "correct_answer_index": 1,
+    "correct_answer": "2-bromopropane",
+    "explanation": "Markovnikov's rule yields 2-bromopropane as the major product via a secondary carbocation."
+  },
+  {
+    "id": 35,
+    "question": "Which compound undergoes the haloform reaction?",
+    "options": ["Propan-1-ol", "Methanol", "Propan-2-ol", "Pentan-3-one"],
+    "correct_answer_index": 2,
+    "correct_answer": "Propan-2-ol",
+    "explanation": "Propan-2-ol oxidizes to a methyl ketone structure, giving a positive haloform test with iodine and NaOH."
+  },
+  {
+    "id": 36,
+    "question": "What is the IUPAC name of CH₃CH(OH)CH₂COOH?",
+    "options": [
+      "2-hydroxybutanoic acid",
+      "3-carboxypropan-2-ol",
+      "2-carboxypropan-1-ol",
+      "3-hydroxybutanoic acid"
+    ],
+    "correct_answer_index": 3,
+    "correct_answer": "3-hydroxybutanoic acid",
+    "explanation": "Carboxylic acid carbon is C-1, and the hydroxyl group is located at C-3."
+  },
+  {
+    "id": 37,
+    "question": "Which intermediate is formed during the nitration of benzene?",
+    "options": [
+      "Arenium ion (sigma complex)",
+      "Carbanion",
+      "Free radical",
+      "Carbene"
+    ],
+    "correct_answer_index": 0,
+    "correct_answer": "Arenium ion (sigma complex)",
+    "explanation": "Electrophilic aromatic substitution proceeds via a resonance-stabilized carbocation known as the arenium ion."
+  },
+  {
+    "id": 38,
+    "question": "What is the primary product of the acid-catalyzed dehydration of ethanol at 170 °C?",
+    "options": ["Diethyl ether", "Ethene", "Ethane", "Ethanal"],
+    "correct_answer_index": 1,
+    "correct_answer": "Ethene",
+    "explanation": "Intramolecular dehydration of ethanol with concentrated H₂SO₄ at high temperature yields ethene."
+  },
+  {
+    "id": 39,
+    "question": "Which of the following represents a condensation polymer?",
+    "options": [
+      "Polyethene",
+      "Polyvinyl chloride (PVC)",
+      "Nylon-6,6",
+      "Polystyrene"
+    ],
+    "correct_answer_index": 2,
+    "correct_answer": "Nylon-6,6",
+    "explanation": "Nylon-6,6 is formed via condensation polymerization with the elimination of water molecules."
+  },
+  {
+    "id": 40,
+    "question": "What is the geometrical shape of a carbocation carbon center?",
+    "options": ["Pyramidal", "Linear", "Tetrahedral", "Trigonal planar"],
+    "correct_answer_index": 3,
+    "correct_answer": "Trigonal planar",
+    "explanation": "Carbocations are sp² hybridized with a planar geometry and an empty p-orbital."
+  },
+  {
+    "id": 41,
+    "question": "What is the hybridization and geometric shape of the tetracyanonickelate(II) ion, [Ni(CN)₄]²⁻?",
+    "options": [
+      "dsp², square planar",
+      "sp³, tetrahedral",
+      "d²sp³, octahedral",
+      "sp³d, trigonal bipyramidal"
+    ],
+    "correct_answer_index": 0,
+    "correct_answer": "dsp², square planar",
+    "explanation": "CN⁻ is a strong-field ligand that forces pairing of d-electrons in Ni²⁺ (d⁸), resulting in dsp² square planar geometry."
+  },
+  {
+    "id": 42,
+    "question": "What mass of copper is deposited by a current of 2.5 A in 5790 seconds? (Cu = 63.5, F = 96500 C/mol)",
+    "options": ["2.38 g", "4.76 g", "9.53 g", "1.19 g"],
+    "correct_answer_index": 1,
+    "correct_answer": "4.76 g",
+    "explanation": "Using Faraday's laws: m = (I × t × M) / (z × F) = (2.5 × 5790 × 63.5) / (2 × 96500) = 4.76 g."
+  },
+  {
+    "id": 43,
+    "question": "In a galvanic cell, oxidation always occurs at the:",
+    "options": ["Cathode", "Salt bridge", "Anode", "Electrolyte"],
+    "correct_answer_index": 2,
+    "correct_answer": "Anode",
+    "explanation": "Oxidation takes place at the anode by international convention."
+  },
+  {
+    "id": 44,
+    "question": "Which ion is discharged most easily during the electrolysis of a dilute aqueous NaCl solution?",
+    "options": ["Cl⁻", "H⁺", "OH⁻", "Na⁺"],
+    "correct_answer_index": 3,
+    "correct_answer": "Na⁺",
+    "explanation": "Hydrogen ions (H⁺) have a lower discharge potential than sodium ions at the cathode."
+  },
+  {
+    "id": 45,
+    "question": "What is the oxidation state of manganese in potassium permanganate (KMnO₄)?",
+    "options": ["+7", "+2", "+4", "+6"],
+    "correct_answer_index": 0,
+    "correct_answer": "+7",
+    "explanation": "1 + x + 4(-2) = 0 ⇒ x = +7."
+  },
+  {
+    "id": 46,
+    "question": "What is the coordination number of cobalt in [Co(en)₃]³⁺ (where en = ethylenediamine)?",
+    "options": ["3", "6", "4", "12"],
+    "correct_answer_index": 1,
+    "correct_answer": "6",
+    "explanation": "Ethylenediamine is a bidentate ligand; three bidentate ligands donate 6 pairs of electrons, giving a coordination number of 6."
+  },
+  {
+    "id": 47,
+    "question": "Which type of isomerism is exhibited by [Co(NH₃)₅(SO₄)]Br and [Co(NH₃)₅(Br)]SO₄?",
+    "options": [
+      "Linkage isomerism",
+      "Coordination isomerism",
+      "Ionization isomerism",
+      "Hydrate isomerism"
+    ],
+    "correct_answer_index": 2,
+    "correct_answer": "Ionization isomerism",
+    "explanation": "Ionization isomerism occurs when compounds yield different ions in solution."
+  },
+  {
+    "id": 48,
+    "question": "What is the standard cell potential (E°_cell) for a spontaneous redox reaction?",
+    "options": ["Negative", "Zero", "Undefined", "Positive"],
+    "correct_answer_index": 3,
+    "correct_answer": "Positive",
+    "explanation": "A spontaneous redox reaction has a positive standard cell potential and negative Gibbs free energy change (ΔG° < 0)."
+  },
+  {
+    "id": 49,
+    "question": "During the electrolysis of acidified water, what gas is liberated at the anode?",
+    "options": ["Oxygen", "Hydrogen", "Chlorine", "Steam"],
+    "correct_answer_index": 0,
+    "correct_answer": "Oxygen",
+    "explanation": "Water is oxidized at the anode to produce oxygen gas and protons."
+  },
+  {
+    "id": 50,
+    "question": "Which metal is refined commercially using the Hall-Héroult electrolytic process?",
+    "options": ["Copper", "Aluminum", "Iron", "Zinc"],
+    "correct_answer_index": 1,
+    "correct_answer": "Aluminum",
+    "explanation": "The Hall-Héroult process is the major industrial method for producing aluminum from alumina."
+  },
+  {
+    "id": 51,
+    "question": "Which gas is primarily responsible for the depletion of the stratospheric ozone layer?",
+    "options": [
+      "Carbon dioxide",
+      "Methane",
+      "Chlorofluorocarbons (CFCs)",
+      "Sulfur dioxide"
+    ],
+    "correct_answer_index": 2,
+    "correct_answer": "Chlorofluorocarbons (CFCs)",
+    "explanation": "CFCs release chlorine atoms under UV radiation, which catalytically break down ozone molecules."
+  },
+  {
+    "id": 52,
+    "question": "What is the main sulfur-containing pollutant that contributes to acid rain formation?",
+    "options": ["H₂S", "CS₂", "SF₆", "SO₂"],
+    "correct_answer_index": 3,
+    "correct_answer": "SO₂",
+    "explanation": "Sulfur dioxide (SO₂) emitted from fossil fuel combustion dissolves in atmospheric moisture to form sulfurous and sulfuric acids."
+  },
+  {
+    "id": 53,
+    "question": "Which industrial process is used for the large-scale production of ammonia?",
+    "options": [
+      "Haber process",
+      "Contact process",
+      "Solvay process",
+      "Bayer process"
+    ],
+    "correct_answer_index": 0,
+    "correct_answer": "Haber process",
+    "explanation": "The Haber process combines nitrogen and hydrogen gases over an iron catalyst to produce ammonia."
+  },
+  {
+    "id": 54,
+    "question": "What is the chemical formula of bauxite, the principal ore of aluminum?",
+    "options": ["Fe₂O₃", "Al₂O₃·2H₂O", "CaCO₃", "Na₃AlF₆"],
+    "correct_answer_index": 1,
+    "correct_answer": "Al₂O₃·2H₂O",
+    "explanation": "Bauxite is a hydrated aluminum oxide mineral containing Al₂O₃·xH₂O."
+  },
+  {
+    "id": 55,
+    "question": "Which greenhouse gas is released in large quantities from paddy fields and livestock?",
+    "options": [
+      "Carbon monoxide",
+      "Nitrogen dioxide",
+      "Methane",
+      "Water vapor"
+    ],
+    "correct_answer_index": 2,
+    "correct_answer": "Methane",
+    "explanation": "Methane (CH₄) is produced by anaerobic bacterial decomposition in flooded rice paddies and enteric fermentation in ruminants."
+  },
+  {
+    "id": 56,
+    "question": "What is the standard enthalpy of formation of an element in its standard state at 298 K? (Variant 2)",
+    "options": ["+100 kJ/mol", "-50 kJ/mol", "+1.00 kJ/mol", "0.00 kJ/mol"],
+    "correct_answer_index": 3,
+    "correct_answer": "0.00 kJ/mol",
+    "explanation": "By international convention, the standard enthalpy of formation of any element in its reference state is defined as exactly zero."
+  },
+  {
+    "id": 57,
+    "question": "For a reaction with rate law Rate = k[A]²[B], what is the overall reaction order? (Variant 2)",
+    "options": ["Third order", "First order", "Second order", "Zero order"],
+    "correct_answer_index": 0,
+    "correct_answer": "Third order",
+    "explanation": "The overall order is the sum of concentration exponents: 2 + 1 = 3 (third order)."
+  },
+  {
+    "id": 58,
+    "question": "What mass of NaOH is required to prepare 250 cm³ of 0.2 mol/dm³ solution? (Na=23, O=16, H=1) (Variant 2)",
+    "options": ["4.0 g", "2.0 g", "3.0 g", "5.0 g"],
+    "correct_answer_index": 1,
+    "correct_answer": "2.0 g",
+    "explanation": "Moles = 0.2 mol/dm³ × 0.250 dm³ = 0.05 mol; mass = 0.05 × 40 = 2.0 g."
+  },
+  {
+    "id": 59,
+    "question": "What volume of CO₂ at s.t.p. is produced by heating 25 g of CaCO₃? (Ca=40, C=12, O=16) (Variant 2)",
+    "options": ["11.2 dm³", "2.8 dm³", "5.6 dm³", "22.4 dm³"],
+    "correct_answer_index": 2,
+    "correct_answer": "5.6 dm³",
+    "explanation": "0.25 mol CaCO₃ yields 0.25 mol CO₂ = 0.25 × 22.4 = 5.6 dm³."
+  },
+  {
+    "id": 60,
+    "question": "Calculate the percentage by mass of oxygen in CaCO₃. (Variant 2)",
+    "options": ["32%", "16%", "64%", "48%"],
+    "correct_answer_index": 3,
+    "correct_answer": "48%",
+    "explanation": "Mass of O = 48 g / 100 g = 48%."
+  },
+  {
+    "id": 61,
+    "question": "What is the effect of a catalyst on activation energy? (Variant 2)",
+    "options": ["Lowers", "Increases", "Unchanged", "Doubles"],
+    "correct_answer_index": 0,
+    "correct_answer": "Lowers",
+    "explanation": "Catalysts provide an alternative reaction pathway with lower activation energy."
+  },
+  {
+    "id": 62,
+    "question": "For an exothermic reaction, how does temperature increase affect the equilibrium constant K_c? (Variant 2)",
+    "options": ["Increases", "Decreases", "Unchanged", "Quads"],
+    "correct_answer_index": 1,
+    "correct_answer": "Decreases",
+    "explanation": "Le Chatelier's principle shifts equilibrium backward when temperature rises, decreasing K_c."
+  },
+  {
+    "id": 63,
+    "question": "In N₂ + 3H₂ ⇌ 2NH₃, what is the effect of increasing pressure? (Variant 2)",
+    "options": [
+      "Favors backward",
+      "No effect",
+      "Favors forward",
+      "Stops reaction"
+    ],
+    "correct_answer_index": 2,
+    "correct_answer": "Favors forward",
+    "explanation": "Higher pressure favors the side with fewer moles of gas (forward reaction)."
+  },
+  {
+    "id": 64,
+    "question": "What happens to the rate constant k when temperature increases according to Arrhenius? (Variant 2)",
+    "options": ["Decreases", "Unchanged", "Halves", "Increases"],
+    "correct_answer_index": 3,
+    "correct_answer": "Increases",
+    "explanation": "The Arrhenius equation shows that k increases exponentially with temperature."
+  },
+  {
+    "id": 65,
+    "question": "What is the pH of a 0.01 mol/dm³ solution of HCl? (Variant 2)",
+    "options": ["2", "1", "3", "4"],
+    "correct_answer_index": 0,
+    "correct_answer": "2",
+    "explanation": "pH = -log[H⁺] = -log(0.01) = 2."
+  },
+  {
+    "id": 66,
+    "question": "What is the conjugate acid of NH₃? (Variant 2)",
+    "options": ["NH₂⁻", "NH₄⁺", "N₂H₄", "NO₃⁻"],
+    "correct_answer_index": 1,
+    "correct_answer": "NH₄⁺",
+    "explanation": "A conjugate acid is formed by adding a proton (H⁺) to a base, resulting in NH₄⁺."
+  },
+  {
+    "id": 67,
+    "question": "Which of the following is a Lewis acid? (Variant 2)",
+    "options": ["NH₃", "H₂O", "BF₃", "OH⁻"],
+    "correct_answer_index": 2,
+    "correct_answer": "BF₃",
+    "explanation": "BF₃ has an incomplete octet and can accept an electron pair, making it a Lewis acid."
+  },
+  {
+    "id": 68,
+    "question": "What is the pH of a 0.001 mol/dm³ solution of NaOH? (Variant 2)",
+    "options": ["3", "12", "14", "11"],
+    "correct_answer_index": 3,
+    "correct_answer": "11",
+    "explanation": "pOH = -log(0.001) = 3; pH = 14 - 3 = 11."
+  },
+  {
+    "id": 69,
+    "question": "Which salt undergoes hydrolysis to give an acidic solution? (Variant 2)",
+    "options": ["NH₄Cl", "NaCl", "CH₃COONa", "KNO₃"],
+    "correct_answer_index": 0,
+    "correct_answer": "NH₄Cl",
+    "explanation": "NH₄Cl is a salt of a strong acid and a weak base, so it hydrolyzes to produce an acidic solution."
+  },
+  {
+    "id": 70,
+    "question": "What is the basicity of phosphoric acid (H₃PO₄)? (Variant 2)",
+    "options": ["1", "3", "2", "4"],
+    "correct_answer_index": 1,
+    "correct_answer": "3",
+    "explanation": "Phosphoric acid is a triprotic acid, meaning each molecule can furnish three replaceable hydrogen ions."
+  },
+  {
+    "id": 71,
+    "question": "Which molecule exhibits a linear geometry? (Variant 2)",
+    "options": ["H₂O", "NH₃", "CO₂", "CH₄"],
+    "correct_answer_index": 2,
+    "correct_answer": "CO₂",
+    "explanation": "CO₂ has two electron domains around the central carbon atom giving a bond angle of 180°."
+  },
+  {
+    "id": 72,
+    "question": "What is the hybridization of carbon in ethyne (C₂H₂)? (Variant 2)",
+    "options": ["sp³", "sp²", "sp³d", "sp"],
+    "correct_answer_index": 3,
+    "correct_answer": "sp",
+    "explanation": "Ethyne has a triple bond requiring sp hybridization."
+  },
+  {
+    "id": 73,
+    "question": "Which intermolecular force is responsible for the abnormally high boiling point of HF? (Variant 2)",
+    "options": [
+      "Hydrogen bonding",
+      "Van der Waals forces",
+      "Dipole-dipole interactions",
+      "Metallic bonding"
+    ],
+    "correct_answer_index": 0,
+    "correct_answer": "Hydrogen bonding",
+    "explanation": "Fluorine is highly electronegative, forming strong intermolecular hydrogen bonds."
+  },
+  {
+    "id": 74,
+    "question": "How many unpaired electrons are in a ground-state Fe³⁺ ion? (Fe = 26) (Variant 2)",
+    "options": ["3", "6", "4", "5"],
+    "correct_answer_index": 1,
+    "correct_answer": "6",
+    "explanation": "Fe is [Ar] 3d⁶ 4s²; Fe³⁺ is [Ar] 3d⁵, containing 5 unpaired electrons."
+  },
+  {
+    "id": 75,
+    "question": "Which of the following quantum numbers determines the shape of an atomic orbital? (Variant 2)",
+    "options": [
+      "Principal quantum number (n)",
+      "Magnetic quantum number (m_l)",
+      "Azimuthal quantum number (l)",
+      "Spin quantum number (m_s)"
+    ],
+    "correct_answer_index": 2,
+    "correct_answer": "Azimuthal quantum number (l)",
+    "explanation": "The azimuthal (angular momentum) quantum number l determines the orbital subshell shape (s, p, d, f)."
+  },
+  {
+    "id": 76,
+    "question": "What is the maximum number of electrons that can occupy the principal shell n = 3? (Variant 2)",
+    "options": ["8", "32", "2", "18"],
+    "correct_answer_index": 3,
+    "correct_answer": "18",
+    "explanation": "Maximum electrons per shell are given by 2n² = 2(3)² = 18."
+  },
+  {
+    "id": 77,
+    "question": "Which species is isoelectronic with an argon atom (Ar = 18)? (Variant 2)",
+    "options": ["Cl⁻", "Na⁺", "Mg²⁺", "Al³⁺"],
+    "correct_answer_index": 0,
+    "correct_answer": "Cl⁻",
+    "explanation": "Cl⁻ gains one electron, reaching 18 electrons like Argon."
+  },
+  {
+    "id": 78,
+    "question": "What is the bond order of the oxygen molecule (O₂) according to molecular orbital theory? (Variant 2)",
+    "options": ["1.0", "2.0", "1.5", "2.5"],
+    "correct_answer_index": 1,
+    "correct_answer": "2.0",
+    "explanation": "Bond order = (bonding electrons - antibonding electrons) / 2 = (10 - 6) / 2 = 2.0."
+  },
+  {
+    "id": 79,
+    "question": "Which crystal lattice defect involves missing cations and anions in stoichiometric proportions? (Variant 2)",
+    "options": [
+      "Frenkel defect",
+      "Interstitial defect",
+      "Schottky defect",
+      "Metal excess defect"
+    ],
+    "correct_answer_index": 2,
+    "correct_answer": "Schottky defect",
+    "explanation": "Schottky defect occurs when equal numbers of cations and anions are missing from the crystal lattice."
+  },
+  {
+    "id": 80,
+    "question": "What type of bonding is present in solid ammonium chloride (NH₄Cl)? (Variant 2)",
+    "options": [
+      "Covalent only",
+      "Ionic only",
+      "Metallic only",
+      "Covalent, ionic, and coordinate covalent"
+    ],
+    "correct_answer_index": 3,
+    "correct_answer": "Covalent, ionic, and coordinate covalent",
+    "explanation": "NH₄Cl contains ionic bonding between NH₄⁺ and Cl⁻, covalent bonds within NH₄⁺, and a coordinate covalent bond."
+  },
+  {
+    "id": 81,
+    "question": "Which property generally decreases down a group in the periodic table? (Variant 2)",
+    "options": [
+      "Electronegativity",
+      "Atomic radius",
+      "Metallic character",
+      "Density"
+    ],
+    "correct_answer_index": 0,
+    "correct_answer": "Electronegativity",
+    "explanation": "Electronegativity decreases down a group due to increased atomic radius and shielding."
+  },
+  {
+    "id": 82,
+    "question": "What type of radioactive emission is blocked by a thin sheet of paper? (Variant 2)",
+    "options": ["Beta particles", "Alpha particles", "Gamma rays", "Neutrons"],
+    "correct_answer_index": 1,
+    "correct_answer": "Alpha particles",
+    "explanation": "Alpha particles have the lowest penetrating power and are stopped by a sheet of paper."
+  },
+  {
+    "id": 83,
+    "question": "Which element has the highest first ionization energy? (Variant 2)",
+    "options": ["Sodium", "Magnesium", "Helium", "Fluorine"],
+    "correct_answer_index": 2,
+    "correct_answer": "Helium",
+    "explanation": "Helium possesses a full valence shell and a very high effective nuclear charge, giving it the highest first ionization energy."
+  },
+  {
+    "id": 84,
+    "question": "In radioactive decay, what is emitted during beta-minus (β⁻) decay? (Variant 2)",
+    "options": [
+      "A helium nucleus",
+      "A positron",
+      "High-frequency electromagnetic wave",
+      "An electron"
+    ],
+    "correct_answer_index": 3,
+    "correct_answer": "An electron",
+    "explanation": "Beta-minus decay involves the conversion of a neutron into a proton, emitting a high-speed electron (beta particle)."
+  },
+  {
+    "id": 85,
+    "question": "Which group of elements is known as the halogens? (Variant 2)",
+    "options": ["Group 17", "Group 1", "Group 2", "Group 18"],
+    "correct_answer_index": 0,
+    "correct_answer": "Group 17",
+    "explanation": "Group 17 elements (fluorine, chlorine, bromine, iodine) are collectively known as the halogens."
+  },
+  {
+    "id": 86,
+    "question": "Which compound exhibits optical isomerism without possessing a traditional asymmetric (chiral) carbon atom? (Variant 2)",
+    "options": [
+      "2-chlorobutane",
+      "1,3-diphenylallene",
+      "Lactic acid",
+      "Tartaric acid"
+    ],
+    "correct_answer_index": 1,
+    "correct_answer": "1,3-diphenylallene",
+    "explanation": "1,3-diphenylallene possesses axial chirality due to restricted rotation and perpendicular planes."
+  },
+  {
+    "id": 87,
+    "question": "Why does the nitro group (-NO₂) in nitrobenzene direct incoming electrophiles primarily to the meta position? (Variant 2)",
+    "options": [
+      "It activates ortho/para positions via hyperconjugation",
+      "It acts as a strong nucleophile preferring the meta position",
+      "It withdraws electron density inductively and by resonance, destabilizing ortho/para carbocation intermediates",
+      "It sterically blocks meta positions while leaving others open"
+    ],
+    "correct_answer_index": 2,
+    "correct_answer": "It withdraws electron density inductively and by resonance, destabilizing ortho/para carbocation intermediates",
+    "explanation": "The -NO₂ group is strongly electron-withdrawing (-I and -R), destabilizing positive charges on ortho/para resonance structures more severely."
+  },
+  {
+    "id": 88,
+    "question": "Which reagent distinguishes terminal alkynes from internal alkynes? (Variant 2)",
+    "options": [
+      "Bromine water",
+      "Acidified KMnO₄",
+      "NaOH",
+      "Ammoniacal silver nitrate"
+    ],
+    "correct_answer_index": 3,
+    "correct_answer": "Ammoniacal silver nitrate",
+    "explanation": "Terminal alkynes form white precipitates with ammoniacal AgNO₃ (silver acetylides)."
+  },
+  {
+    "id": 89,
+    "question": "What is the major product when propene reacts with HBr without peroxides? (Variant 2)",
+    "options": [
+      "2-bromopropane",
+      "1-bromopropane",
+      "1,2-dibromopropane",
+      "Bromocyclopropane"
+    ],
+    "correct_answer_index": 0,
+    "correct_answer": "2-bromopropane",
+    "explanation": "Markovnikov's rule yields 2-bromopropane as the major product via a secondary carbocation."
+  },
+  {
+    "id": 90,
+    "question": "Which compound undergoes the haloform reaction? (Variant 2)",
+    "options": ["Propan-1-ol", "Propan-2-ol", "Methanol", "Pentan-3-one"],
+    "correct_answer_index": 1,
+    "correct_answer": "Propan-2-ol",
+    "explanation": "Propan-2-ol oxidizes to a methyl ketone structure, giving a positive haloform test with iodine and NaOH."
+  },
+  {
+    "id": 91,
+    "question": "What is the IUPAC name of CH₃CH(OH)CH₂COOH? (Variant 2)",
+    "options": [
+      "2-hydroxybutanoic acid",
+      "3-carboxypropan-2-ol",
+      "3-hydroxybutanoic acid",
+      "2-carboxypropan-1-ol"
+    ],
+    "correct_answer_index": 2,
+    "correct_answer": "3-hydroxybutanoic acid",
+    "explanation": "Carboxylic acid carbon is C-1, and the hydroxyl group is located at C-3."
+  },
+  {
+    "id": 92,
+    "question": "Which intermediate is formed during the nitration of benzene? (Variant 2)",
+    "options": [
+      "Carbanion",
+      "Free radical",
+      "Carbene",
+      "Arenium ion (sigma complex)"
+    ],
+    "correct_answer_index": 3,
+    "correct_answer": "Arenium ion (sigma complex)",
+    "explanation": "Electrophilic aromatic substitution proceeds via a resonance-stabilized carbocation known as the arenium ion."
+  },
+  {
+    "id": 93,
+    "question": "What is the primary product of the acid-catalyzed dehydration of ethanol at 170 °C? (Variant 2)",
+    "options": ["Ethene", "Diethyl ether", "Ethane", "Ethanal"],
+    "correct_answer_index": 0,
+    "correct_answer": "Ethene",
+    "explanation": "Intramolecular dehydration of ethanol with concentrated H₂SO₄ at high temperature yields ethene."
+  },
+  {
+    "id": 94,
+    "question": "Which of the following represents a condensation polymer? (Variant 2)",
+    "options": [
+      "Polyethene",
+      "Nylon-6,6",
+      "Polyvinyl chloride (PVC)",
+      "Polystyrene"
+    ],
+    "correct_answer_index": 1,
+    "correct_answer": "Nylon-6,6",
+    "explanation": "Nylon-6,6 is formed via condensation polymerization with the elimination of water molecules."
+  },
+  {
+    "id": 95,
+    "question": "What is the geometrical shape of a carbocation carbon center? (Variant 2)",
+    "options": ["Pyramidal", "Linear", "Trigonal planar", "Tetrahedral"],
+    "correct_answer_index": 2,
+    "correct_answer": "Trigonal planar",
+    "explanation": "Carbocations are sp² hybridized with a planar geometry and an empty p-orbital."
+  },
+  {
+    "id": 96,
+    "question": "What is the hybridization and geometric shape of the tetracyanonickelate(II) ion, [Ni(CN)₄]²⁻? (Variant 2)",
+    "options": [
+      "sp³, tetrahedral",
+      "d²sp³, octahedral",
+      "sp³d, trigonal bipyramidal",
+      "dsp², square planar"
+    ],
+    "correct_answer_index": 3,
+    "correct_answer": "dsp², square planar",
+    "explanation": "CN⁻ is a strong-field ligand that forces pairing of d-electrons in Ni²⁺ (d⁸), resulting in dsp² square planar geometry."
+  },
+  {
+    "id": 97,
+    "question": "What mass of copper is deposited by a current of 2.5 A in 5790 seconds? (Cu = 63.5, F = 96500 C/mol) (Variant 2)",
+    "options": ["4.76 g", "2.38 g", "9.53 g", "1.19 g"],
+    "correct_answer_index": 0,
+    "correct_answer": "4.76 g",
+    "explanation": "Using Faraday's laws: m = (I × t × M) / (z × F) = (2.5 × 5790 × 63.5) / (2 × 96500) = 4.76 g."
+  },
+  {
+    "id": 98,
+    "question": "In a galvanic cell, oxidation always occurs at the: (Variant 2)",
+    "options": ["Cathode", "Anode", "Salt bridge", "Electrolyte"],
+    "correct_answer_index": 1,
+    "correct_answer": "Anode",
+    "explanation": "Oxidation takes place at the anode by international convention."
+  },
+  {
+    "id": 99,
+    "question": "Which ion is discharged most easily during the electrolysis of a dilute aqueous NaCl solution? (Variant 2)",
+    "options": ["Cl⁻", "H⁺", "Na⁺", "OH⁻"],
+    "correct_answer_index": 2,
+    "correct_answer": "Na⁺",
+    "explanation": "Hydrogen ions (H⁺) have a lower discharge potential than sodium ions at the cathode."
+  },
+  {
+    "id": 100,
+    "question": "What is the oxidation state of manganese in potassium permanganate (KMnO₄)? (Variant 2)",
+    "options": ["+2", "+4", "+6", "+7"],
+    "correct_answer_index": 3,
+    "correct_answer": "+7",
+    "explanation": "1 + x + 4(-2) = 0 ⇒ x = +7."
+  },
+  {
+    "id": 101,
+    "question": "What is the coordination number of cobalt in [Co(en)₃]³⁺ (where en = ethylenediamine)? (Variant 2)",
+    "options": ["6", "3", "4", "12"],
+    "correct_answer_index": 0,
+    "correct_answer": "6",
+    "explanation": "Ethylenediamine is a bidentate ligand; three bidentate ligands donate 6 pairs of electrons, giving a coordination number of 6."
+  },
+  {
+    "id": 102,
+    "question": "Which type of isomerism is exhibited by [Co(NH₃)₅(SO₄)]Br and [Co(NH₃)₅(Br)]SO₄? (Variant 2)",
+    "options": [
+      "Linkage isomerism",
+      "Ionization isomerism",
+      "Coordination isomerism",
+      "Hydrate isomerism"
+    ],
+    "correct_answer_index": 1,
+    "correct_answer": "Ionization isomerism",
+    "explanation": "Ionization isomerism occurs when compounds yield different ions in solution."
+  },
+  {
+    "id": 103,
+    "question": "What is the standard cell potential (E°_cell) for a spontaneous redox reaction? (Variant 2)",
+    "options": ["Negative", "Zero", "Positive", "Undefined"],
+    "correct_answer_index": 2,
+    "correct_answer": "Positive",
+    "explanation": "A spontaneous redox reaction has a positive standard cell potential and negative Gibbs free energy change (ΔG° < 0)."
+  },
+  {
+    "id": 104,
+    "question": "During the electrolysis of acidified water, what gas is liberated at the anode? (Variant 2)",
+    "options": ["Hydrogen", "Chlorine", "Steam", "Oxygen"],
+    "correct_answer_index": 3,
+    "correct_answer": "Oxygen",
+    "explanation": "Water is oxidized at the anode to produce oxygen gas and protons."
+  },
+  {
+    "id": 105,
+    "question": "Which metal is refined commercially using the Hall-Héroult electrolytic process? (Variant 2)",
+    "options": ["Aluminum", "Copper", "Iron", "Zinc"],
+    "correct_answer_index": 0,
+    "correct_answer": "Aluminum",
+    "explanation": "The Hall-Héroult process is the major industrial method for producing aluminum from alumina."
+  },
+  {
+    "id": 106,
+    "question": "Which gas is primarily responsible for the depletion of the stratospheric ozone layer? (Variant 2)",
+    "options": [
+      "Carbon dioxide",
+      "Chlorofluorocarbons (CFCs)",
+      "Methane",
+      "Sulfur dioxide"
+    ],
+    "correct_answer_index": 1,
+    "correct_answer": "Chlorofluorocarbons (CFCs)",
+    "explanation": "CFCs release chlorine atoms under UV radiation, which catalytically break down ozone molecules."
+  },
+  {
+    "id": 107,
+    "question": "What is the main sulfur-containing pollutant that contributes to acid rain formation? (Variant 2)",
+    "options": ["H₂S", "CS₂", "SO₂", "SF₆"],
+    "correct_answer_index": 2,
+    "correct_answer": "SO₂",
+    "explanation": "Sulfur dioxide (SO₂) emitted from fossil fuel combustion dissolves in atmospheric moisture to form sulfurous and sulfuric acids."
+  },
+  {
+    "id": 108,
+    "question": "Which industrial process is used for the large-scale production of ammonia? (Variant 2)",
+    "options": [
+      "Contact process",
+      "Solvay process",
+      "Bayer process",
+      "Haber process"
+    ],
+    "correct_answer_index": 3,
+    "correct_answer": "Haber process",
+    "explanation": "The Haber process combines nitrogen and hydrogen gases over an iron catalyst to produce ammonia."
+  },
+  {
+    "id": 109,
+    "question": "What is the chemical formula of bauxite, the principal ore of aluminum? (Variant 2)",
+    "options": ["Al₂O₃·2H₂O", "Fe₂O₃", "CaCO₃", "Na₃AlF₆"],
+    "correct_answer_index": 0,
+    "correct_answer": "Al₂O₃·2H₂O",
+    "explanation": "Bauxite is a hydrated aluminum oxide mineral containing Al₂O₃·xH₂O."
+  },
+  {
+    "id": 110,
+    "question": "Which greenhouse gas is released in large quantities from paddy fields and livestock? (Variant 2)",
+    "options": [
+      "Carbon monoxide",
+      "Methane",
+      "Nitrogen dioxide",
+      "Water vapor"
+    ],
+    "correct_answer_index": 1,
+    "correct_answer": "Methane",
+    "explanation": "Methane (CH₄) is produced by anaerobic bacterial decomposition in flooded rice paddies and enteric fermentation in ruminants."
+  },
+  {
+    "id": 111,
+    "question": "What is the standard enthalpy of formation of an element in its standard state at 298 K? (Variant 3)",
+    "options": ["+100 kJ/mol", "-50 kJ/mol", "0.00 kJ/mol", "+1.00 kJ/mol"],
+    "correct_answer_index": 2,
+    "correct_answer": "0.00 kJ/mol",
+    "explanation": "By international convention, the standard enthalpy of formation of any element in its reference state is defined as exactly zero."
+  },
+  {
+    "id": 112,
+    "question": "For a reaction with rate law Rate = k[A]²[B], what is the overall reaction order? (Variant 3)",
+    "options": ["First order", "Second order", "Zero order", "Third order"],
+    "correct_answer_index": 3,
+    "correct_answer": "Third order",
+    "explanation": "The overall order is the sum of concentration exponents: 2 + 1 = 3 (third order)."
+  },
+  {
+    "id": 113,
+    "question": "What mass of NaOH is required to prepare 250 cm³ of 0.2 mol/dm³ solution? (Na=23, O=16, H=1) (Variant 3)",
+    "options": ["2.0 g", "4.0 g", "3.0 g", "5.0 g"],
+    "correct_answer_index": 0,
+    "correct_answer": "2.0 g",
+    "explanation": "Moles = 0.2 mol/dm³ × 0.250 dm³ = 0.05 mol; mass = 0.05 × 40 = 2.0 g."
+  },
+  {
+    "id": 114,
+    "question": "What volume of CO₂ at s.t.p. is produced by heating 25 g of CaCO₃? (Ca=40, C=12, O=16) (Variant 3)",
+    "options": ["11.2 dm³", "5.6 dm³", "2.8 dm³", "22.4 dm³"],
+    "correct_answer_index": 1,
+    "correct_answer": "5.6 dm³",
+    "explanation": "0.25 mol CaCO₃ yields 0.25 mol CO₂ = 0.25 × 22.4 = 5.6 dm³."
+  },
+  {
+    "id": 115,
+    "question": "Calculate the percentage by mass of oxygen in CaCO₃. (Variant 3)",
+    "options": ["32%", "16%", "48%", "64%"],
+    "correct_answer_index": 2,
+    "correct_answer": "48%",
+    "explanation": "Mass of O = 48 g / 100 g = 48%."
+  },
+  {
+    "id": 116,
+    "question": "What is the effect of a catalyst on activation energy? (Variant 3)",
+    "options": ["Increases", "Unchanged", "Doubles", "Lowers"],
+    "correct_answer_index": 3,
+    "correct_answer": "Lowers",
+    "explanation": "Catalysts provide an alternative reaction pathway with lower activation energy."
+  },
+  {
+    "id": 117,
+    "question": "For an exothermic reaction, how does temperature increase affect the equilibrium constant K_c? (Variant 3)",
+    "options": ["Decreases", "Increases", "Unchanged", "Quads"],
+    "correct_answer_index": 0,
+    "correct_answer": "Decreases",
+    "explanation": "Le Chatelier's principle shifts equilibrium backward when temperature rises, decreasing K_c."
+  },
+  {
+    "id": 118,
+    "question": "In N₂ + 3H₂ ⇌ 2NH₃, what is the effect of increasing pressure? (Variant 3)",
+    "options": [
+      "Favors backward",
+      "Favors forward",
+      "No effect",
+      "Stops reaction"
+    ],
+    "correct_answer_index": 1,
+    "correct_answer": "Favors forward",
+    "explanation": "Higher pressure favors the side with fewer moles of gas (forward reaction)."
+  },
+  {
+    "id": 119,
+    "question": "What happens to the rate constant k when temperature increases according to Arrhenius? (Variant 3)",
+    "options": ["Decreases", "Unchanged", "Increases", "Halves"],
+    "correct_answer_index": 2,
+    "correct_answer": "Increases",
+    "explanation": "The Arrhenius equation shows that k increases exponentially with temperature."
+  },
+  {
+    "id": 120,
+    "question": "What is the pH of a 0.01 mol/dm³ solution of HCl? (Variant 3)",
+    "options": ["1", "3", "4", "2"],
+    "correct_answer_index": 3,
+    "correct_answer": "2",
+    "explanation": "pH = -log[H⁺] = -log(0.01) = 2."
+  },
+  {
+    "id": 121,
+    "question": "What is the conjugate acid of NH₃? (Variant 3)",
+    "options": ["NH₄⁺", "NH₂⁻", "N₂H₄", "NO₃⁻"],
+    "correct_answer_index": 0,
+    "correct_answer": "NH₄⁺",
+    "explanation": "A conjugate acid is formed by adding a proton (H⁺) to a base, resulting in NH₄⁺."
+  },
+  {
+    "id": 122,
+    "question": "Which of the following is a Lewis acid? (Variant 3)",
+    "options": ["NH₃", "BF₃", "H₂O", "OH⁻"],
+    "correct_answer_index": 1,
+    "correct_answer": "BF₃",
+    "explanation": "BF₃ has an incomplete octet and can accept an electron pair, making it a Lewis acid."
+  },
+  {
+    "id": 123,
+    "question": "What is the pH of a 0.001 mol/dm³ solution of NaOH? (Variant 3)",
+    "options": ["3", "12", "11", "14"],
+    "correct_answer_index": 2,
+    "correct_answer": "11",
+    "explanation": "pOH = -log(0.001) = 3; pH = 14 - 3 = 11."
+  },
+  {
+    "id": 124,
+    "question": "Which salt undergoes hydrolysis to give an acidic solution? (Variant 3)",
+    "options": ["NaCl", "CH₃COONa", "KNO₃", "NH₄Cl"],
+    "correct_answer_index": 3,
+    "correct_answer": "NH₄Cl",
+    "explanation": "NH₄Cl is a salt of a strong acid and a weak base, so it hydrolyzes to produce an acidic solution."
+  },
+  {
+    "id": 125,
+    "question": "What is the basicity of phosphoric acid (H₃PO₄)? (Variant 3)",
+    "options": ["3", "1", "2", "4"],
+    "correct_answer_index": 0,
+    "correct_answer": "3",
+    "explanation": "Phosphoric acid is a triprotic acid, meaning each molecule can furnish three replaceable hydrogen ions."
+  },
+  {
+    "id": 126,
+    "question": "Which molecule exhibits a linear geometry? (Variant 3)",
+    "options": ["H₂O", "CO₂", "NH₃", "CH₄"],
+    "correct_answer_index": 1,
+    "correct_answer": "CO₂",
+    "explanation": "CO₂ has two electron domains around the central carbon atom giving a bond angle of 180°."
+  },
+  {
+    "id": 127,
+    "question": "What is the hybridization of carbon in ethyne (C₂H₂)? (Variant 3)",
+    "options": ["sp³", "sp²", "sp", "sp³d"],
+    "correct_answer_index": 2,
+    "correct_answer": "sp",
+    "explanation": "Ethyne has a triple bond requiring sp hybridization."
+  },
+  {
+    "id": 128,
+    "question": "Which intermolecular force is responsible for the abnormally high boiling point of HF? (Variant 3)",
+    "options": [
+      "Van der Waals forces",
+      "Dipole-dipole interactions",
+      "Metallic bonding",
+      "Hydrogen bonding"
+    ],
+    "correct_answer_index": 3,
+    "correct_answer": "Hydrogen bonding",
+    "explanation": "Fluorine is highly electronegative, forming strong intermolecular hydrogen bonds."
+  },
+  {
+    "id": 129,
+    "question": "How many unpaired electrons are in a ground-state Fe³⁺ ion? (Fe = 26) (Variant 3)",
+    "options": ["6", "3", "4", "5"],
+    "correct_answer_index": 0,
+    "correct_answer": "6",
+    "explanation": "Fe is [Ar] 3d⁶ 4s²; Fe³⁺ is [Ar] 3d⁵, containing 5 unpaired electrons."
+  },
+  {
+    "id": 130,
+    "question": "Which of the following quantum numbers determines the shape of an atomic orbital? (Variant 3)",
+    "options": [
+      "Principal quantum number (n)",
+      "Azimuthal quantum number (l)",
+      "Magnetic quantum number (m_l)",
+      "Spin quantum number (m_s)"
+    ],
+    "correct_answer_index": 1,
+    "correct_answer": "Azimuthal quantum number (l)",
+    "explanation": "The azimuthal (angular momentum) quantum number l determines the orbital subshell shape (s, p, d, f)."
+  },
+  {
+    "id": 131,
+    "question": "What is the maximum number of electrons that can occupy the principal shell n = 3? (Variant 3)",
+    "options": ["8", "32", "18", "2"],
+    "correct_answer_index": 2,
+    "correct_answer": "18",
+    "explanation": "Maximum electrons per shell are given by 2n² = 2(3)² = 18."
+  },
+  {
+    "id": 132,
+    "question": "Which species is isoelectronic with an argon atom (Ar = 18)? (Variant 3)",
+    "options": ["Na⁺", "Mg²⁺", "Al³⁺", "Cl⁻"],
+    "correct_answer_index": 3,
+    "correct_answer": "Cl⁻",
+    "explanation": "Cl⁻ gains one electron, reaching 18 electrons like Argon."
+  },
+  {
+    "id": 133,
+    "question": "What is the bond order of the oxygen molecule (O₂) according to molecular orbital theory? (Variant 3)",
+    "options": ["2.0", "1.0", "1.5", "2.5"],
+    "correct_answer_index": 0,
+    "correct_answer": "2.0",
+    "explanation": "Bond order = (bonding electrons - antibonding electrons) / 2 = (10 - 6) / 2 = 2.0."
+  },
+  {
+    "id": 134,
+    "question": "Which crystal lattice defect involves missing cations and anions in stoichiometric proportions? (Variant 3)",
+    "options": [
+      "Frenkel defect",
+      "Schottky defect",
+      "Interstitial defect",
+      "Metal excess defect"
+    ],
+    "correct_answer_index": 1,
+    "correct_answer": "Schottky defect",
+    "explanation": "Schottky defect occurs when equal numbers of cations and anions are missing from the crystal lattice."
+  },
+  {
+    "id": 135,
+    "question": "What type of bonding is present in solid ammonium chloride (NH₄Cl)? (Variant 3)",
+    "options": [
+      "Covalent only",
+      "Ionic only",
+      "Covalent, ionic, and coordinate covalent",
+      "Metallic only"
+    ],
+    "correct_answer_index": 2,
+    "correct_answer": "Covalent, ionic, and coordinate covalent",
+    "explanation": "NH₄Cl contains ionic bonding between NH₄⁺ and Cl⁻, covalent bonds within NH₄⁺, and a coordinate covalent bond."
+  },
+  {
+    "id": 136,
+    "question": "Which property generally decreases down a group in the periodic table? (Variant 3)",
+    "options": [
+      "Atomic radius",
+      "Metallic character",
+      "Density",
+      "Electronegativity"
+    ],
+    "correct_answer_index": 3,
+    "correct_answer": "Electronegativity",
+    "explanation": "Electronegativity decreases down a group due to increased atomic radius and shielding."
+  },
+  {
+    "id": 137,
+    "question": "What type of radioactive emission is blocked by a thin sheet of paper? (Variant 3)",
+    "options": ["Alpha particles", "Beta particles", "Gamma rays", "Neutrons"],
+    "correct_answer_index": 0,
+    "correct_answer": "Alpha particles",
+    "explanation": "Alpha particles have the lowest penetrating power and are stopped by a sheet of paper."
+  },
+  {
+    "id": 138,
+    "question": "Which element has the highest first ionization energy? (Variant 3)",
+    "options": ["Sodium", "Helium", "Magnesium", "Fluorine"],
+    "correct_answer_index": 1,
+    "correct_answer": "Helium",
+    "explanation": "Helium possesses a full valence shell and a very high effective nuclear charge, giving it the highest first ionization energy."
+  },
+  {
+    "id": 139,
+    "question": "In radioactive decay, what is emitted during beta-minus (β⁻) decay? (Variant 3)",
+    "options": [
+      "A helium nucleus",
+      "A positron",
+      "An electron",
+      "High-frequency electromagnetic wave"
+    ],
+    "correct_answer_index": 2,
+    "correct_answer": "An electron",
+    "explanation": "Beta-minus decay involves the conversion of a neutron into a proton, emitting a high-speed electron (beta particle)."
+  },
+  {
+    "id": 140,
+    "question": "Which group of elements is known as the halogens? (Variant 3)",
+    "options": ["Group 1", "Group 2", "Group 18", "Group 17"],
+    "correct_answer_index": 3,
+    "correct_answer": "Group 17",
+    "explanation": "Group 17 elements (fluorine, chlorine, bromine, iodine) are collectively known as the halogens."
+  },
+  {
+    "id": 141,
+    "question": "Which compound exhibits optical isomerism without possessing a traditional asymmetric (chiral) carbon atom? (Variant 3)",
+    "options": [
+      "1,3-diphenylallene",
+      "2-chlorobutane",
+      "Lactic acid",
+      "Tartaric acid"
+    ],
+    "correct_answer_index": 0,
+    "correct_answer": "1,3-diphenylallene",
+    "explanation": "1,3-diphenylallene possesses axial chirality due to restricted rotation and perpendicular planes."
+  },
+  {
+    "id": 142,
+    "question": "Why does the nitro group (-NO₂) in nitrobenzene direct incoming electrophiles primarily to the meta position? (Variant 3)",
+    "options": [
+      "It activates ortho/para positions via hyperconjugation",
+      "It withdraws electron density inductively and by resonance, destabilizing ortho/para carbocation intermediates",
+      "It acts as a strong nucleophile preferring the meta position",
+      "It sterically blocks meta positions while leaving others open"
+    ],
+    "correct_answer_index": 1,
+    "correct_answer": "It withdraws electron density inductively and by resonance, destabilizing ortho/para carbocation intermediates",
+    "explanation": "The -NO₂ group is strongly electron-withdrawing (-I and -R), destabilizing positive charges on ortho/para resonance structures more severely."
+  },
+  {
+    "id": 143,
+    "question": "Which reagent distinguishes terminal alkynes from internal alkynes? (Variant 3)",
+    "options": [
+      "Bromine water",
+      "Acidified KMnO₄",
+      "Ammoniacal silver nitrate",
+      "NaOH"
+    ],
+    "correct_answer_index": 2,
+    "correct_answer": "Ammoniacal silver nitrate",
+    "explanation": "Terminal alkynes form white precipitates with ammoniacal AgNO₃ (silver acetylides)."
+  },
+  {
+    "id": 144,
+    "question": "What is the major product when propene reacts with HBr without peroxides? (Variant 3)",
+    "options": [
+      "1-bromopropane",
+      "1,2-dibromopropane",
+      "Bromocyclopropane",
+      "2-bromopropane"
+    ],
+    "correct_answer_index": 3,
+    "correct_answer": "2-bromopropane",
+    "explanation": "Markovnikov's rule yields 2-bromopropane as the major product via a secondary carbocation."
+  },
+  {
+    "id": 145,
+    "question": "Which compound undergoes the haloform reaction? (Variant 3)",
+    "options": ["Propan-2-ol", "Propan-1-ol", "Methanol", "Pentan-3-one"],
+    "correct_answer_index": 0,
+    "correct_answer": "Propan-2-ol",
+    "explanation": "Propan-2-ol oxidizes to a methyl ketone structure, giving a positive haloform test with iodine and NaOH."
+  },
+  {
+    "id": 146,
+    "question": "What is the IUPAC name of CH₃CH(OH)CH₂COOH? (Variant 3)",
+    "options": [
+      "2-hydroxybutanoic acid",
+      "3-hydroxybutanoic acid",
+      "3-carboxypropan-2-ol",
+      "2-carboxypropan-1-ol"
+    ],
+    "correct_answer_index": 1,
+    "correct_answer": "3-hydroxybutanoic acid",
+    "explanation": "Carboxylic acid carbon is C-1, and the hydroxyl group is located at C-3."
+  },
+  {
+    "id": 147,
+    "question": "Which intermediate is formed during the nitration of benzene? (Variant 3)",
+    "options": [
+      "Carbanion",
+      "Free radical",
+      "Arenium ion (sigma complex)",
+      "Carbene"
+    ],
+    "correct_answer_index": 2,
+    "correct_answer": "Arenium ion (sigma complex)",
+    "explanation": "Electrophilic aromatic substitution proceeds via a resonance-stabilized carbocation known as the arenium ion."
+  },
+  {
+    "id": 148,
+    "question": "What is the primary product of the acid-catalyzed dehydration of ethanol at 170 °C? (Variant 3)",
+    "options": ["Diethyl ether", "Ethane", "Ethanal", "Ethene"],
+    "correct_answer_index": 3,
+    "correct_answer": "Ethene",
+    "explanation": "Intramolecular dehydration of ethanol with concentrated H₂SO₄ at high temperature yields ethene."
+  },
+  {
+    "id": 149,
+    "question": "Which of the following represents a condensation polymer? (Variant 3)",
+    "options": [
+      "Nylon-6,6",
+      "Polyethene",
+      "Polyvinyl chloride (PVC)",
+      "Polystyrene"
+    ],
+    "correct_answer_index": 0,
+    "correct_answer": "Nylon-6,6",
+    "explanation": "Nylon-6,6 is formed via condensation polymerization with the elimination of water molecules."
+  },
+  {
+    "id": 150,
+    "question": "What is the geometrical shape of a carbocation carbon center? (Variant 3)",
+    "options": ["Pyramidal", "Trigonal planar", "Linear", "Tetrahedral"],
+    "correct_answer_index": 1,
+    "correct_answer": "Trigonal planar",
+    "explanation": "Carbocations are sp² hybridized with a planar geometry and an empty p-orbital."
+  },
+  {
+    "id": 151,
+    "question": "What is the hybridization and geometric shape of the tetracyanonickelate(II) ion, [Ni(CN)₄]²⁻? (Variant 3)",
+    "options": [
+      "sp³, tetrahedral",
+      "d²sp³, octahedral",
+      "dsp², square planar",
+      "sp³d, trigonal bipyramidal"
+    ],
+    "correct_answer_index": 2,
+    "correct_answer": "dsp², square planar",
+    "explanation": "CN⁻ is a strong-field ligand that forces pairing of d-electrons in Ni²⁺ (d⁸), resulting in dsp² square planar geometry."
+  },
+  {
+    "id": 152,
+    "question": "What mass of copper is deposited by a current of 2.5 A in 5790 seconds? (Cu = 63.5, F = 96500 C/mol) (Variant 3)",
+    "options": ["2.38 g", "9.53 g", "1.19 g", "4.76 g"],
+    "correct_answer_index": 3,
+    "correct_answer": "4.76 g",
+    "explanation": "Using Faraday's laws: m = (I × t × M) / (z × F) = (2.5 × 5790 × 63.5) / (2 × 96500) = 4.76 g."
+  },
+  {
+    "id": 153,
+    "question": "In a galvanic cell, oxidation always occurs at the: (Variant 3)",
+    "options": ["Anode", "Cathode", "Salt bridge", "Electrolyte"],
+    "correct_answer_index": 0,
+    "correct_answer": "Anode",
+    "explanation": "Oxidation takes place at the anode by international convention."
+  },
+  {
+    "id": 154,
+    "question": "Which ion is discharged most easily during the electrolysis of a dilute aqueous NaCl solution? (Variant 3)",
+    "options": ["Cl⁻", "Na⁺", "H⁺", "OH⁻"],
+    "correct_answer_index": 1,
+    "correct_answer": "Na⁺",
+    "explanation": "Hydrogen ions (H⁺) have a lower discharge potential than sodium ions at the cathode."
+  },
+  {
+    "id": 155,
+    "question": "What is the oxidation state of manganese in potassium permanganate (KMnO₄)? (Variant 3)",
+    "options": ["+2", "+4", "+7", "+6"],
+    "correct_answer_index": 2,
+    "correct_answer": "+7",
+    "explanation": "1 + x + 4(-2) = 0 ⇒ x = +7."
+  },
+  {
+    "id": 156,
+    "question": "What is the coordination number of cobalt in [Co(en)₃]³⁺ (where en = ethylenediamine)? (Variant 3)",
+    "options": ["3", "4", "12", "6"],
+    "correct_answer_index": 3,
+    "correct_answer": "6",
+    "explanation": "Ethylenediamine is a bidentate ligand; three bidentate ligands donate 6 pairs of electrons, giving a coordination number of 6."
+  },
+  {
+    "id": 157,
+    "question": "Which type of isomerism is exhibited by [Co(NH₃)₅(SO₄)]Br and [Co(NH₃)₅(Br)]SO₄? (Variant 3)",
+    "options": [
+      "Ionization isomerism",
+      "Linkage isomerism",
+      "Coordination isomerism",
+      "Hydrate isomerism"
+    ],
+    "correct_answer_index": 0,
+    "correct_answer": "Ionization isomerism",
+    "explanation": "Ionization isomerism occurs when compounds yield different ions in solution."
+  },
+  {
+    "id": 158,
+    "question": "What is the standard cell potential (E°_cell) for a spontaneous redox reaction? (Variant 3)",
+    "options": ["Negative", "Positive", "Zero", "Undefined"],
+    "correct_answer_index": 1,
+    "correct_answer": "Positive",
+    "explanation": "A spontaneous redox reaction has a positive standard cell potential and negative Gibbs free energy change (ΔG° < 0)."
+  },
+  {
+    "id": 159,
+    "question": "During the electrolysis of acidified water, what gas is liberated at the anode? (Variant 3)",
+    "options": ["Hydrogen", "Chlorine", "Oxygen", "Steam"],
+    "correct_answer_index": 2,
+    "correct_answer": "Oxygen",
+    "explanation": "Water is oxidized at the anode to produce oxygen gas and protons."
+  },
+  {
+    "id": 160,
+    "question": "Which metal is refined commercially using the Hall-Héroult electrolytic process? (Variant 3)",
+    "options": ["Copper", "Iron", "Zinc", "Aluminum"],
+    "correct_answer_index": 3,
+    "correct_answer": "Aluminum",
+    "explanation": "The Hall-Héroult process is the major industrial method for producing aluminum from alumina."
+  },
+  {
+    "id": 161,
+    "question": "Which gas is primarily responsible for the depletion of the stratospheric ozone layer? (Variant 3)",
+    "options": [
+      "Chlorofluorocarbons (CFCs)",
+      "Carbon dioxide",
+      "Methane",
+      "Sulfur dioxide"
+    ],
+    "correct_answer_index": 0,
+    "correct_answer": "Chlorofluorocarbons (CFCs)",
+    "explanation": "CFCs release chlorine atoms under UV radiation, which catalytically break down ozone molecules."
+  },
+  {
+    "id": 162,
+    "question": "What is the main sulfur-containing pollutant that contributes to acid rain formation? (Variant 3)",
+    "options": ["H₂S", "SO₂", "CS₂", "SF₆"],
+    "correct_answer_index": 1,
+    "correct_answer": "SO₂",
+    "explanation": "Sulfur dioxide (SO₂) emitted from fossil fuel combustion dissolves in atmospheric moisture to form sulfurous and sulfuric acids."
+  },
+  {
+    "id": 163,
+    "question": "Which industrial process is used for the large-scale production of ammonia? (Variant 3)",
+    "options": [
+      "Contact process",
+      "Solvay process",
+      "Haber process",
+      "Bayer process"
+    ],
+    "correct_answer_index": 2,
+    "correct_answer": "Haber process",
+    "explanation": "The Haber process combines nitrogen and hydrogen gases over an iron catalyst to produce ammonia."
+  },
+  {
+    "id": 164,
+    "question": "What is the chemical formula of bauxite, the principal ore of aluminum? (Variant 3)",
+    "options": ["Fe₂O₃", "CaCO₃", "Na₃AlF₆", "Al₂O₃·2H₂O"],
+    "correct_answer_index": 3,
+    "correct_answer": "Al₂O₃·2H₂O",
+    "explanation": "Bauxite is a hydrated aluminum oxide mineral containing Al₂O₃·xH₂O."
+  },
+  {
+    "id": 165,
+    "question": "Which greenhouse gas is released in large quantities from paddy fields and livestock? (Variant 3)",
+    "options": [
+      "Methane",
+      "Carbon monoxide",
+      "Nitrogen dioxide",
+      "Water vapor"
+    ],
+    "correct_answer_index": 0,
+    "correct_answer": "Methane",
+    "explanation": "Methane (CH₄) is produced by anaerobic bacterial decomposition in flooded rice paddies and enteric fermentation in ruminants."
+  },
+  {
+    "id": 166,
+    "question": "What is the standard enthalpy of formation of an element in its standard state at 298 K? (Variant 4)",
+    "options": ["+100 kJ/mol", "0.00 kJ/mol", "-50 kJ/mol", "+1.00 kJ/mol"],
+    "correct_answer_index": 1,
+    "correct_answer": "0.00 kJ/mol",
+    "explanation": "By international convention, the standard enthalpy of formation of any element in its reference state is defined as exactly zero."
+  },
+  {
+    "id": 167,
+    "question": "For a reaction with rate law Rate = k[A]²[B], what is the overall reaction order? (Variant 4)",
+    "options": ["First order", "Second order", "Third order", "Zero order"],
+    "correct_answer_index": 2,
+    "correct_answer": "Third order",
+    "explanation": "The overall order is the sum of concentration exponents: 2 + 1 = 3 (third order)."
+  },
+  {
+    "id": 168,
+    "question": "What mass of NaOH is required to prepare 250 cm³ of 0.2 mol/dm³ solution? (Na=23, O=16, H=1) (Variant 4)",
+    "options": ["4.0 g", "3.0 g", "5.0 g", "2.0 g"],
+    "correct_answer_index": 3,
+    "correct_answer": "2.0 g",
+    "explanation": "Moles = 0.2 mol/dm³ × 0.250 dm³ = 0.05 mol; mass = 0.05 × 40 = 2.0 g."
+  },
+  {
+    "id": 169,
+    "question": "What volume of CO₂ at s.t.p. is produced by heating 25 g of CaCO₃? (Ca=40, C=12, O=16) (Variant 4)",
+    "options": ["5.6 dm³", "11.2 dm³", "2.8 dm³", "22.4 dm³"],
+    "correct_answer_index": 0,
+    "correct_answer": "5.6 dm³",
+    "explanation": "0.25 mol CaCO₃ yields 0.25 mol CO₂ = 0.25 × 22.4 = 5.6 dm³."
+  },
+  {
+    "id": 170,
+    "question": "Calculate the percentage by mass of oxygen in CaCO₃. (Variant 4)",
+    "options": ["32%", "48%", "16%", "64%"],
+    "correct_answer_index": 1,
+    "correct_answer": "48%",
+    "explanation": "Mass of O = 48 g / 100 g = 48%."
+  },
+  {
+    "id": 171,
+    "question": "What is the effect of a catalyst on activation energy? (Variant 4)",
+    "options": ["Increases", "Unchanged", "Lowers", "Doubles"],
+    "correct_answer_index": 2,
+    "correct_answer": "Lowers",
+    "explanation": "Catalysts provide an alternative reaction pathway with lower activation energy."
+  },
+  {
+    "id": 172,
+    "question": "For an exothermic reaction, how does temperature increase affect the equilibrium constant K_c? (Variant 4)",
+    "options": ["Increases", "Unchanged", "Quads", "Decreases"],
+    "correct_answer_index": 3,
+    "correct_answer": "Decreases",
+    "explanation": "Le Chatelier's principle shifts equilibrium backward when temperature rises, decreasing K_c."
+  },
+  {
+    "id": 173,
+    "question": "In N₂ + 3H₂ ⇌ 2NH₃, what is the effect of increasing pressure? (Variant 4)",
+    "options": [
+      "Favors forward",
+      "Favors backward",
+      "No effect",
+      "Stops reaction"
+    ],
+    "correct_answer_index": 0,
+    "correct_answer": "Favors forward",
+    "explanation": "Higher pressure favors the side with fewer moles of gas (forward reaction)."
+  },
+  {
+    "id": 174,
+    "question": "What happens to the rate constant k when temperature increases according to Arrhenius? (Variant 4)",
+    "options": ["Decreases", "Increases", "Unchanged", "Halves"],
+    "correct_answer_index": 1,
+    "correct_answer": "Increases",
+    "explanation": "The Arrhenius equation shows that k increases exponentially with temperature."
+  },
+  {
+    "id": 175,
+    "question": "What is the pH of a 0.01 mol/dm³ solution of HCl? (Variant 4)",
+    "options": ["1", "3", "2", "4"],
+    "correct_answer_index": 2,
+    "correct_answer": "2",
+    "explanation": "pH = -log[H⁺] = -log(0.01) = 2."
+  },
+  {
+    "id": 176,
+    "question": "What is the conjugate acid of NH₃? (Variant 4)",
+    "options": ["NH₂⁻", "N₂H₄", "NO₃⁻", "NH₄⁺"],
+    "correct_answer_index": 3,
+    "correct_answer": "NH₄⁺",
+    "explanation": "A conjugate acid is formed by adding a proton (H⁺) to a base, resulting in NH₄⁺."
+  },
+  {
+    "id": 177,
+    "question": "Which of the following is a Lewis acid? (Variant 4)",
+    "options": ["BF₃", "NH₃", "H₂O", "OH⁻"],
+    "correct_answer_index": 0,
+    "correct_answer": "BF₃",
+    "explanation": "BF₃ has an incomplete octet and can accept an electron pair, making it a Lewis acid."
+  },
+  {
+    "id": 178,
+    "question": "What is the pH of a 0.001 mol/dm³ solution of NaOH? (Variant 4)",
+    "options": ["3", "11", "12", "14"],
+    "correct_answer_index": 1,
+    "correct_answer": "11",
+    "explanation": "pOH = -log(0.001) = 3; pH = 14 - 3 = 11."
+  },
+  {
+    "id": 179,
+    "question": "Which salt undergoes hydrolysis to give an acidic solution? (Variant 4)",
+    "options": ["NaCl", "CH₃COONa", "NH₄Cl", "KNO₃"],
+    "correct_answer_index": 2,
+    "correct_answer": "NH₄Cl",
+    "explanation": "NH₄Cl is a salt of a strong acid and a weak base, so it hydrolyzes to produce an acidic solution."
+  },
+  {
+    "id": 180,
+    "question": "What is the basicity of phosphoric acid (H₃PO₄)? (Variant 4)",
+    "options": ["1", "2", "4", "3"],
+    "correct_answer_index": 3,
+    "correct_answer": "3",
+    "explanation": "Phosphoric acid is a triprotic acid, meaning each molecule can furnish three replaceable hydrogen ions."
+  },
+  {
+    "id": 181,
+    "question": "Which molecule exhibits a linear geometry? (Variant 4)",
+    "options": ["CO₂", "H₂O", "NH₃", "CH₄"],
+    "correct_answer_index": 0,
+    "correct_answer": "CO₂",
+    "explanation": "CO₂ has two electron domains around the central carbon atom giving a bond angle of 180°."
+  },
+  {
+    "id": 182,
+    "question": "What is the hybridization of carbon in ethyne (C₂H₂)? (Variant 4)",
+    "options": ["sp³", "sp", "sp²", "sp³d"],
+    "correct_answer_index": 1,
+    "correct_answer": "sp",
+    "explanation": "Ethyne has a triple bond requiring sp hybridization."
+  },
+  {
+    "id": 183,
+    "question": "Which intermolecular force is responsible for the abnormally high boiling point of HF? (Variant 4)",
+    "options": [
+      "Van der Waals forces",
+      "Dipole-dipole interactions",
+      "Hydrogen bonding",
+      "Metallic bonding"
+    ],
+    "correct_answer_index": 2,
+    "correct_answer": "Hydrogen bonding",
+    "explanation": "Fluorine is highly electronegative, forming strong intermolecular hydrogen bonds."
+  },
+  {
+    "id": 184,
+    "question": "How many unpaired electrons are in a ground-state Fe³⁺ ion? (Fe = 26) (Variant 4)",
+    "options": ["3", "4", "5", "6"],
+    "correct_answer_index": 3,
+    "correct_answer": "6",
+    "explanation": "Fe is [Ar] 3d⁶ 4s²; Fe³⁺ is [Ar] 3d⁵, containing 5 unpaired electrons."
+  },
+  {
+    "id": 185,
+    "question": "Which of the following quantum numbers determines the shape of an atomic orbital? (Variant 4)",
+    "options": [
+      "Azimuthal quantum number (l)",
+      "Principal quantum number (n)",
+      "Magnetic quantum number (m_l)",
+      "Spin quantum number (m_s)"
+    ],
+    "correct_answer_index": 0,
+    "correct_answer": "Azimuthal quantum number (l)",
+    "explanation": "The azimuthal (angular momentum) quantum number l determines the orbital subshell shape (s, p, d, f)."
+  },
+  {
+    "id": 186,
+    "question": "What is the maximum number of electrons that can occupy the principal shell n = 3? (Variant 4)",
+    "options": ["8", "18", "32", "2"],
+    "correct_answer_index": 1,
+    "correct_answer": "18",
+    "explanation": "Maximum electrons per shell are given by 2n² = 2(3)² = 18."
+  },
+  {
+    "id": 187,
+    "question": "Which species is isoelectronic with an argon atom (Ar = 18)? (Variant 4)",
+    "options": ["Na⁺", "Mg²⁺", "Cl⁻", "Al³⁺"],
+    "correct_answer_index": 2,
+    "correct_answer": "Cl⁻",
+    "explanation": "Cl⁻ gains one electron, reaching 18 electrons like Argon."
+  },
+  {
+    "id": 188,
+    "question": "What is the bond order of the oxygen molecule (O₂) according to molecular orbital theory? (Variant 4)",
+    "options": ["1.0", "1.5", "2.5", "2.0"],
+    "correct_answer_index": 3,
+    "correct_answer": "2.0",
+    "explanation": "Bond order = (bonding electrons - antibonding electrons) / 2 = (10 - 6) / 2 = 2.0."
+  },
+  {
+    "id": 189,
+    "question": "Which crystal lattice defect involves missing cations and anions in stoichiometric proportions? (Variant 4)",
+    "options": [
+      "Schottky defect",
+      "Frenkel defect",
+      "Interstitial defect",
+      "Metal excess defect"
+    ],
+    "correct_answer_index": 0,
+    "correct_answer": "Schottky defect",
+    "explanation": "Schottky defect occurs when equal numbers of cations and anions are missing from the crystal lattice."
+  },
+  {
+    "id": 190,
+    "question": "What type of bonding is present in solid ammonium chloride (NH₄Cl)? (Variant 4)",
+    "options": [
+      "Covalent only",
+      "Covalent, ionic, and coordinate covalent",
+      "Ionic only",
+      "Metallic only"
+    ],
+    "correct_answer_index": 1,
+    "correct_answer": "Covalent, ionic, and coordinate covalent",
+    "explanation": "NH₄Cl contains ionic bonding between NH₄⁺ and Cl⁻, covalent bonds within NH₄⁺, and a coordinate covalent bond."
+  },
+  {
+    "id": 191,
+    "question": "Which property generally decreases down a group in the periodic table? (Variant 4)",
+    "options": [
+      "Atomic radius",
+      "Metallic character",
+      "Electronegativity",
+      "Density"
+    ],
+    "correct_answer_index": 2,
+    "correct_answer": "Electronegativity",
+    "explanation": "Electronegativity decreases down a group due to increased atomic radius and shielding."
+  },
+  {
+    "id": 192,
+    "question": "What type of radioactive emission is blocked by a thin sheet of paper? (Variant 4)",
+    "options": ["Beta particles", "Gamma rays", "Neutrons", "Alpha particles"],
+    "correct_answer_index": 3,
+    "correct_answer": "Alpha particles",
+    "explanation": "Alpha particles have the lowest penetrating power and are stopped by a sheet of paper."
+  },
+  {
+    "id": 193,
+    "question": "Which element has the highest first ionization energy? (Variant 4)",
+    "options": ["Helium", "Sodium", "Magnesium", "Fluorine"],
+    "correct_answer_index": 0,
+    "correct_answer": "Helium",
+    "explanation": "Helium possesses a full valence shell and a very high effective nuclear charge, giving it the highest first ionization energy."
+  },
+  {
+    "id": 194,
+    "question": "In radioactive decay, what is emitted during beta-minus (β⁻) decay? (Variant 4)",
+    "options": [
+      "A helium nucleus",
+      "An electron",
+      "A positron",
+      "High-frequency electromagnetic wave"
+    ],
+    "correct_answer_index": 1,
+    "correct_answer": "An electron",
+    "explanation": "Beta-minus decay involves the conversion of a neutron into a proton, emitting a high-speed electron (beta particle)."
+  },
+  {
+    "id": 195,
+    "question": "Which group of elements is known as the halogens? (Variant 4)",
+    "options": ["Group 1", "Group 2", "Group 17", "Group 18"],
+    "correct_answer_index": 2,
+    "correct_answer": "Group 17",
+    "explanation": "Group 17 elements (fluorine, chlorine, bromine, iodine) are collectively known as the halogens."
+  },
+  {
+    "id": 196,
+    "question": "Which compound exhibits optical isomerism without possessing a traditional asymmetric (chiral) carbon atom? (Variant 4)",
+    "options": [
+      "2-chlorobutane",
+      "Lactic acid",
+      "Tartaric acid",
+      "1,3-diphenylallene"
+    ],
+    "correct_answer_index": 3,
+    "correct_answer": "1,3-diphenylallene",
+    "explanation": "1,3-diphenylallene possesses axial chirality due to restricted rotation and perpendicular planes."
+  },
+  {
+    "id": 197,
+    "question": "Why does the nitro group (-NO₂) in nitrobenzene direct incoming electrophiles primarily to the meta position? (Variant 4)",
+    "options": [
+      "It withdraws electron density inductively and by resonance, destabilizing ortho/para carbocation intermediates",
+      "It activates ortho/para positions via hyperconjugation",
+      "It acts as a strong nucleophile preferring the meta position",
+      "It sterically blocks meta positions while leaving others open"
+    ],
+    "correct_answer_index": 0,
+    "correct_answer": "It withdraws electron density inductively and by resonance, destabilizing ortho/para carbocation intermediates",
+    "explanation": "The -NO₂ group is strongly electron-withdrawing (-I and -R), destabilizing positive charges on ortho/para resonance structures more severely."
+  },
+  {
+    "id": 198,
+    "question": "Which reagent distinguishes terminal alkynes from internal alkynes? (Variant 4)",
+    "options": [
+      "Bromine water",
+      "Ammoniacal silver nitrate",
+      "Acidified KMnO₄",
+      "NaOH"
+    ],
+    "correct_answer_index": 1,
+    "correct_answer": "Ammoniacal silver nitrate",
+    "explanation": "Terminal alkynes form white precipitates with ammoniacal AgNO₃ (silver acetylides)."
+  },
+  {
+    "id": 199,
+    "question": "What is the major product when propene reacts with HBr without peroxides? (Variant 4)",
+    "options": [
+      "1-bromopropane",
+      "1,2-dibromopropane",
+      "2-bromopropane",
+      "Bromocyclopropane"
+    ],
+    "correct_answer_index": 2,
+    "correct_answer": "2-bromopropane",
+    "explanation": "Markovnikov's rule yields 2-bromopropane as the major product via a secondary carbocation."
+  },
+  {
+    "id": 200,
+    "question": "Which compound undergoes the haloform reaction? (Variant 4)",
+    "options": ["Propan-1-ol", "Methanol", "Pentan-3-one", "Propan-2-ol"],
+    "correct_answer_index": 3,
+    "correct_answer": "Propan-2-ol",
+    "explanation": "Propan-2-ol oxidizes to a methyl ketone structure, giving a positive haloform test with iodine and NaOH."
+  },
+  {
+    "id": 201,
+    "question": "What is the IUPAC name of CH₃CH(OH)CH₂COOH? (Variant 4)",
+    "options": [
+      "3-hydroxybutanoic acid",
+      "2-hydroxybutanoic acid",
+      "3-carboxypropan-2-ol",
+      "2-carboxypropan-1-ol"
+    ],
+    "correct_answer_index": 0,
+    "correct_answer": "3-hydroxybutanoic acid",
+    "explanation": "Carboxylic acid carbon is C-1, and the hydroxyl group is located at C-3."
+  },
+  {
+    "id": 202,
+    "question": "Which intermediate is formed during the nitration of benzene? (Variant 4)",
+    "options": [
+      "Carbanion",
+      "Arenium ion (sigma complex)",
+      "Free radical",
+      "Carbene"
+    ],
+    "correct_answer_index": 1,
+    "correct_answer": "Arenium ion (sigma complex)",
+    "explanation": "Electrophilic aromatic substitution proceeds via a resonance-stabilized carbocation known as the arenium ion."
+  },
+  {
+    "id": 203,
+    "question": "What is the primary product of the acid-catalyzed dehydration of ethanol at 170 °C? (Variant 4)",
+    "options": ["Diethyl ether", "Ethane", "Ethene", "Ethanal"],
+    "correct_answer_index": 2,
+    "correct_answer": "Ethene",
+    "explanation": "Intramolecular dehydration of ethanol with concentrated H₂SO₄ at high temperature yields ethene."
+  },
+  {
+    "id": 204,
+    "question": "Which of the following represents a condensation polymer? (Variant 4)",
+    "options": [
+      "Polyethene",
+      "Polyvinyl chloride (PVC)",
+      "Polystyrene",
+      "Nylon-6,6"
+    ],
+    "correct_answer_index": 3,
+    "correct_answer": "Nylon-6,6",
+    "explanation": "Nylon-6,6 is formed via condensation polymerization with the elimination of water molecules."
+  },
+  {
+    "id": 205,
+    "question": "What is the geometrical shape of a carbocation carbon center? (Variant 4)",
+    "options": ["Trigonal planar", "Pyramidal", "Linear", "Tetrahedral"],
+    "correct_answer_index": 0,
+    "correct_answer": "Trigonal planar",
+    "explanation": "Carbocations are sp² hybridized with a planar geometry and an empty p-orbital."
+  },
+  {
+    "id": 206,
+    "question": "What is the hybridization and geometric shape of the tetracyanonickelate(II) ion, [Ni(CN)₄]²⁻? (Variant 4)",
+    "options": [
+      "sp³, tetrahedral",
+      "dsp², square planar",
+      "d²sp³, octahedral",
+      "sp³d, trigonal bipyramidal"
+    ],
+    "correct_answer_index": 1,
+    "correct_answer": "dsp², square planar",
+    "explanation": "CN⁻ is a strong-field ligand that forces pairing of d-electrons in Ni²⁺ (d⁸), resulting in dsp² square planar geometry."
+  },
+  {
+    "id": 207,
+    "question": "What mass of copper is deposited by a current of 2.5 A in 5790 seconds? (Cu = 63.5, F = 96500 C/mol) (Variant 4)",
+    "options": ["2.38 g", "9.53 g", "4.76 g", "1.19 g"],
+    "correct_answer_index": 2,
+    "correct_answer": "4.76 g",
+    "explanation": "Using Faraday's laws: m = (I × t × M) / (z × F) = (2.5 × 5790 × 63.5) / (2 × 96500) = 4.76 g."
+  },
+  {
+    "id": 208,
+    "question": "In a galvanic cell, oxidation always occurs at the: (Variant 4)",
+    "options": ["Cathode", "Salt bridge", "Electrolyte", "Anode"],
+    "correct_answer_index": 3,
+    "correct_answer": "Anode",
+    "explanation": "Oxidation takes place at the anode by international convention."
+  },
+  {
+    "id": 209,
+    "question": "Which ion is discharged most easily during the electrolysis of a dilute aqueous NaCl solution? (Variant 4)",
+    "options": ["Na⁺", "Cl⁻", "H⁺", "OH⁻"],
+    "correct_answer_index": 0,
+    "correct_answer": "Na⁺",
+    "explanation": "Hydrogen ions (H⁺) have a lower discharge potential than sodium ions at the cathode."
+  },
+  {
+    "id": 210,
+    "question": "What is the oxidation state of manganese in potassium permanganate (KMnO₄)? (Variant 4)",
+    "options": ["+2", "+7", "+4", "+6"],
+    "correct_answer_index": 1,
+    "correct_answer": "+7",
+    "explanation": "1 + x + 4(-2) = 0 ⇒ x = +7."
+  },
+  {
+    "id": 211,
+    "question": "What is the coordination number of cobalt in [Co(en)₃]³⁺ (where en = ethylenediamine)? (Variant 4)",
+    "options": ["3", "4", "6", "12"],
+    "correct_answer_index": 2,
+    "correct_answer": "6",
+    "explanation": "Ethylenediamine is a bidentate ligand; three bidentate ligands donate 6 pairs of electrons, giving a coordination number of 6."
+  },
+  {
+    "id": 212,
+    "question": "Which type of isomerism is exhibited by [Co(NH₃)₅(SO₄)]Br and [Co(NH₃)₅(Br)]SO₄? (Variant 4)",
+    "options": [
+      "Linkage isomerism",
+      "Coordination isomerism",
+      "Hydrate isomerism",
+      "Ionization isomerism"
+    ],
+    "correct_answer_index": 3,
+    "correct_answer": "Ionization isomerism",
+    "explanation": "Ionization isomerism occurs when compounds yield different ions in solution."
+  },
+  {
+    "id": 213,
+    "question": "What is the standard cell potential (E°_cell) for a spontaneous redox reaction? (Variant 4)",
+    "options": ["Positive", "Negative", "Zero", "Undefined"],
+    "correct_answer_index": 0,
+    "correct_answer": "Positive",
+    "explanation": "A spontaneous redox reaction has a positive standard cell potential and negative Gibbs free energy change (ΔG° < 0)."
+  },
+  {
+    "id": 214,
+    "question": "During the electrolysis of acidified water, what gas is liberated at the anode? (Variant 4)",
+    "options": ["Hydrogen", "Oxygen", "Chlorine", "Steam"],
+    "correct_answer_index": 1,
+    "correct_answer": "Oxygen",
+    "explanation": "Water is oxidized at the anode to produce oxygen gas and protons."
+  },
+  {
+    "id": 215,
+    "question": "Which metal is refined commercially using the Hall-Héroult electrolytic process? (Variant 4)",
+    "options": ["Copper", "Iron", "Aluminum", "Zinc"],
+    "correct_answer_index": 2,
+    "correct_answer": "Aluminum",
+    "explanation": "The Hall-Héroult process is the major industrial method for producing aluminum from alumina."
+  },
+  {
+    "id": 216,
+    "question": "Which gas is primarily responsible for the depletion of the stratospheric ozone layer? (Variant 4)",
+    "options": [
+      "Carbon dioxide",
+      "Methane",
+      "Sulfur dioxide",
+      "Chlorofluorocarbons (CFCs)"
+    ],
+    "correct_answer_index": 3,
+    "correct_answer": "Chlorofluorocarbons (CFCs)",
+    "explanation": "CFCs release chlorine atoms under UV radiation, which catalytically break down ozone molecules."
+  },
+  {
+    "id": 217,
+    "question": "What is the main sulfur-containing pollutant that contributes to acid rain formation? (Variant 4)",
+    "options": ["SO₂", "H₂S", "CS₂", "SF₆"],
+    "correct_answer_index": 0,
+    "correct_answer": "SO₂",
+    "explanation": "Sulfur dioxide (SO₂) emitted from fossil fuel combustion dissolves in atmospheric moisture to form sulfurous and sulfuric acids."
+  },
+  {
+    "id": 218,
+    "question": "Which industrial process is used for the large-scale production of ammonia? (Variant 4)",
+    "options": [
+      "Contact process",
+      "Haber process",
+      "Solvay process",
+      "Bayer process"
+    ],
+    "correct_answer_index": 1,
+    "correct_answer": "Haber process",
+    "explanation": "The Haber process combines nitrogen and hydrogen gases over an iron catalyst to produce ammonia."
+  },
+  {
+    "id": 219,
+    "question": "What is the chemical formula of bauxite, the principal ore of aluminum? (Variant 4)",
+    "options": ["Fe₂O₃", "CaCO₃", "Al₂O₃·2H₂O", "Na₃AlF₆"],
+    "correct_answer_index": 2,
+    "correct_answer": "Al₂O₃·2H₂O",
+    "explanation": "Bauxite is a hydrated aluminum oxide mineral containing Al₂O₃·xH₂O."
+  },
+  {
+    "id": 220,
+    "question": "Which greenhouse gas is released in large quantities from paddy fields and livestock? (Variant 4)",
+    "options": [
+      "Carbon monoxide",
+      "Nitrogen dioxide",
+      "Water vapor",
+      "Methane"
+    ],
+    "correct_answer_index": 3,
+    "correct_answer": "Methane",
+    "explanation": "Methane (CH₄) is produced by anaerobic bacterial decomposition in flooded rice paddies and enteric fermentation in ruminants."
+  },
+  {
+    "id": 221,
+    "question": "What is the standard enthalpy of formation of an element in its standard state at 298 K? (Variant 5)",
+    "options": ["0.00 kJ/mol", "+100 kJ/mol", "-50 kJ/mol", "+1.00 kJ/mol"],
+    "correct_answer_index": 0,
+    "correct_answer": "0.00 kJ/mol",
+    "explanation": "By international convention, the standard enthalpy of formation of any element in its reference state is defined as exactly zero."
+  },
+  {
+    "id": 222,
+    "question": "For a reaction with rate law Rate = k[A]²[B], what is the overall reaction order? (Variant 5)",
+    "options": ["First order", "Third order", "Second order", "Zero order"],
+    "correct_answer_index": 1,
+    "correct_answer": "Third order",
+    "explanation": "The overall order is the sum of concentration exponents: 2 + 1 = 3 (third order)."
+  },
+  {
+    "id": 223,
+    "question": "What mass of NaOH is required to prepare 250 cm³ of 0.2 mol/dm³ solution? (Na=23, O=16, H=1) (Variant 5)",
+    "options": ["4.0 g", "3.0 g", "2.0 g", "5.0 g"],
+    "correct_answer_index": 2,
+    "correct_answer": "2.0 g",
+    "explanation": "Moles = 0.2 mol/dm³ × 0.250 dm³ = 0.05 mol; mass = 0.05 × 40 = 2.0 g."
+  },
+  {
+    "id": 224,
+    "question": "What volume of CO₂ at s.t.p. is produced by heating 25 g of CaCO₃? (Ca=40, C=12, O=16) (Variant 5)",
+    "options": ["11.2 dm³", "2.8 dm³", "22.4 dm³", "5.6 dm³"],
+    "correct_answer_index": 3,
+    "correct_answer": "5.6 dm³",
+    "explanation": "0.25 mol CaCO₃ yields 0.25 mol CO₂ = 0.25 × 22.4 = 5.6 dm³."
+  },
+  {
+    "id": 225,
+    "question": "Calculate the percentage by mass of oxygen in CaCO₃. (Variant 5)",
+    "options": ["48%", "32%", "16%", "64%"],
+    "correct_answer_index": 0,
+    "correct_answer": "48%",
+    "explanation": "Mass of O = 48 g / 100 g = 48%."
+  },
+  {
+    "id": 226,
+    "question": "What is the effect of a catalyst on activation energy? (Variant 5)",
+    "options": ["Increases", "Lowers", "Unchanged", "Doubles"],
+    "correct_answer_index": 1,
+    "correct_answer": "Lowers",
+    "explanation": "Catalysts provide an alternative reaction pathway with lower activation energy."
+  },
+  {
+    "id": 227,
+    "question": "For an exothermic reaction, how does temperature increase affect the equilibrium constant K_c? (Variant 5)",
+    "options": ["Increases", "Unchanged", "Decreases", "Quads"],
+    "correct_answer_index": 2,
+    "correct_answer": "Decreases",
+    "explanation": "Le Chatelier's principle shifts equilibrium backward when temperature rises, decreasing K_c."
+  },
+  {
+    "id": 228,
+    "question": "In N₂ + 3H₂ ⇌ 2NH₃, what is the effect of increasing pressure? (Variant 5)",
+    "options": [
+      "Favors backward",
+      "No effect",
+      "Stops reaction",
+      "Favors forward"
+    ],
+    "correct_answer_index": 3,
+    "correct_answer": "Favors forward",
+    "explanation": "Higher pressure favors the side with fewer moles of gas (forward reaction)."
+  },
+  {
+    "id": 229,
+    "question": "What happens to the rate constant k when temperature increases according to Arrhenius? (Variant 5)",
+    "options": ["Increases", "Decreases", "Unchanged", "Halves"],
+    "correct_answer_index": 0,
+    "correct_answer": "Increases",
+    "explanation": "The Arrhenius equation shows that k increases exponentially with temperature."
+  },
+  {
+    "id": 230,
+    "question": "What is the pH of a 0.01 mol/dm³ solution of HCl? (Variant 5)",
+    "options": ["1", "2", "3", "4"],
+    "correct_answer_index": 1,
+    "correct_answer": "2",
+    "explanation": "pH = -log[H⁺] = -log(0.01) = 2."
+  },
+  {
+    "id": 231,
+    "question": "What is the conjugate acid of NH₃? (Variant 5)",
+    "options": ["NH₂⁻", "N₂H₄", "NH₄⁺", "NO₃⁻"],
+    "correct_answer_index": 2,
+    "correct_answer": "NH₄⁺",
+    "explanation": "A conjugate acid is formed by adding a proton (H⁺) to a base, resulting in NH₄⁺."
+  },
+  {
+    "id": 232,
+    "question": "Which of the following is a Lewis acid? (Variant 5)",
+    "options": ["NH₃", "H₂O", "OH⁻", "BF₃"],
+    "correct_answer_index": 3,
+    "correct_answer": "BF₃",
+    "explanation": "BF₃ has an incomplete octet and can accept an electron pair, making it a Lewis acid."
+  },
+  {
+    "id": 233,
+    "question": "What is the pH of a 0.001 mol/dm³ solution of NaOH? (Variant 5)",
+    "options": ["11", "3", "12", "14"],
+    "correct_answer_index": 0,
+    "correct_answer": "11",
+    "explanation": "pOH = -log(0.001) = 3; pH = 14 - 3 = 11."
+  },
+  {
+    "id": 234,
+    "question": "Which salt undergoes hydrolysis to give an acidic solution? (Variant 5)",
+    "options": ["NaCl", "NH₄Cl", "CH₃COONa", "KNO₃"],
+    "correct_answer_index": 1,
+    "correct_answer": "NH₄Cl",
+    "explanation": "NH₄Cl is a salt of a strong acid and a weak base, so it hydrolyzes to produce an acidic solution."
+  },
+  {
+    "id": 235,
+    "question": "What is the basicity of phosphoric acid (H₃PO₄)? (Variant 5)",
+    "options": ["1", "2", "3", "4"],
+    "correct_answer_index": 2,
+    "correct_answer": "3",
+    "explanation": "Phosphoric acid is a triprotic acid, meaning each molecule can furnish three replaceable hydrogen ions."
+  },
+  {
+    "id": 236,
+    "question": "Which molecule exhibits a linear geometry? (Variant 5)",
+    "options": ["H₂O", "NH₃", "CH₄", "CO₂"],
+    "correct_answer_index": 3,
+    "correct_answer": "CO₂",
+    "explanation": "CO₂ has two electron domains around the central carbon atom giving a bond angle of 180°."
+  },
+  {
+    "id": 237,
+    "question": "What is the hybridization of carbon in ethyne (C₂H₂)? (Variant 5)",
+    "options": ["sp", "sp³", "sp²", "sp³d"],
+    "correct_answer_index": 0,
+    "correct_answer": "sp",
+    "explanation": "Ethyne has a triple bond requiring sp hybridization."
+  },
+  {
+    "id": 238,
+    "question": "Which intermolecular force is responsible for the abnormally high boiling point of HF? (Variant 5)",
+    "options": [
+      "Van der Waals forces",
+      "Hydrogen bonding",
+      "Dipole-dipole interactions",
+      "Metallic bonding"
+    ],
+    "correct_answer_index": 1,
+    "correct_answer": "Hydrogen bonding",
+    "explanation": "Fluorine is highly electronegative, forming strong intermolecular hydrogen bonds."
+  },
+  {
+    "id": 239,
+    "question": "How many unpaired electrons are in a ground-state Fe³⁺ ion? (Fe = 26) (Variant 5)",
+    "options": ["3", "4", "6", "5"],
+    "correct_answer_index": 2,
+    "correct_answer": "6",
+    "explanation": "Fe is [Ar] 3d⁶ 4s²; Fe³⁺ is [Ar] 3d⁵, containing 5 unpaired electrons."
+  },
+  {
+    "id": 240,
+    "question": "Which of the following quantum numbers determines the shape of an atomic orbital? (Variant 5)",
+    "options": [
+      "Principal quantum number (n)",
+      "Magnetic quantum number (m_l)",
+      "Spin quantum number (m_s)",
+      "Azimuthal quantum number (l)"
+    ],
+    "correct_answer_index": 3,
+    "correct_answer": "Azimuthal quantum number (l)",
+    "explanation": "The azimuthal (angular momentum) quantum number l determines the orbital subshell shape (s, p, d, f)."
+  },
+  {
+    "id": 241,
+    "question": "What is the maximum number of electrons that can occupy the principal shell n = 3? (Variant 5)",
+    "options": ["18", "8", "32", "2"],
+    "correct_answer_index": 0,
+    "correct_answer": "18",
+    "explanation": "Maximum electrons per shell are given by 2n² = 2(3)² = 18."
+  },
+  {
+    "id": 242,
+    "question": "Which species is isoelectronic with an argon atom (Ar = 18)? (Variant 5)",
+    "options": ["Na⁺", "Cl⁻", "Mg²⁺", "Al³⁺"],
+    "correct_answer_index": 1,
+    "correct_answer": "Cl⁻",
+    "explanation": "Cl⁻ gains one electron, reaching 18 electrons like Argon."
+  },
+  {
+    "id": 243,
+    "question": "What is the bond order of the oxygen molecule (O₂) according to molecular orbital theory? (Variant 5)",
+    "options": ["1.0", "1.5", "2.0", "2.5"],
+    "correct_answer_index": 2,
+    "correct_answer": "2.0",
+    "explanation": "Bond order = (bonding electrons - antibonding electrons) / 2 = (10 - 6) / 2 = 2.0."
+  },
+  {
+    "id": 244,
+    "question": "Which crystal lattice defect involves missing cations and anions in stoichiometric proportions? (Variant 5)",
+    "options": [
+      "Frenkel defect",
+      "Interstitial defect",
+      "Metal excess defect",
+      "Schottky defect"
+    ],
+    "correct_answer_index": 3,
+    "correct_answer": "Schottky defect",
+    "explanation": "Schottky defect occurs when equal numbers of cations and anions are missing from the crystal lattice."
+  },
+  {
+    "id": 245,
+    "question": "What type of bonding is present in solid ammonium chloride (NH₄Cl)? (Variant 5)",
+    "options": [
+      "Covalent, ionic, and coordinate covalent",
+      "Covalent only",
+      "Ionic only",
+      "Metallic only"
+    ],
+    "correct_answer_index": 0,
+    "correct_answer": "Covalent, ionic, and coordinate covalent",
+    "explanation": "NH₄Cl contains ionic bonding between NH₄⁺ and Cl⁻, covalent bonds within NH₄⁺, and a coordinate covalent bond."
+  },
+  {
+    "id": 246,
+    "question": "Which property generally decreases down a group in the periodic table? (Variant 5)",
+    "options": [
+      "Atomic radius",
+      "Electronegativity",
+      "Metallic character",
+      "Density"
+    ],
+    "correct_answer_index": 1,
+    "correct_answer": "Electronegativity",
+    "explanation": "Electronegativity decreases down a group due to increased atomic radius and shielding."
+  },
+  {
+    "id": 247,
+    "question": "What type of radioactive emission is blocked by a thin sheet of paper? (Variant 5)",
+    "options": ["Beta particles", "Gamma rays", "Alpha particles", "Neutrons"],
+    "correct_answer_index": 2,
+    "correct_answer": "Alpha particles",
+    "explanation": "Alpha particles have the lowest penetrating power and are stopped by a sheet of paper."
+  },
+  {
+    "id": 248,
+    "question": "Which element has the highest first ionization energy? (Variant 5)",
+    "options": ["Sodium", "Magnesium", "Fluorine", "Helium"],
+    "correct_answer_index": 3,
+    "correct_answer": "Helium",
+    "explanation": "Helium possesses a full valence shell and a very high effective nuclear charge, giving it the highest first ionization energy."
+  },
+  {
+    "id": 249,
+    "question": "In radioactive decay, what is emitted during beta-minus (β⁻) decay? (Variant 5)",
+    "options": [
+      "An electron",
+      "A helium nucleus",
+      "A positron",
+      "High-frequency electromagnetic wave"
+    ],
+    "correct_answer_index": 0,
+    "correct_answer": "An electron",
+    "explanation": "Beta-minus decay involves the conversion of a neutron into a proton, emitting a high-speed electron (beta particle)."
+  },
+  {
+    "id": 250,
+    "question": "Which group of elements is known as the halogens? (Variant 5)",
+    "options": ["Group 1", "Group 17", "Group 2", "Group 18"],
+    "correct_answer_index": 1,
+    "correct_answer": "Group 17",
+    "explanation": "Group 17 elements (fluorine, chlorine, bromine, iodine) are collectively known as the halogens."
+  },
+  {
+    "id": 251,
+    "question": "Which compound exhibits optical isomerism without possessing a traditional asymmetric (chiral) carbon atom? (Variant 5)",
+    "options": [
+      "2-chlorobutane",
+      "Lactic acid",
+      "1,3-diphenylallene",
+      "Tartaric acid"
+    ],
+    "correct_answer_index": 2,
+    "correct_answer": "1,3-diphenylallene",
+    "explanation": "1,3-diphenylallene possesses axial chirality due to restricted rotation and perpendicular planes."
+  },
+  {
+    "id": 252,
+    "question": "Why does the nitro group (-NO₂) in nitrobenzene direct incoming electrophiles primarily to the meta position? (Variant 5)",
+    "options": [
+      "It activates ortho/para positions via hyperconjugation",
+      "It acts as a strong nucleophile preferring the meta position",
+      "It sterically blocks meta positions while leaving others open",
+      "It withdraws electron density inductively and by resonance, destabilizing ortho/para carbocation intermediates"
+    ],
+    "correct_answer_index": 3,
+    "correct_answer": "It withdraws electron density inductively and by resonance, destabilizing ortho/para carbocation intermediates",
+    "explanation": "The -NO₂ group is strongly electron-withdrawing (-I and -R), destabilizing positive charges on ortho/para resonance structures more severely."
+  },
+  {
+    "id": 253,
+    "question": "Which reagent distinguishes terminal alkynes from internal alkynes? (Variant 5)",
+    "options": [
+      "Ammoniacal silver nitrate",
+      "Bromine water",
+      "Acidified KMnO₄",
+      "NaOH"
+    ],
+    "correct_answer_index": 0,
+    "correct_answer": "Ammoniacal silver nitrate",
+    "explanation": "Terminal alkynes form white precipitates with ammoniacal AgNO₃ (silver acetylides)."
+  },
+  {
+    "id": 254,
+    "question": "What is the major product when propene reacts with HBr without peroxides? (Variant 5)",
+    "options": [
+      "1-bromopropane",
+      "2-bromopropane",
+      "1,2-dibromopropane",
+      "Bromocyclopropane"
+    ],
+    "correct_answer_index": 1,
+    "correct_answer": "2-bromopropane",
+    "explanation": "Markovnikov's rule yields 2-bromopropane as the major product via a secondary carbocation."
+  },
+  {
+    "id": 255,
+    "question": "Which compound undergoes the haloform reaction? (Variant 5)",
+    "options": ["Propan-1-ol", "Methanol", "Propan-2-ol", "Pentan-3-one"],
+    "correct_answer_index": 2,
+    "correct_answer": "Propan-2-ol",
+    "explanation": "Propan-2-ol oxidizes to a methyl ketone structure, giving a positive haloform test with iodine and NaOH."
+  },
+  {
+    "id": 256,
+    "question": "What is the IUPAC name of CH₃CH(OH)CH₂COOH? (Variant 5)",
+    "options": [
+      "2-hydroxybutanoic acid",
+      "3-carboxypropan-2-ol",
+      "2-carboxypropan-1-ol",
+      "3-hydroxybutanoic acid"
+    ],
+    "correct_answer_index": 3,
+    "correct_answer": "3-hydroxybutanoic acid",
+    "explanation": "Carboxylic acid carbon is C-1, and the hydroxyl group is located at C-3."
+  },
+  {
+    "id": 257,
+    "question": "Which intermediate is formed during the nitration of benzene? (Variant 5)",
+    "options": [
+      "Arenium ion (sigma complex)",
+      "Carbanion",
+      "Free radical",
+      "Carbene"
+    ],
+    "correct_answer_index": 0,
+    "correct_answer": "Arenium ion (sigma complex)",
+    "explanation": "Electrophilic aromatic substitution proceeds via a resonance-stabilized carbocation known as the arenium ion."
+  },
+  {
+    "id": 258,
+    "question": "What is the primary product of the acid-catalyzed dehydration of ethanol at 170 °C? (Variant 5)",
+    "options": ["Diethyl ether", "Ethene", "Ethane", "Ethanal"],
+    "correct_answer_index": 1,
+    "correct_answer": "Ethene",
+    "explanation": "Intramolecular dehydration of ethanol with concentrated H₂SO₄ at high temperature yields ethene."
+  },
+  {
+    "id": 259,
+    "question": "Which of the following represents a condensation polymer? (Variant 5)",
+    "options": [
+      "Polyethene",
+      "Polyvinyl chloride (PVC)",
+      "Nylon-6,6",
+      "Polystyrene"
+    ],
+    "correct_answer_index": 2,
+    "correct_answer": "Nylon-6,6",
+    "explanation": "Nylon-6,6 is formed via condensation polymerization with the elimination of water molecules."
+  },
+  {
+    "id": 260,
+    "question": "What is the geometrical shape of a carbocation carbon center? (Variant 5)",
+    "options": ["Pyramidal", "Linear", "Tetrahedral", "Trigonal planar"],
+    "correct_answer_index": 3,
+    "correct_answer": "Trigonal planar",
+    "explanation": "Carbocations are sp² hybridized with a planar geometry and an empty p-orbital."
+  },
+  {
+    "id": 261,
+    "question": "What is the hybridization and geometric shape of the tetracyanonickelate(II) ion, [Ni(CN)₄]²⁻? (Variant 5)",
+    "options": [
+      "dsp², square planar",
+      "sp³, tetrahedral",
+      "d²sp³, octahedral",
+      "sp³d, trigonal bipyramidal"
+    ],
+    "correct_answer_index": 0,
+    "correct_answer": "dsp², square planar",
+    "explanation": "CN⁻ is a strong-field ligand that forces pairing of d-electrons in Ni²⁺ (d⁸), resulting in dsp² square planar geometry."
+  },
+  {
+    "id": 262,
+    "question": "What mass of copper is deposited by a current of 2.5 A in 5790 seconds? (Cu = 63.5, F = 96500 C/mol) (Variant 5)",
+    "options": ["2.38 g", "4.76 g", "9.53 g", "1.19 g"],
+    "correct_answer_index": 1,
+    "correct_answer": "4.76 g",
+    "explanation": "Using Faraday's laws: m = (I × t × M) / (z × F) = (2.5 × 5790 × 63.5) / (2 × 96500) = 4.76 g."
+  },
+  {
+    "id": 263,
+    "question": "In a galvanic cell, oxidation always occurs at the: (Variant 5)",
+    "options": ["Cathode", "Salt bridge", "Anode", "Electrolyte"],
+    "correct_answer_index": 2,
+    "correct_answer": "Anode",
+    "explanation": "Oxidation takes place at the anode by international convention."
+  },
+  {
+    "id": 264,
+    "question": "Which ion is discharged most easily during the electrolysis of a dilute aqueous NaCl solution? (Variant 5)",
+    "options": ["Cl⁻", "H⁺", "OH⁻", "Na⁺"],
+    "correct_answer_index": 3,
+    "correct_answer": "Na⁺",
+    "explanation": "Hydrogen ions (H⁺) have a lower discharge potential than sodium ions at the cathode."
+  },
+  {
+    "id": 265,
+    "question": "What is the oxidation state of manganese in potassium permanganate (KMnO₄)? (Variant 5)",
+    "options": ["+7", "+2", "+4", "+6"],
+    "correct_answer_index": 0,
+    "correct_answer": "+7",
+    "explanation": "1 + x + 4(-2) = 0 ⇒ x = +7."
+  },
+  {
+    "id": 266,
+    "question": "What is the coordination number of cobalt in [Co(en)₃]³⁺ (where en = ethylenediamine)? (Variant 5)",
+    "options": ["3", "6", "4", "12"],
+    "correct_answer_index": 1,
+    "correct_answer": "6",
+    "explanation": "Ethylenediamine is a bidentate ligand; three bidentate ligands donate 6 pairs of electrons, giving a coordination number of 6."
+  },
+  {
+    "id": 267,
+    "question": "Which type of isomerism is exhibited by [Co(NH₃)₅(SO₄)]Br and [Co(NH₃)₅(Br)]SO₄? (Variant 5)",
+    "options": [
+      "Linkage isomerism",
+      "Coordination isomerism",
+      "Ionization isomerism",
+      "Hydrate isomerism"
+    ],
+    "correct_answer_index": 2,
+    "correct_answer": "Ionization isomerism",
+    "explanation": "Ionization isomerism occurs when compounds yield different ions in solution."
+  },
+  {
+    "id": 268,
+    "question": "What is the standard cell potential (E°_cell) for a spontaneous redox reaction? (Variant 5)",
+    "options": ["Negative", "Zero", "Undefined", "Positive"],
+    "correct_answer_index": 3,
+    "correct_answer": "Positive",
+    "explanation": "A spontaneous redox reaction has a positive standard cell potential and negative Gibbs free energy change (ΔG° < 0)."
+  },
+  {
+    "id": 269,
+    "question": "During the electrolysis of acidified water, what gas is liberated at the anode? (Variant 5)",
+    "options": ["Oxygen", "Hydrogen", "Chlorine", "Steam"],
+    "correct_answer_index": 0,
+    "correct_answer": "Oxygen",
+    "explanation": "Water is oxidized at the anode to produce oxygen gas and protons."
+  },
+  {
+    "id": 270,
+    "question": "Which metal is refined commercially using the Hall-Héroult electrolytic process? (Variant 5)",
+    "options": ["Copper", "Aluminum", "Iron", "Zinc"],
+    "correct_answer_index": 1,
+    "correct_answer": "Aluminum",
+    "explanation": "The Hall-Héroult process is the major industrial method for producing aluminum from alumina."
+  },
+  {
+    "id": 271,
+    "question": "Which gas is primarily responsible for the depletion of the stratospheric ozone layer? (Variant 5)",
+    "options": [
+      "Carbon dioxide",
+      "Methane",
+      "Chlorofluorocarbons (CFCs)",
+      "Sulfur dioxide"
+    ],
+    "correct_answer_index": 2,
+    "correct_answer": "Chlorofluorocarbons (CFCs)",
+    "explanation": "CFCs release chlorine atoms under UV radiation, which catalytically break down ozone molecules."
+  },
+  {
+    "id": 272,
+    "question": "What is the main sulfur-containing pollutant that contributes to acid rain formation? (Variant 5)",
+    "options": ["H₂S", "CS₂", "SF₆", "SO₂"],
+    "correct_answer_index": 3,
+    "correct_answer": "SO₂",
+    "explanation": "Sulfur dioxide (SO₂) emitted from fossil fuel combustion dissolves in atmospheric moisture to form sulfurous and sulfuric acids."
+  },
+  {
+    "id": 273,
+    "question": "Which industrial process is used for the large-scale production of ammonia? (Variant 5)",
+    "options": [
+      "Haber process",
+      "Contact process",
+      "Solvay process",
+      "Bayer process"
+    ],
+    "correct_answer_index": 0,
+    "correct_answer": "Haber process",
+    "explanation": "The Haber process combines nitrogen and hydrogen gases over an iron catalyst to produce ammonia."
+  },
+  {
+    "id": 274,
+    "question": "What is the chemical formula of bauxite, the principal ore of aluminum? (Variant 5)",
+    "options": ["Fe₂O₃", "Al₂O₃·2H₂O", "CaCO₃", "Na₃AlF₆"],
+    "correct_answer_index": 1,
+    "correct_answer": "Al₂O₃·2H₂O",
+    "explanation": "Bauxite is a hydrated aluminum oxide mineral containing Al₂O₃·xH₂O."
+  },
+  {
+    "id": 275,
+    "question": "Which greenhouse gas is released in large quantities from paddy fields and livestock? (Variant 5)",
+    "options": [
+      "Carbon monoxide",
+      "Nitrogen dioxide",
+      "Methane",
+      "Water vapor"
+    ],
+    "correct_answer_index": 2,
+    "correct_answer": "Methane",
+    "explanation": "Methane (CH₄) is produced by anaerobic bacterial decomposition in flooded rice paddies and enteric fermentation in ruminants."
+  },
+  {
+    "id": 276,
+    "question": "What is the standard enthalpy of formation of an element in its standard state at 298 K? (Variant 6)",
+    "options": ["+100 kJ/mol", "-50 kJ/mol", "+1.00 kJ/mol", "0.00 kJ/mol"],
+    "correct_answer_index": 3,
+    "correct_answer": "0.00 kJ/mol",
+    "explanation": "By international convention, the standard enthalpy of formation of any element in its reference state is defined as exactly zero."
+  },
+  {
+    "id": 277,
+    "question": "For a reaction with rate law Rate = k[A]²[B], what is the overall reaction order? (Variant 6)",
+    "options": ["Third order", "First order", "Second order", "Zero order"],
+    "correct_answer_index": 0,
+    "correct_answer": "Third order",
+    "explanation": "The overall order is the sum of concentration exponents: 2 + 1 = 3 (third order)."
+  },
+  {
+    "id": 278,
+    "question": "What mass of NaOH is required to prepare 250 cm³ of 0.2 mol/dm³ solution? (Na=23, O=16, H=1) (Variant 6)",
+    "options": ["4.0 g", "2.0 g", "3.0 g", "5.0 g"],
+    "correct_answer_index": 1,
+    "correct_answer": "2.0 g",
+    "explanation": "Moles = 0.2 mol/dm³ × 0.250 dm³ = 0.05 mol; mass = 0.05 × 40 = 2.0 g."
+  },
+  {
+    "id": 279,
+    "question": "What volume of CO₂ at s.t.p. is produced by heating 25 g of CaCO₃? (Ca=40, C=12, O=16) (Variant 6)",
+    "options": ["11.2 dm³", "2.8 dm³", "5.6 dm³", "22.4 dm³"],
+    "correct_answer_index": 2,
+    "correct_answer": "5.6 dm³",
+    "explanation": "0.25 mol CaCO₃ yields 0.25 mol CO₂ = 0.25 × 22.4 = 5.6 dm³."
+  },
+  {
+    "id": 280,
+    "question": "Calculate the percentage by mass of oxygen in CaCO₃. (Variant 6)",
+    "options": ["32%", "16%", "64%", "48%"],
+    "correct_answer_index": 3,
+    "correct_answer": "48%",
+    "explanation": "Mass of O = 48 g / 100 g = 48%."
+  },
+  {
+    "id": 281,
+    "question": "What is the effect of a catalyst on activation energy? (Variant 6)",
+    "options": ["Lowers", "Increases", "Unchanged", "Doubles"],
+    "correct_answer_index": 0,
+    "correct_answer": "Lowers",
+    "explanation": "Catalysts provide an alternative reaction pathway with lower activation energy."
+  },
+  {
+    "id": 282,
+    "question": "For an exothermic reaction, how does temperature increase affect the equilibrium constant K_c? (Variant 6)",
+    "options": ["Increases", "Decreases", "Unchanged", "Quads"],
+    "correct_answer_index": 1,
+    "correct_answer": "Decreases",
+    "explanation": "Le Chatelier's principle shifts equilibrium backward when temperature rises, decreasing K_c."
+  },
+  {
+    "id": 283,
+    "question": "In N₂ + 3H₂ ⇌ 2NH₃, what is the effect of increasing pressure? (Variant 6)",
+    "options": [
+      "Favors backward",
+      "No effect",
+      "Favors forward",
+      "Stops reaction"
+    ],
+    "correct_answer_index": 2,
+    "correct_answer": "Favors forward",
+    "explanation": "Higher pressure favors the side with fewer moles of gas (forward reaction)."
+  },
+  {
+    "id": 284,
+    "question": "What happens to the rate constant k when temperature increases according to Arrhenius? (Variant 6)",
+    "options": ["Decreases", "Unchanged", "Halves", "Increases"],
+    "correct_answer_index": 3,
+    "correct_answer": "Increases",
+    "explanation": "The Arrhenius equation shows that k increases exponentially with temperature."
+  },
+  {
+    "id": 285,
+    "question": "What is the pH of a 0.01 mol/dm³ solution of HCl? (Variant 6)",
+    "options": ["2", "1", "3", "4"],
+    "correct_answer_index": 0,
+    "correct_answer": "2",
+    "explanation": "pH = -log[H⁺] = -log(0.01) = 2."
+  },
+  {
+    "id": 286,
+    "question": "What is the conjugate acid of NH₃? (Variant 6)",
+    "options": ["NH₂⁻", "NH₄⁺", "N₂H₄", "NO₃⁻"],
+    "correct_answer_index": 1,
+    "correct_answer": "NH₄⁺",
+    "explanation": "A conjugate acid is formed by adding a proton (H⁺) to a base, resulting in NH₄⁺."
+  },
+  {
+    "id": 287,
+    "question": "Which of the following is a Lewis acid? (Variant 6)",
+    "options": ["NH₃", "H₂O", "BF₃", "OH⁻"],
+    "correct_answer_index": 2,
+    "correct_answer": "BF₃",
+    "explanation": "BF₃ has an incomplete octet and can accept an electron pair, making it a Lewis acid."
+  },
+  {
+    "id": 288,
+    "question": "What is the pH of a 0.001 mol/dm³ solution of NaOH? (Variant 6)",
+    "options": ["3", "12", "14", "11"],
+    "correct_answer_index": 3,
+    "correct_answer": "11",
+    "explanation": "pOH = -log(0.001) = 3; pH = 14 - 3 = 11."
+  },
+  {
+    "id": 289,
+    "question": "Which salt undergoes hydrolysis to give an acidic solution? (Variant 6)",
+    "options": ["NH₄Cl", "NaCl", "CH₃COONa", "KNO₃"],
+    "correct_answer_index": 0,
+    "correct_answer": "NH₄Cl",
+    "explanation": "NH₄Cl is a salt of a strong acid and a weak base, so it hydrolyzes to produce an acidic solution."
+  },
+  {
+    "id": 290,
+    "question": "What is the basicity of phosphoric acid (H₃PO₄)? (Variant 6)",
+    "options": ["1", "3", "2", "4"],
+    "correct_answer_index": 1,
+    "correct_answer": "3",
+    "explanation": "Phosphoric acid is a triprotic acid, meaning each molecule can furnish three replaceable hydrogen ions."
+  },
+  {
+    "id": 291,
+    "question": "Which molecule exhibits a linear geometry? (Variant 6)",
+    "options": ["H₂O", "NH₃", "CO₂", "CH₄"],
+    "correct_answer_index": 2,
+    "correct_answer": "CO₂",
+    "explanation": "CO₂ has two electron domains around the central carbon atom giving a bond angle of 180°."
+  },
+  {
+    "id": 292,
+    "question": "What is the hybridization of carbon in ethyne (C₂H₂)? (Variant 6)",
+    "options": ["sp³", "sp²", "sp³d", "sp"],
+    "correct_answer_index": 3,
+    "correct_answer": "sp",
+    "explanation": "Ethyne has a triple bond requiring sp hybridization."
+  },
+  {
+    "id": 293,
+    "question": "Which intermolecular force is responsible for the abnormally high boiling point of HF? (Variant 6)",
+    "options": [
+      "Hydrogen bonding",
+      "Van der Waals forces",
+      "Dipole-dipole interactions",
+      "Metallic bonding"
+    ],
+    "correct_answer_index": 0,
+    "correct_answer": "Hydrogen bonding",
+    "explanation": "Fluorine is highly electronegative, forming strong intermolecular hydrogen bonds."
+  },
+  {
+    "id": 294,
+    "question": "How many unpaired electrons are in a ground-state Fe³⁺ ion? (Fe = 26) (Variant 6)",
+    "options": ["3", "6", "4", "5"],
+    "correct_answer_index": 1,
+    "correct_answer": "6",
+    "explanation": "Fe is [Ar] 3d⁶ 4s²; Fe³⁺ is [Ar] 3d⁵, containing 5 unpaired electrons."
+  },
+  {
+    "id": 295,
+    "question": "Which of the following quantum numbers determines the shape of an atomic orbital? (Variant 6)",
+    "options": [
+      "Principal quantum number (n)",
+      "Magnetic quantum number (m_l)",
+      "Azimuthal quantum number (l)",
+      "Spin quantum number (m_s)"
+    ],
+    "correct_answer_index": 2,
+    "correct_answer": "Azimuthal quantum number (l)",
+    "explanation": "The azimuthal (angular momentum) quantum number l determines the orbital subshell shape (s, p, d, f)."
+  },
+  {
+    "id": 296,
+    "question": "What is the maximum number of electrons that can occupy the principal shell n = 3? (Variant 6)",
+    "options": ["8", "32", "2", "18"],
+    "correct_answer_index": 3,
+    "correct_answer": "18",
+    "explanation": "Maximum electrons per shell are given by 2n² = 2(3)² = 18."
+  },
+  {
+    "id": 297,
+    "question": "Which species is isoelectronic with an argon atom (Ar = 18)? (Variant 6)",
+    "options": ["Cl⁻", "Na⁺", "Mg²⁺", "Al³⁺"],
+    "correct_answer_index": 0,
+    "correct_answer": "Cl⁻",
+    "explanation": "Cl⁻ gains one electron, reaching 18 electrons like Argon."
+  },
+  {
+    "id": 298,
+    "question": "What is the bond order of the oxygen molecule (O₂) according to molecular orbital theory? (Variant 6)",
+    "options": ["1.0", "2.0", "1.5", "2.5"],
+    "correct_answer_index": 1,
+    "correct_answer": "2.0",
+    "explanation": "Bond order = (bonding electrons - antibonding electrons) / 2 = (10 - 6) / 2 = 2.0."
+  },
+  {
+    "id": 299,
+    "question": "Which crystal lattice defect involves missing cations and anions in stoichiometric proportions? (Variant 6)",
+    "options": [
+      "Frenkel defect",
+      "Interstitial defect",
+      "Schottky defect",
+      "Metal excess defect"
+    ],
+    "correct_answer_index": 2,
+    "correct_answer": "Schottky defect",
+    "explanation": "Schottky defect occurs when equal numbers of cations and anions are missing from the crystal lattice."
+  },
+  {
+    "id": 300,
+    "question": "What type of bonding is present in solid ammonium chloride (NH₄Cl)? (Variant 6)",
+    "options": [
+      "Covalent only",
+      "Ionic only",
+      "Metallic only",
+      "Covalent, ionic, and coordinate covalent"
+    ],
+    "correct_answer_index": 3,
+    "correct_answer": "Covalent, ionic, and coordinate covalent",
+    "explanation": "NH₄Cl contains ionic bonding between NH₄⁺ and Cl⁻, covalent bonds within NH₄⁺, and a coordinate covalent bond."
+  }
 ]
