@@ -449,4 +449,5 @@
 {"q":"The shape of BF₃ is","opts":["Tetrahedral","Trigonal planar","Bent","Pyramidal"],"correct":1,"explain":"3 bonds, no lone pair."},
 {"q":"What is the mass of 2 mol of Na₂CO₃? [Na₂CO₃=106]","opts":["212 g","106 g","53 g","424 g"],"correct":0,"explain":"2×106=212 g."},
 {"q":"Which of the following is a use of NH₃?","opts":["Making HNO₃ and fertilisers","Making H₂SO₄","Making steel","Making glass"],"correct":0,"explain":"NH₃ uses."},
-{"q":"The product of CH₃CH₂OH + acidified K₂Cr₂O₇ (excess, reflux) is","opts":["CH₃CHO","CH₃COOH","CH₃CH₃","CH₂=CH₂"],"correct":1,"explain":"Excess oxidiser → acid."}]
+{"q":"The product of CH₃CH₂OH + acidified K₂Cr₂O₇ (excess, reflux) is","opts":["CH₃CHO","CH₃COOH","CH₃CH₃","CH₂=CH₂"],"correct":1,"explain":"Excess oxidiser → acid."}
+]
