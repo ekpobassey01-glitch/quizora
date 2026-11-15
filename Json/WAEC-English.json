@@ -856,4 +856,4 @@
 {"q":"Choose the correct option to complete the sentence: 'Neither of the two suggested solutions __________ practical.'","opts":["is","are","were","have been"],"ans":0,"exp":"'Neither' is grammatically singular and requires the singular verb 'is'."},
 {"q":"Select the word that has the same vowel sound as the underlined letter: b[u]sy","opts":["women","fuss","buzz","push"],"ans":0,"exp":"'Busy' is pronounced /ˈbɪzi/, sharing the short front vowel /ɪ/ with the first syllable of 'women' (/ˈwɪmɪn/)."},
 {"q":"Choose the correct option to complete the sentence: 'All that glitters __________ not gold.'","opts":["is","are","were","have been"],"ans":0,"exp":"In this proverbial expression, 'All' means 'everything' (singular), requiring the singular verb 'is'."}
-]  
+]
