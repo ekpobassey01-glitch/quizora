@@ -854,5 +854,5 @@
 {"q":"Identify the figure of speech in: 'To err is human; to forgive, divine.'","opts":["Antithesis","Oxymoron","Hyperbole","Apostrophe"],"ans":0,"exp":"Contrasting ideas ('err/human' vs 'forgive/divine') are balanced in parallel clauses, forming antithesis."},
 {"q":"Identify the part of speech of the underlined word: 'Look at the sky [above]!'","opts":["Adverb","Preposition","Adjective","Noun"],"ans":0,"exp":"Here 'above' has no noun object following it and modifies the verb 'Look', functioning as an adverb of place."},
 {"q":"Choose the correct option to complete the sentence: 'Neither of the two suggested solutions __________ practical.'","opts":["is","are","were","have been"],"ans":0,"exp":"'Neither' is grammatically singular and requires the singular verb 'is'."},
-{"q":"Select the word that has the same vowel sound as the underlined letter: b[u]sy","opts":["women","fuss","buzz","push"],"ans":0,"exp":"'Busy' is pronounced /ˈbɪzi/, sharing the short front vowel /ɪ/ with the first syllable of 'women' (/ˈwɪmɪn/)."},
+{"q":"Select the word that has the same vowel sound as the underlined letter: b[u]sy","opts":["women","fuss","buzz","push"],"ans":0,"exp":"'Busy' is pronounced /ˈbɪzi/, sharing the short front vowel /ɪ/ with the first syllable of 'women' (/ˈwɪmɪn/)."}
 ]
